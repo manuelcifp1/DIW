@@ -1,5 +1,62 @@
 
 body {
+    margin: 0;
+    overflow: hidden;
     font-family: 'Fredoka', sans-serif;
+    color: white;
+}
+.container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.scroll {
+    height: 100vh;
+    scroll-snap-align: start;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+h1, h3 {
+    margin: 0;
+    padding: 10px;
+    position: absolute;  
+}
+
+
+
+#photo1 {
+    background-image: url(./img/city-7137958_1920.jpg);
+    
+}
+
+#photo2 {
+    background-image: url(./img/cathedral-5043132.jpg);
+}
+
+#photo3 {
+    background-image: url(./img/sunset-1226113.jpg);
+}
+
+#photo4 {
+    background-image: url(./img/malaga-4714579.jpg);
+}
+
+#photo5 {
+    background-image: url(./img/malaga-4714575.jpg);
+}
+
+#photo6 {
+    background-image: url(./img/city-lights-malaga-plaza-de-toros-cityscape-wallpaper-b8a62df8d0400c8800cc61ee28f2d4ca.jpg);
+}
+
+#center {
+
+}
+
+.rightSide {
+
 }
 
