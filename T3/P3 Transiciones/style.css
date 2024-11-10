@@ -1,0 +1,18 @@
+body {
+    background: linear-gradient(180deg, #4b0082 50%, #db7093 100%);
+    margin: 0;
+    overflow: hidden;
+    font-family: 'REM', sans-serif;
+    font-size: xx-large;
+    height: 100vh;
+    
+}
+
+h1 {
+    color: #db7093; 
+}
+
+h2 {
+    color: #4b0085;
+}
+
