@@ -35,27 +35,66 @@ h2 {
     text-align: center;
     margin: 0 10px;
     vertical-align: top;
+    transition: background-color 4s ease-in-out;
     
 }
 
+.container:hover {
+    background-color: #008a8a;
+    color: black;
+}
 
 .container i {
     color: white;
     font-size: 370px;
     margin-bottom: 10px;
+    padding-top: 20px;
     transition: transform 4s ease, color 4s ease;
 }
 
 .container i:hover {
     transform: scale(1.1);
     color: #4b0085;
+    
 }
 
 .container p {
     opacity: 0;
-    color: white;
+    color: transparent;
     font-size:x-large;
     line-height: 1.5;
+    transform-origin: center;
+    transform: rotate(90deg) scale(0);
+    transition: opacity 0.5s linear;
+}
+
+.container:hover p {
+    opacity: 1;
+    animation: colorParrafos 5s linear forwards, rotacionParrafos 5s linear forwards;
+}
+
+@keyframes colorParrafos {
+    0% {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+
+    100% {
+        color: white;
+    }
+}
+
+@keyframes rotacionParrafos {
+    0% {
+        transform: rotate(90deg) scale(0); /* Rotado verticalmente y sin tamaño */
+    }
+    
+    100% {
+        transform: rotate(0deg) scale(1); /* Termina horizontal y a tamaño completo */
+    }
+
 }
 
 @keyframes aparecer {
