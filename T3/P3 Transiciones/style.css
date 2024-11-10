@@ -4,8 +4,7 @@ body {
     font-family: 'REM', sans-serif;
     font-size: xx-large;
     text-align: center;
-    height: 100vh;
-    
+    height: 100vh;    
     
 }
 
@@ -13,14 +12,18 @@ h1 {
     opacity: 0;
     margin: 20px 0;
     padding: 2%;
-    animation: aparecer 2s ease-in 2s forwards;    
-     
+    animation: aparecer 2s ease-in 2s forwards;     
+}
+
+.container-group {
+    opacity: 0;
+    animation: aparecer 2s ease-in 4s forwards;
 }
 
 h2 {
-    color: #4b0085;
+    color: transparent;
     margin-top: 40px;
-    
+    animation: aparecer2 2s ease-in 6s forwards;
 }
 
 .container {
@@ -49,12 +52,22 @@ h2 {
     font-size: 370px;
     margin-bottom: 10px;
     padding-top: 20px;
-    transition: transform 4s ease, color 4s ease;
+    transition: transform 4s ease, color 4s ease, text-shadow 4s ease;
+    
 }
 
 .container i:hover {
     transform: scale(1.1);
     color: #4b0085;
+    text-shadow: 2px 2px 0px white,
+    -2px 2px 0px white,
+    2px -2px 0px white,
+    -2px -2px 0px white;
+    /*Esto de aquí arriba es para el bordecito blanco de las figuras.
+    Lo he hecho al final, se me había olvidado, menos mal.
+    Pensé que se hacía con border, pero investigando he descubierto
+    que esta opción es la más conveniente. */
+
     
 }
 
@@ -72,7 +85,7 @@ h2 {
     opacity: 1;
     animation: colorParrafos 5s linear forwards, rotacionParrafos 5s linear forwards;
 }
-
+/*Aquí controlamos la animación de cambio de color de los párrafos */
 @keyframes colorParrafos {
     0% {
         color: transparent;
@@ -80,23 +93,23 @@ h2 {
     50% {
         color: black;
     }
-
     100% {
         color: white;
     }
 }
-
+/*Aquí la rotación del texto de los párrafos */
 @keyframes rotacionParrafos {
     0% {
         transform: rotate(90deg) scale(0); /* Rotado verticalmente y sin tamaño */
-    }
-    
+    }    
     100% {
         transform: rotate(0deg) scale(1); /* Termina horizontal y a tamaño completo */
     }
 
 }
-
+/*Aquí la aparición del h1 y del container-group un poco después, al principio de la carga de la página.
+Como los párrafos no se ven al principio, el color que aparece aquí sólo afecta al h1, por eso este keyframes
+ lo podemos usar para ambos elementos */
 @keyframes aparecer {
     0% {
         opacity: 0; /* Transparente al inicio */
@@ -104,6 +117,16 @@ h2 {
     100% {
         opacity: 1; /* Opaco al final */
         color: #db7093;
+    }
+}
+/*Y aquí la aparición del h2 al principio de la carga de la página, con su color específico. */
+@keyframes aparecer2 {
+    0% {
+        opacity: 0; /* Transparente al inicio */
+    }
+    100% {
+        opacity: 1; /* Opaco al final */
+        color: #4b0085;
     }
 }
 
