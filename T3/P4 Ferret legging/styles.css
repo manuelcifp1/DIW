@@ -1,6 +1,137 @@
-* {
-    box-sizing: border-box;
+/* General */
+body {
+    background: linear-gradient(to right, #37023C,  #871C35), url('./img/tile.png');
+    background-blend-mode: overlay;
+    background-size: auto 100px;
+    background-repeat: repeat;
+    background-position: center top;
+    font-family: 'Pathway Extreme', sans-serif;
+    color: #f5f5f5;
     margin: 0;
-    padding: 0;
 }
 
+/* Header */
+
+h1 {
+    font-family: 'BioRhyme', serif;
+    font-size: 10vh;
+    color: #871C35;
+    text-align: center;
+    line-height: 0.5;
+    padding-top: 10px 0;
+}
+
+h3 {
+    font-family: 'BioRhyme', serif;
+    font-size: 2vh;
+    color: #871C35;
+    background-color: white;
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+/* Section ferret */
+#ferret {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 0.5% ;
+    border-radius: 10px;
+    padding: 20px;
+    color: #37023C;
+    text-align: center;
+    background-color: #DAF1FB;
+}
+
+#ferret img {
+    width: 80vh;
+    border: 10px solid #6d0477;
+    border-radius: 10px;
+    margin: 0 auto;
+    
+}
+
+#ferret #reglas a {
+    color: #CE50B0;
+}
+
+/* resaltared text */
+.resaltar {
+    color: #E4A0D4;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.resaltar:hover {
+    color: #5d003E;
+}
+
+/* Blocks */
+#container-group {   
+    
+    width: 50%;
+    padding: 20px;
+    margin: 0 auto;
+    border: 3px solid white;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#descripcion, #reglas {    
+    margin: 5px 5px;    
+    background-color: #0D506D;   
+}
+
+#descripcion p {
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: justify;
+}
+
+#reglas p {
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: justify;
+
+}
+
+#recuadro {
+    background-color: #E4A0D4;
+    color: #37023C;
+    border: 10px solid #CE50B0;
+    padding-left: 3px;
+    padding-right: 3px;
+    transition: all 0.3s ease;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+ul{
+    list-style-type: square;
+    color: #0D506D;
+    padding: 10px 10px;
+    text-align: justify;
+    line-height: 30px;
+    
+}
+
+.someRules {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#reglas #recuadro:hover {
+    background-color: #CE50B0;
+    border-color: #E4A0D4;
+}
+
+/* Footer */
+footer {
+    background-color: #b6b6b6;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    border-top: 5px solid #f5f5f5;
+}
