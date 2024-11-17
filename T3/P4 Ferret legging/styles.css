@@ -84,6 +84,11 @@ h3 {
     background-color: #0D506D;   
 }
 
+#descripcion img {
+
+    margin-left: 100px;
+}
+
 #descripcion p {
     padding-left: 100px;
     padding-right: 100px;
