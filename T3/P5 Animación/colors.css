@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;   
+}
+
+:root{
+
+    --color_texto:#5a0075;
+    --color_borde:#dd0a85;
+    --color_sombra:whitesmoke;
+    
+    
+}
+
+body{
+    background-color: var(--color_texto);
+    background-image: url('./back.png');
+    
+}
+
+h1{
+    padding:5px;
+    padding-bottom: 15px;
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 5px var(--color_sombra), -1px -1px 5px var(--color_sombra);
+    color:var(--color_texto);
+}
+
+h3{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.2em;
+    font-weight: 400;
+    color:var(--color_texto);
+    padding:10px;
+}
+
+.contenedor{
+    background-color: var(--color_borde);
+    background: rgb(217,219,112);
+    background: radial-gradient(circle, rgba(217,219,112,1) 10%, rgba(181,43,157,1) 60%, rgba(33,60,204,1) 100%);
+
+ 
+
+    width: 900px;
+    height:900px;
+    border: 5px solid var(--color_borde);
+    border-radius: 10px;
+    margin: 15px auto 0px auto;
+    padding:1vh 2vw;
+}
+
+.cuadrado{
+    display: grid;
+    grid-template-columns: repeat(8, 100px);
+    grid-template-rows: repeat(8, 100px);
+    justify-content:center;
+    place-items: center;
+
+}
+
+.casilla{
+    border:2px solid var(--color_texto);
+    width:90px;
+    height:90px;  
+}
