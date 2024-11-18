@@ -15,10 +15,13 @@ h3 {
     padding: 20px;
     font-size: 25px;
     text-align: center;
+    height: 10vh;
 }
 
 #naranja {
     background-color:#F15946;
+    height: 30vh;
+    width: 100px;
 
 }
 
@@ -28,26 +31,31 @@ h3 {
     border: 2px solid black;
     width: 21vw;
     height: 40%;
+    margin: 5px;
 }
 
 #celeste {
     color: white;
     background-color: #53b3cb;
+    height: 60vh;
+    width: 100px;
 }
 
 #celeste div {
     border: 2px solid white;
 }
 
-.naranja {
+#naranja1 #naranja2 {
     background-color:#F15946;
 
 }
 
-.chicle {
+#chicle {
     background-color: #e01a4f;
+    width: 30%;
+    height: 75%;
 }
 
-.burdeos {
+#burdeos {
     background-color: #8b0000;
 }
