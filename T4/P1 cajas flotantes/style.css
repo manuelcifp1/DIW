@@ -69,6 +69,7 @@ h3 {
     height: 75%;
     text-align: justify;
     padding: 5px;
+    float: left;
 
 }
 
@@ -77,4 +78,8 @@ h3 {
     width: 80%;
     height: 15%;
     padding: 5px;
+}
+
+#uno {
+    float: left;
 }
