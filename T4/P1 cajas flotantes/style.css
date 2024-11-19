@@ -21,7 +21,8 @@ h3 {
 #naranja {
     background-color:#F15946;
     height: 30vh;
-    width: 100px;
+    width: 100%;
+    padding: 5px;
 
 }
 
@@ -32,30 +33,48 @@ h3 {
     width: 21vw;
     height: 40%;
     margin: 5px;
+    padding: 5px;
 }
 
 #celeste {
     color: white;
     background-color: #53b3cb;
     height: 60vh;
-    width: 100px;
+    width: 100%;
+   
 }
 
 #celeste div {
     border: 2px solid white;
 }
 
-#naranja1 #naranja2 {
+#naranja2 #naranja3 {
     background-color:#F15946;
+    width: 60%;
+    padding: 5px;
 
+}
+
+#naranja2 {
+    height: 33%;
+}
+
+#naranja3 {
+    height: 40%;
 }
 
 #chicle {
     background-color: #e01a4f;
     width: 30%;
     height: 75%;
+    text-align: justify;
+    padding: 5px;
+
 }
 
 #burdeos {
     background-color: #8b0000;
+    width: 80%;
+    height: 15%;
+    padding: 5px;
 }
