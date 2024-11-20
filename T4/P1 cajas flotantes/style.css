@@ -38,7 +38,9 @@ h3 {
     
 }
 
-
+/*He aprendido que el orden de las reglas CSS cuando estamos jugando con float es vital. 
+Creo que el profe nos ha confundido un poco con los números que le ha asignado a cada
+contenedor, con la intención de hacernos pensar, que no lo hacemos bastante. */
 
 #uno {
     float: left;
@@ -80,8 +82,7 @@ h3 {
     background-color:#F15946;
     width: 60%;
     padding: 5px;
-    border: 2px solid white;
-    
+    border: 2px solid white;    
     margin: 15px 30px;   
     
 }
@@ -89,7 +90,6 @@ h3 {
 #naranja2 {
     height: 33%;
     float: left;
-
     
 }
 
@@ -102,7 +102,7 @@ h3 {
     padding: 5px;    
     border: 2px solid white;
     margin: 15px 20px 15px 0;
-    
+        
 }
 
 #naranja3 {
