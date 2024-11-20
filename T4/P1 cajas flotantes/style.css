@@ -21,8 +21,9 @@ h3 {
 #naranja {
     background-color:#F15946;
     height: 30vh;
-    width: 100%;
-    padding: 5px;
+    width: 100vw;
+    padding: 20px 40px;
+    overflow: hidden;
 
 }
 
@@ -32,54 +33,92 @@ h3 {
     border: 2px solid black;
     width: 21vw;
     height: 40%;
-    margin: 5px;
+    margin: 10px;
     padding: 5px;
+    
 }
 
 #celeste {
     color: white;
-    background-color: #53b3cb;
+    background-color: #53b3cb;    
     height: 60vh;
-    width: 100%;
+    width: 100vw;
    
 }
 
-#celeste div {
-    border: 2px solid white;
-}
-
-#naranja2 #naranja3 {
+#naranja2, #naranja3 {
     background-color:#F15946;
     width: 60%;
     padding: 5px;
-
+    border: 2px solid white;
+    display: inline-block;
+    margin: 15px 30px;
+    
 }
 
 #naranja2 {
     height: 33%;
+
+    
 }
 
 #naranja3 {
     height: 40%;
+    
 }
 
 #chicle {
+    float: right;
     background-color: #e01a4f;
     width: 30%;
     height: 75%;
     text-align: justify;
-    padding: 5px;
-    float: left;
-
+    padding: 5px;    
+    border: 2px solid white;
+    margin: 0 70px 0 0;
+    
 }
 
 #burdeos {
     background-color: #8b0000;
     width: 80%;
     height: 15%;
-    padding: 5px;
+    padding: 10px;
+    border: 2px solid white;
+    margin: 0 auto;    
+    
 }
 
 #uno {
     float: left;
+}
+
+#dos {
+    float: left;
+}
+
+#tres {
+    float: left;
+}
+
+#cuatro {
+    float:left;
+}
+
+#cinco {
+    float:left;
+}
+
+#seis {
+    float: left;
+}
+
+#siete {    
+    float:left;         
+}
+
+footer {
+    height: 10vh;
+    background-color: black;   
+    
 }
