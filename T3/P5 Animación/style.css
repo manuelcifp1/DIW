@@ -43,9 +43,6 @@ h3{
     background-color: var(--color_borde);
     background: rgb(217,219,112);
     background: radial-gradient(circle, rgba(217,219,112,1) 10%, rgba(181,43,157,1) 60%, rgba(33,60,204,1) 100%);
-
- 
-
     width: 900px;
     height:900px;
     border: 5px solid var(--color_borde);
