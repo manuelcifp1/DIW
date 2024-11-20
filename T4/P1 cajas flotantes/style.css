@@ -38,56 +38,7 @@ h3 {
     
 }
 
-#celeste {
-    color: white;
-    background-color: #53b3cb;    
-    height: 60vh;
-    width: 100vw;
-   
-}
 
-#naranja2, #naranja3 {
-    background-color:#F15946;
-    width: 60%;
-    padding: 5px;
-    border: 2px solid white;
-    display: inline-block;
-    margin: 15px 30px;
-    
-}
-
-#naranja2 {
-    height: 33%;
-
-    
-}
-
-#naranja3 {
-    height: 40%;
-    
-}
-
-#chicle {
-    float: right;
-    background-color: #e01a4f;
-    width: 30%;
-    height: 75%;
-    text-align: justify;
-    padding: 5px;    
-    border: 2px solid white;
-    margin: 0 70px 0 0;
-    
-}
-
-#burdeos {
-    background-color: #8b0000;
-    width: 80%;
-    height: 15%;
-    padding: 10px;
-    border: 2px solid white;
-    margin: 0 auto;    
-    
-}
 
 #uno {
     float: left;
@@ -115,6 +66,60 @@ h3 {
 
 #siete {    
     float:left;         
+}
+
+#celeste {
+    color: white;
+    background-color: #53b3cb;    
+    height: 60vh;
+    width: 100vw;
+   
+}
+
+#naranja2, #naranja3 {
+    background-color:#F15946;
+    width: 60%;
+    padding: 5px;
+    border: 2px solid white;
+    
+    margin: 15px 30px;   
+    
+}
+
+#naranja2 {
+    height: 33%;
+    float: left;
+
+    
+}
+
+#chicle {
+    float:right;
+    background-color: #e01a4f;
+    width: 30%;
+    height: 75%;
+    text-align: justify;
+    padding: 5px;    
+    border: 2px solid white;
+    margin: 15px 20px 15px 0;
+    
+}
+
+#naranja3 {
+    height: 40%;
+    float: left;
+    
+}
+
+#burdeos {
+    background-color: #8b0000;
+    width: 80%;
+    height: 15%;
+    padding: 10px;
+    border: 2px solid white;
+    margin-left: 10vw;
+    float: left;    
+    
 }
 
 footer {
