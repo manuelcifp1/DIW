@@ -42,32 +42,8 @@ h3 {
 Creo que el profe nos ha confundido un poco con los números que le ha asignado a cada
 contenedor, con la intención de hacernos pensar, que no lo hacemos bastante. */
 
-#uno {
+#uno, #dos, #tres, #cuatro, #cinco, #seis, #siete {
     float: left;
-}
-
-#dos {
-    float: left;
-}
-
-#tres {
-    float: left;
-}
-
-#cuatro {
-    float:left;
-}
-
-#cinco {
-    float:left;
-}
-
-#seis {
-    float: left;
-}
-
-#siete {    
-    float:left;         
 }
 
 #celeste {
