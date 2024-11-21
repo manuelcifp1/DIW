@@ -35,16 +35,20 @@ h3 {
     height: 40%;
     margin: 10px;
     padding: 5px;
+    float: left;
     
+}
+/*Para conseguir que el contenedor 7 pasara a la línea de abajo he optado por
+crear un div vacío, siguiendo los magníficos apuntes de este módulo y ocultarlo
+con la propiedad visibility: hidden */
+#vacio {
+    visibility: hidden;
 }
 
 /*He aprendido que el orden de las reglas CSS cuando estamos jugando con float es vital. 
 Creo que el profe nos ha confundido un poco con los números que le ha asignado a cada
 contenedor, con la intención de hacernos pensar, que no lo hacemos bastante. */
 
-#uno, #dos, #tres, #cuatro, #cinco, #seis, #siete {
-    float: left;
-}
 
 #celeste {
     color: white;
