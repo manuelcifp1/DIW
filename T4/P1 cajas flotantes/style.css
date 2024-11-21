@@ -12,8 +12,8 @@ body {
 h3 {
     background-color: black;
     color: white;
-    padding: 20px;
-    font-size: 25px;
+    padding: 26px;
+    font-size: 30px;
     text-align: center;
     height: 10vh;
 }
@@ -48,7 +48,6 @@ con la propiedad visibility: hidden */
 /*He aprendido que el orden de las reglas CSS cuando estamos jugando con float es vital. 
 Creo que el profe nos ha confundido un poco con los números que le ha asignado a cada
 contenedor, con la intención de hacernos pensar, que no lo hacemos bastante. */
-
 
 #celeste {
     color: white;
