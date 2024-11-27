@@ -14,22 +14,18 @@
 body {
     background-image: url("./img/Pattern4.jpg");
     background-repeat: repeat;
-    background-size: 20vw;
-    
-    
-    
+    background-size: 20vw;   
    
 }
 
 body::after {
-  content: '';
-  position: absolute;
+  content: '';  
   top: 0;
   left: 0;
   width: 90%;
   height: 660%;
   background-color: rgba(255, 255, 255, 0.3);
-  z-index: -1; /* Coloca la capa encima */
+  z-index: -1; 
   margin-left: 5%;
   margin-right: 5%;
   
@@ -45,8 +41,7 @@ body::after {
 p {
     font-family: "Roboto", sans-serif;
     color: black;
-    font-size: 0.9vw;
-    padding: 20px;
+    font-size: 0.9vw;    
     letter-spacing: 1.5px;
     text-align: justify;
 }
@@ -94,7 +89,8 @@ h4 {
     border: 2px solid var(--naranja);
     border-radius: 5px;
     background-color: var(--azulTrans);
-    width: 20vw;
+    width: 27vw;
+    height: 35vh;
     margin: 2vw;
 }
 
@@ -111,3 +107,25 @@ h4 {
 .comic img {
     width: 10vw;
 }
+
+#dracula {
+    margin-left: 7vw;
+}
+
+#snowhite {
+    float: right;
+    margin-right: 7vw;
+    margin-top: 0.6vh;
+    margin-left: 0.6vw;
+}
+
+#yoda {
+    float:right;
+    margin-left: 10.3vw;
+    margin-top: 0.1vw;
+}
+
+.comic p {
+    color: white;
+}
+
