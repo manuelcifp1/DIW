@@ -5,32 +5,30 @@
 }
 
 :root {
-    --azulTrans: rgb(0, 0, 255, 0.2);
+    --azulTrans: rgb(0, 0, 255, 0.8);
     --naranja: orange;
     --blancoTrans: rgba(0, 255, 255, 0.2);
     --azul: rgb(0, 0, 255);
 }
 
-body {
-    background-image: url("./img/Pattern4.jpg");
-    background-repeat: repeat;
-    background-size: 20vw;   
+.fondo {
+    width: 100%;
+    height: 100%;
+    background: url("./img/Pattern4.jpg");
+    background-size:auto;
+    background-position: center;
+    
    
 }
 
-body::after {
-  content: '';
-  position:absolute;  
-  top: 0;
-  left: 0;
-  width: 90%;
-  height: 660%;
-  background-color: rgba(255, 255, 255, 0.3);
-  z-index: -1; 
-  margin-left: 5%;
-  margin-right: 5%;
-  
+.colorFondo {
+    width: 90%; /* Deja un 5% de margen a cada lado */    
+    margin: auto; /* Centra la capa negra */
+    background: rgba(0, 0, 0, 0.7); /* Color negro semitransparente */
+   
 }
+
+
 
 .pop img {
     float: left;
@@ -90,8 +88,8 @@ h4 {
     border: 2px solid var(--naranja);
     border-radius: 5px;
     background-color: var(--azulTrans);
-    width: 27vw;
-    height: 42vh;
+    width: 25vw;
+    height: 27vh;
     margin: 2vw;
     padding: 12px;
     
@@ -112,26 +110,31 @@ h4 {
 }
 
 #dracula {
-    margin-left: 6.8vw ;
+    margin-left: 2.5vw ;
 }
 
 #snowhite {
     float: right;
-    margin-right: 7vw;
+    margin-right: 2.5vw;
     margin-top: 0.6vh;
-    margin-left: 0.6vw;
+    margin-left: 2.3vw;
 }
 
 #yoda {
     float:right;    
-    margin-top: 0.1vw;
+    margin-top: 0.2vw;
 }
 
 #potter {
-   margin-left: 53vw;
+   margin-left: 49vw;
+   margin-top: 5vh;
+   
 }
 
 #indiana {
+  margin-left: 20vw;
+  float:inline-start;
+  margin-top: 0;
     
    
 }
