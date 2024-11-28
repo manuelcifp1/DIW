@@ -19,7 +19,8 @@ body {
 }
 
 body::after {
-  content: '';  
+  content: '';
+  position:absolute;  
   top: 0;
   left: 0;
   width: 90%;
@@ -40,7 +41,7 @@ body::after {
 
 p {
     font-family: "Roboto", sans-serif;
-    color: black;
+    color: white;
     font-size: 0.9vw;    
     letter-spacing: 1.5px;
     text-align: justify;
@@ -50,7 +51,7 @@ span {
     color: var(--naranja);
     font-style: italic;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 17px;
 }
 
 h1, h2, h4 {
@@ -90,8 +91,10 @@ h4 {
     border-radius: 5px;
     background-color: var(--azulTrans);
     width: 27vw;
-    height: 35vh;
+    height: 42vh;
     margin: 2vw;
+    padding: 12px;
+    
 }
 
 .comic div {
@@ -109,7 +112,7 @@ h4 {
 }
 
 #dracula {
-    margin-left: 7vw;
+    margin-left: 6.8vw ;
 }
 
 #snowhite {
@@ -120,9 +123,17 @@ h4 {
 }
 
 #yoda {
-    float:right;
-    margin-left: 10.3vw;
+    float:right;    
     margin-top: 0.1vw;
+}
+
+#potter {
+   margin-left: 53vw;
+}
+
+#indiana {
+    
+   
 }
 
 .comic p {
