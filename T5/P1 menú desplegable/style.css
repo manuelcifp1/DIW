@@ -1,5 +1,163 @@
+/* Reseteamos medidas del navegador
+como está mandado. */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+/* ¿A quién no le gustan unas
+ variables de colores? */
+:root {
+    --menuColor: #ba2240;
+    --hoverColor: #2e0404;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    /*Aquí abajo posicionamos la imagen de background con un
+    shorthand muy apañao: que no se repita, que se posicione horizontalmente,
+    que se posicione verticalmente y que esté fija en la ventana.*/
+    background: url('./img/background.jpg') no-repeat center center fixed;
+    /*Nuestra imagen de fondo se ajusta y
+     cubre todo el área de su contenedor. */
+    background-size: cover;
+    color: white;
+    /*Y que el texto esté centradito */
+    text-align: center;
+}
+
+
+.menu ul {
+    /*Con esto eliminamos las viñetas, números 
+    o imágenes que aparecen por defecto en las listas. */
+    list-style: none;
+    padding: 0;
+    margin: 0;    
+    justify-content: left; /* Alinear el menú a la izquierda, como se nos pide. */
+}
+
+
+.menu ul li {
+    position: relative; /* Con esto posicionamos los submenús bajo el 
+    elemento menú-padre correspondiente */
+}
+
+/*Estilos para todos los enlaces del menú */
+.menu ul li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Efecto hover en los enlaces del menú */
+.menu ul li a:hover {
+    background-color: var(--hoverColor);
+}
+
+
+.submenu {
+    display: none; /* Ocultamos los submenús */
+    position: absolute;
+    top: 100%; /* Coloca el submenú debajo del padre */
+    left: 0;
+    background-color: var(--menuColor);
+    min-width: 200px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000; /* Asegura que el submenú al aparecer esté sobre el resto de elementos */
+    text-align: left; /* Alineación del texto */
+    visibility: hidden; /* Así no se ve hasta que hacemos hover */
+    opacity: 0; /* Hace invisible el submenú */     
+}
+
+/* Mostrar submenú al pasar el cursor sobre su papi. 
+Sólo afecta a los hijos directos del <li> sobre el que 
+realizamos la acción, gracias a ">" */
+.menu ul li:hover > .submenu {
+    display: block; /* El submenú aparece */
+    visibility: visible; /* Se hace visible */
+    opacity: 1; /* Se muestra con opacidad */
+}
+
+/* Submenús anidados */
+.submenu .submenu {
+    display: none; /* Ocultamos los submenús anidados */
+    position: absolute; /* Para evitar errores de renderización */
+    left: 100%; /* Posición a la derecha del submenú padre */
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Mostrar submenús anidados al pasar el cursor */
+.submenu li:hover > .submenu {
+    display: block; /* El submenú anidado aparece */
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Enlaces dentro de los submenús */
+.submenu li a {
+    padding: 10px 15px; /* Espaciado interno */
+}
+
+/* Efecto hover en los enlaces de los submenús */
+.submenu li a:hover {
+    background-color: var(--hoverColor);
+}
+
+.arriba {
+    float:left;
+    background-color: var(--menuColor);    
+    
+}
+
+.menu {
+    background-color: var(--menuColor);
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+/*Probablemente esto sea una chapucilla, pero es que el background color del menú
+principal se me quedaba cubriendo sólo las palabras, y así lo he ampliado hasta el
+borde derecho de la pantalla.*/
+#pasion {
+    padding-right: 56.15vw;
+}
+
+/*Estilos para el título */
+h1 {
+    font-family: "Rakkas", sans-serif;
+    font-size: 3.3vw;
+    margin-bottom: 7vh;
+}
+
+
+p {
+    margin-left: 8vw;
+    margin-right: 8vw;
+    font-size: 1.6vw;
+}
+
+/* Fuente Monda para párrafos y elementos de lista */
+p, li {
+    font-family: "Monda", sans-serif;
+}
+
+/*Con esto posiciono la sección que incluye el título y
+ el párrafo subtítulo. Como no tiene ningún ancestro posicionado,
+ section se posiciona respecto a la ventana en su totalidad (el body)
+ Con position:absolute, el posicionamiento de section
+ no afecta a ningún otro elemento de la página y
+ se posiciona respecto  */
+section {
+    position: absolute;
+    top: 30vh;
 }
