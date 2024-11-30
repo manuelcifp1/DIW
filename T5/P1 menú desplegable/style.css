@@ -28,7 +28,6 @@ body {
     text-align: center;
 }
 
-
 .menu ul {
     /*Con esto eliminamos las viñetas, números 
     o imágenes que aparecen por defecto en las listas. */
@@ -38,7 +37,6 @@ body {
     justify-content: left; /* Alinear el menú a la izquierda, como se nos pide. */
 }
 
-
 .menu ul li {
     position: relative; /* Con esto posicionamos los submenús bajo el 
     elemento menú-padre correspondiente */
@@ -47,7 +45,7 @@ body {
 /*Estilos para todos los enlaces del menú */
 .menu ul li a {
     display: block;
-    padding: 15px 20px;
+    padding: 8px 20px;
     text-decoration: none;
     color: white;
     font-weight: bold;
@@ -58,17 +56,18 @@ body {
     background-color: var(--hoverColor);
 }
 
-
 .submenu {
     display: none; /* Ocultamos los submenús */
+    /*Position:absolute para que los submenús se posicionen respecto
+    a sus papis <li> */
     position: absolute;
     top: 100%; /* Coloca el submenú debajo del padre */
     left: 0;
     background-color: var(--menuColor);
-    min-width: 200px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    /*max-width ajustado para que quepa
+    hasta la palabra Contentedness, que se las trae. */
+    max-width: 150px;
+    list-style: none;    
     z-index: 1000; /* Asegura que el submenú al aparecer esté sobre el resto de elementos */
     text-align: left; /* Alineación del texto */
     visibility: hidden; /* Así no se ve hasta que hacemos hover */
@@ -84,27 +83,17 @@ realizamos la acción, gracias a ">" */
     opacity: 1; /* Se muestra con opacidad */
 }
 
-/* Submenús anidados */
 .submenu .submenu {
-    display: none; /* Ocultamos los submenús anidados */
-    position: absolute; /* Para evitar errores de renderización */
-    left: 100%; /* Posición a la derecha del submenú padre */
-    top: 0;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    display: none; /* Ocultamos los submenús anidados */    
+    left: 100%; /* Posición a la derecha del borde derecho del submenú padre */    
+    top: 0;/*Con top:0 alineamos verticalmente con el borde superior de su papi */
+    visibility: hidden;       
 }
 
 /* Mostrar submenús anidados al pasar el cursor */
 .submenu li:hover > .submenu {
     display: block; /* El submenú anidado aparece */
-    visibility: visible;
-    opacity: 1;
-}
-
-/* Enlaces dentro de los submenús */
-.submenu li a {
-    padding: 10px 15px; /* Espaciado interno */
+    visibility: visible;    
 }
 
 /* Efecto hover en los enlaces de los submenús */
@@ -113,15 +102,15 @@ realizamos la acción, gracias a ">" */
 }
 
 .arriba {
+    /*Como pide el ejercicio, le aplicamos float a los
+     elementos del menú principal, para que estén alineados
+      arriba y a la izquierda.*/
     float:left;
     background-color: var(--menuColor);    
-    
 }
 
 .menu {
-    background-color: var(--menuColor);
-    padding: 0;
-    margin: 0;
+    background-color: var(--menuColor);    
     text-align: left;
 }
 
@@ -138,15 +127,14 @@ h1 {
     font-size: 3.3vw;
     margin-bottom: 7vh;
 }
-
-
+/*Damos formato al párrafo debajo del título */
 p {
     margin-left: 8vw;
     margin-right: 8vw;
     font-size: 1.6vw;
 }
 
-/* Fuente Monda para párrafos y elementos de lista */
+/* Fuente Monda para el párrafo y el texto de las listas */
 p, li {
     font-family: "Monda", sans-serif;
 }
