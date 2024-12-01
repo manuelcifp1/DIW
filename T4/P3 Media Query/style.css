@@ -1,0 +1,260 @@
+/*Esto ya está más que he explicado:
+reseteo de medidas de los navegadores */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*Colección de variables de colores*/
+:root {
+    --azulTrans: rgba(97, 97, 129, 0.5);
+    --naranja: orange;
+    --verdiAzulTrans: rgba(16, 214, 214, 0.2);
+    --azul: rgb(17, 49, 107);
+    --negroTrans: rgba(0, 0, 0, 0.4);
+    --azulLiterature: rgb(11, 6, 82);
+}
+
+/*Nuestra imagen estilo art-decó para el fondo,
+so cool. */
+.fondo {
+    width: 100%;
+    height: 100%;
+    background: url("./img/Pattern4.jpg");
+    background-size:25vw;
+    background-position: center;   
+}
+
+/*Con esto hacemos el fondo semitrans */
+.colorFondo {
+    width: 90%; /* Deja un 5% de margen a cada lado */    
+    margin: auto; /* Centra la capa negra */
+    background: var(--negroTrans); /* Color negro semitransparente */
+    padding-top: 20px;   
+}
+
+/*Esto para situar las imágenes de la section
+primera a la izquierda del texto que le rodea y
+ darles estilo */
+#primera img {
+    float: left;
+    width: 7vw;
+    padding: 1px;
+    margin: 3px;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    color: white;
+    font-size: 0.9vw;    
+    letter-spacing: 1.5px;
+    text-align: justify;
+}
+
+/*Le damos color al texto del footer */
+span {
+    color: white;    
+}
+
+/*Color y estilos a los titulares
+de la section primera */
+#primera span {
+    color: var(--naranja);
+    font-weight: bolder;
+    font-size: 15px;
+    font-style: italic;
+}
+
+/*Asignamos la fuente y sus estilos
+comunes a los titulares */
+h1, h2, h3, h4 {
+  font-family: "Bangers", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--naranja);  
+}
+
+/*Estilos específicos para cada titular */
+h1 {
+    font-size: 4vw;
+    background-color: var(--azulTrans);
+    text-align: center;
+    border: 6px solid var(--naranja);
+    border-radius: 5px;
+    margin-left: 5vw;
+    margin-right: 5vw;    
+}
+
+h2 {
+    font-size: 2.3vw;
+    background-color: var(--verdiAzulTrans);
+    padding: 10px;
+    border: 4px solid var(--naranja);
+    margin: 3.8vw 7vw;
+}
+
+h3 {
+    padding: 20px;
+    margin-left: 0px;
+}
+
+h4 {
+    font-size: 2vw;
+    text-align: center;
+    padding-top: 10px;
+}
+
+/*Con esto nos ocupamos del posicionamiento
+de potter e indiana*/
+.container {
+    width: 90vw;
+    height: 42vh;
+    clear: both;    
+}
+
+/*Más estilos para los div de las clases pop y container */
+.pop div, .container div {    
+    border: 2px solid var(--naranja);
+    border-radius: 5px;
+    background-image: url("./img/Pattern10.jpg"); 
+    background-size: 20vw;
+    background-color: rgba(9, 10, 27, 0.7);
+    background-blend-mode: overlay;/*Para mezclar color y fondo*/       
+    width: 26.3vw;
+    height: 41vh;
+    margin: 2vw;
+    padding: 12px;    
+} 
+
+/*Margen para posicionar a toda la clase comic */
+.comic {
+    margin-left: 2vw;
+}
+
+/*Y estilos para sus div */
+.comic div {
+    border: 2px solid var(--naranja);
+    border-radius: 5px;    
+    background: linear-gradient(to bottom, var(--azul) 0.2%, var(--azulTrans) 99.98%);
+    width: 17vw;
+    height: 93vh;    
+    padding: 8px;
+}
+
+/*Tamaño y posicionamiento para las imágenes
+de la clase comic */
+.comic img {
+    width: 10vw;
+    margin-left: 17%;
+}
+
+/*Margen para posicionar a toda la clase literature */
+.literature {
+    margin-left: 3vw;
+}
+
+/*Posicionamiento y tamaño de las imágenes de literature */
+.literature img {
+    width: 6vw;
+    float: right;
+    padding-top: 13px;
+    padding-right: 10px;
+}
+
+/*Estilos para los párrafos y los div de literature */
+.literature p {
+    padding: 12px;
+    color: rgb(162, 172, 231);
+}
+
+.literature div {
+    border: 2px solid var(--naranja);    
+}
+
+/*Estilos para los encabezados de los div
+de literature */
+.headers {
+    font-size: 2vw;
+    background-color: rgb(85, 108, 235);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 20vh;
+    text-align: center;
+}
+
+/*Los div completos de literature (.header + <p>) pertenecen
+a la clase tales, para poder posicionarlos con float */
+.tales {
+    float:left;
+    width: 22%; /* Ajusta el ancho para que quepan los cuatro elementos*/
+    margin: 3% 1%; /*Agrega espacio entre los elementos*/
+    height: 80vh;
+    border-radius: 10px;
+    background-color: var(--azulLiterature);    
+}
+
+/*Reglas para posicionar con float y demás zarandajas
+ a los distintos contenedores de personajes de las clases pop y comic */
+#dracula {
+    margin-left: 2.5vw ;
+}
+
+#snowhite {
+    float: right;
+    margin-right: 2.5vw;
+    margin-top: 0.6vh;
+    margin-left: 1vw;
+}
+
+#yoda {
+    float:right;    
+    margin-top: 0.2vw;
+}
+
+#potter {
+   float:right;
+   margin-top: 0.1vh;
+   margin-right: 17vw;   
+}
+
+#indiana {
+  margin-top: 1vh;
+  margin-left: 17vw;   
+}
+
+#supes {
+    float: left;
+    margin-left: 3vw;
+}
+
+#bats {
+    float: left;
+    margin-left: 4vw;
+}
+
+#wolvie, #thing {
+    float: left;
+    margin-left: 4vw;
+}
+
+/*Estilo para el footer*/
+footer {
+    text-align: center;
+    font-family: "Bangers",sans-serif;
+    letter-spacing: 2px;
+    padding: 20px;
+    clear: both; /*He tenido que añadir esto aquí porque ocurría
+    algo muy "gracioso": las tres primeras palabras del footer, "Text for the",
+     se habían desplazado hasta ponerse al lado del sobrino favorito
+      de la tía Petunia. Obviamente, sufriendo las consecuencias de tanto float */    
+}
+
+/*Estilos para el enlace a la Wikipedia que hay
+en el footer, quitándole el típico subrayado */
+a {
+    color: var(--naranja);    
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: none;    
+}
