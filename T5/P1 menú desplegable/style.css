@@ -28,6 +28,31 @@ body {
     text-align: center;
 }
 
+.menu {
+    background-color: var(--menuColor);    
+    text-align: left;
+    width: 100%;    
+}
+
+/*He tenido que añadir esto porque tenía problemas
+con el background-color del menú principal, que no 
+llegaba hasta el borde derecho de la pantalla */
+.menu::after {
+    content: "";
+    display: table;
+    clear: both; /* Limpia flotantes sin usar overflow,
+    en caso contrario no se despliegan los submenús */
+}
+
+.arriba {
+    /*Como pide el ejercicio, le aplicamos float a los
+     elementos del menú principal, para que estén alineados
+      arriba y a la izquierda.*/
+    float:left;
+    background-color: var(--menuColor);
+        
+}
+
 .menu ul {
     /*Con esto eliminamos las viñetas, números 
     o imágenes que aparecen por defecto en las listas. */
@@ -101,25 +126,7 @@ realizamos la acción, gracias a ">" */
     background-color: var(--hoverColor);
 }
 
-.arriba {
-    /*Como pide el ejercicio, le aplicamos float a los
-     elementos del menú principal, para que estén alineados
-      arriba y a la izquierda.*/
-    float:left;
-    background-color: var(--menuColor);    
-}
 
-.menu {
-    background-color: var(--menuColor);    
-    text-align: left;
-}
-
-/*Probablemente esto sea una chapucilla, pero es que el background color del menú
-principal se me quedaba cubriendo sólo las palabras, y así lo he ampliado hasta el
-borde derecho de la pantalla.*/
-#pasion {
-    padding-right: 56.15vw;
-}
 
 /*Estilos para el título */
 h1 {
@@ -149,3 +156,33 @@ section {
     position: absolute;
     top: 30vh;
 }
+
+@media screen and (max-width:768px) {
+    section {
+        margin-top: 19vh;
+    }
+    
+    h1 {
+        font-size: 6vw;
+    }
+
+    p {
+        font-size: 3vw;
+    }
+
+    .menu {
+        text-align: center;
+    }
+
+    .arriba {
+        float: none;
+    }
+
+    .submenu {
+        display: none;
+    }
+
+    .menu ul li:hover > .submenu {
+        display: none;
+    }
+    }
