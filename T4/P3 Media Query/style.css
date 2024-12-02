@@ -322,6 +322,19 @@ a {
         de la sección primera */
         .pop div, .container div {
             width: 95vw;
+            
+        }
+
+        .container div {
+            height: 43vh;
+        }
+
+        #dracula {
+            height: 38vh;
+        }
+
+        #snowhite, #yoda {
+            height: 35vh;
         }
 
         /*Aumentar el tamaño de la fuente
@@ -346,7 +359,7 @@ a {
         /*Modificamos la altura de los contenedores
         de los superheroes*/
         #supes, #bats, #wolvie, #thing {
-            height: 115vh;        
+            height: 118vh;        
         }
 
         /*Más pequeños ajustes para posicionar
