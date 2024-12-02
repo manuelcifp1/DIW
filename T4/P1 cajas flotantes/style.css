@@ -38,6 +38,7 @@ h3 {
     float: left;
     
 }
+
 /*Para conseguir que el contenedor 7 pasara a la línea de abajo he optado por
 crear un div vacío, siguiendo los magníficos apuntes de este módulo y ocultarlo
 con la propiedad visibility: hidden */
@@ -48,11 +49,10 @@ con la propiedad visibility: hidden */
 /*He aprendido que el orden de las reglas CSS cuando estamos jugando con float es vital. 
 Creo que el profe nos ha confundido un poco con los números que le ha asignado a cada
 contenedor, con la intención de hacernos pensar, que no lo hacemos bastante. */
-
 #celeste {
     color: white;
     background-color: #53b3cb;    
-    height: 60vh;
+    height: 90vh;
     width: 100vw;
    
 }
@@ -62,41 +62,44 @@ contenedor, con la intención de hacernos pensar, que no lo hacemos bastante. */
     width: 60%;
     padding: 5px;
     border: 2px solid white;    
-    margin: 15px 30px;   
+    margin: 2% 1%;   
     
 }
 
 #naranja2 {
     height: 33%;
     float: left;
-    
+    margin-left: 4%;    
 }
 
 #chicle {
-    float:right;
+    float:right;      
     background-color: #e01a4f;
-    width: 30%;
-    height: 75%;
+    width: 25%;
+    height: 79.7%;
     text-align: justify;
-    padding: 5px;    
+    padding: 7px;    
     border: 2px solid white;
-    margin: 15px 50px 15px 0;
-        
+    margin-right: 5%;
+    margin-left: 3%;
+    margin-top: 2%;             
 }
 
+
 #naranja3 {
-    height: 40%;
+    height: 40%; /* Mantener la altura */
     float: left;
-    
+    margin-left: 4%;   
 }
 
 #burdeos {
     background-color: #8b0000;
     width: 80%;
-    height: 15%;
+    height: 10%;
     padding: 10px;
     border: 2px solid white;
-    margin-left: 10vw;
+    margin-left: 10%;
+    margin-top: 1%;    
     float: left;    
     
 }
