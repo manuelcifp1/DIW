@@ -56,7 +56,6 @@ contenedor, con la intención de hacernos pensar, que no lo hacemos bastante. */
 
 /*Los elementos dentro del contenedor celeste han necesitado muchos ajustes de márgenes
 en % para que todo quedara bien, así como cambiar el orden de "chicle" en el html. */
-
 #naranja2, #naranja3 {
     background-color:#F15946;
     width: 60%;
@@ -84,7 +83,6 @@ en % para que todo quedara bien, así como cambiar el orden de "chicle" en el ht
     margin-left: 3%;
     margin-top: 2%;             
 }
-
 
 #naranja3 {
     height: 40%;
