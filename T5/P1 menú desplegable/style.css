@@ -158,10 +158,13 @@ section {
 }
 
 @media screen and (max-width:768px) {
+    /*Posicionamos el título y el 
+    párrafo */
     section {
         margin-top: 19vh;
     }
     
+    /*Ajustamos el tamaño de las fuentes */
     h1 {
         font-size: 6vw;
     }
@@ -169,19 +172,19 @@ section {
     p {
         font-size: 3vw;
     }
-
+    /*Centramos texto del menú principal */
     .menu {
         text-align: center;
     }
 
+    /*Quitamos el float del menú principal para poder
+    centrarlo */
     .arriba {
         float: none;
     }
 
-    .submenu {
-        display: none;
-    }
-
+    /*Con esto evitamos que se desplieguen los 
+    submenús en la versión móvil */
     .menu ul li:hover > .submenu {
         display: none;
     }
