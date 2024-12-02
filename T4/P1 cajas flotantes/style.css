@@ -61,11 +61,11 @@ en % para que todo quedara bien, así como cambiar el orden de "chicle" en el ht
     width: 60%;
     padding: 5px;
     border: 2px solid white;    
-    margin: 2% 1%;    
+    margin: 2% 0.5%;    
 }
 
 #naranja2 {
-    height: 33%;
+    height: 30%;
     float: left;
     margin-left: 4%;    
 }
@@ -74,7 +74,7 @@ en % para que todo quedara bien, así como cambiar el orden de "chicle" en el ht
     float:right;      
     background-color: #e01a4f;
     width: 25%;
-    height: 79.7%; /*Ajustando la altura al dedillo para que el lado de abajo esté alineado con
+    height: 75.6%; /*Ajustando la altura al dedillo para que el lado de abajo esté alineado con
     el lado inferior del contenedor naranja3*/
     text-align: justify;
     padding: 7px;    
@@ -85,7 +85,7 @@ en % para que todo quedara bien, así como cambiar el orden de "chicle" en el ht
 }
 
 #naranja3 {
-    height: 40%;
+    height: 35%;
     float: left;
     margin-left: 4%;   
 }
@@ -97,7 +97,7 @@ en % para que todo quedara bien, así como cambiar el orden de "chicle" en el ht
     padding: 10px;
     border: 2px solid white;
     margin-left: 10%;
-    margin-top: 1%;    
+    margin-top: 0;    
     float: left;    
 }
 
