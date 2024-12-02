@@ -121,11 +121,18 @@ de potter e indiana*/
     background-size: 20vw;
     background-color: rgba(9, 10, 27, 0.7);
     background-blend-mode: overlay;/*Para mezclar color y fondo*/       
-    width: 26.3vw;
-    height: 41vh;
+    width: 26.3vw;    
     margin: 2vw;
     padding: 12px;    
-} 
+}
+
+.pop div {
+    height: 34vh;
+}
+
+.container div {
+    height: 41vh;
+}
 
 /*Margen para posicionar a toda la clase comic */
 .comic {
@@ -138,7 +145,7 @@ de potter e indiana*/
     border-radius: 5px;    
     background: linear-gradient(to bottom, var(--azul) 0.2%, var(--azulTrans) 99.98%);
     width: 17vw;
-    height: 93vh;    
+    height: 90vh;    
     padding: 8px;
 }
 
@@ -169,7 +176,8 @@ de la clase comic */
 }
 
 .literature div {
-    border: 2px solid var(--naranja);    
+    border: 2px solid var(--naranja);
+        
 }
 
 /*Estilos para los encabezados de los div
@@ -189,7 +197,7 @@ a la clase tales, para poder posicionarlos con float */
     float:left;
     width: 22%; /* Ajusta el ancho para que quepan los cuatro elementos*/
     margin: 3% 1%; /*Agrega espacio entre los elementos*/
-    height: 80vh;
+    height: 73vh;
     border-radius: 10px;
     background-color: var(--azulLiterature);    
 }
