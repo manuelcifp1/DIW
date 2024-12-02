@@ -24,7 +24,6 @@ h3 {
     width: 100vw;
     padding: 20px 40px;
     overflow: hidden;
-
 }
 
 #naranja div {
@@ -35,8 +34,7 @@ h3 {
     height: 40%;
     margin: 10px;
     padding: 5px;
-    float: left;
-    
+    float: left;    
 }
 
 /*Para conseguir que el contenedor 7 pasara a la línea de abajo he optado por
@@ -53,17 +51,18 @@ contenedor, con la intención de hacernos pensar, que no lo hacemos bastante. */
     color: white;
     background-color: #53b3cb;    
     height: 90vh;
-    width: 100vw;
-   
+    width: 100vw;   
 }
+
+/*Los elementos dentro del contenedor celeste han necesitado muchos ajustes de márgenes
+en % para que todo quedara bien, así como cambiar el orden de "chicle" en el html. */
 
 #naranja2, #naranja3 {
     background-color:#F15946;
     width: 60%;
     padding: 5px;
     border: 2px solid white;    
-    margin: 2% 1%;   
-    
+    margin: 2% 1%;    
 }
 
 #naranja2 {
@@ -76,7 +75,8 @@ contenedor, con la intención de hacernos pensar, que no lo hacemos bastante. */
     float:right;      
     background-color: #e01a4f;
     width: 25%;
-    height: 79.7%;
+    height: 79.7%; /*Ajustando la altura al dedillo para que el lado de abajo esté alineado con
+    el lado inferior del contenedor naranja3*/
     text-align: justify;
     padding: 7px;    
     border: 2px solid white;
@@ -87,7 +87,7 @@ contenedor, con la intención de hacernos pensar, que no lo hacemos bastante. */
 
 
 #naranja3 {
-    height: 40%; /* Mantener la altura */
+    height: 40%;
     float: left;
     margin-left: 4%;   
 }
@@ -101,11 +101,9 @@ contenedor, con la intención de hacernos pensar, que no lo hacemos bastante. */
     margin-left: 10%;
     margin-top: 1%;    
     float: left;    
-    
 }
 
 footer {
     height: 10vh;
-    background-color: black;   
-    
+    background-color: black;    
 }
