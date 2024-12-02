@@ -261,14 +261,120 @@ a {
 
 @media screen and (max-width:768px) {
 
-    h1 {
-        width: 90%;
-        font-size: 10vw;
-    }
+        /*Adaptamos el título principal */
+        h1 {
+            width: 90%;
+            font-size: 10vw;
+        }
 
-    h2 {
-        font-size: 6vw;
-        text-align: center;
-    }
-    
+        /*Y los secundarios */
+        h2 {
+            font-size: 6vw;
+            text-align: center;        
+            margin-top: 13%;
+            clear: both;        
+        }
+
+        /*El h2 "comic and literature icons" estaba encima del
+        pobre Indy y esto es lo que se me ha ocurrido para arreglar
+        este último problema que tenía. ¿Buena práctica? Quizás no.
+        ¿Me he quedado a gusto? Mucho. */
+        #pain {
+            margin-top: 50vh;
+        }
+
+        h3 {
+            font-size: 12vw;
+            margin-top: 5%;
+        }
+
+        h4 {
+            font-size: 8vw;
+        }
+
+        /*Eliminamos márgenes del fondo transparente */
+        .colorFondo {
+            width: 100%;
+        }
+        
+        /*Posicionamos y aumentamos de tamaño las imágenes
+        de la sección primera */
+        #primera img {
+            float: right;
+            width: 30vw;
+            padding: 1px;
+            margin: 3px;
+        }
+
+        /*Eliminamos los float de estos entrañables
+        personajes */
+        #snowhite, #yoda, #potter {
+            float: none;
+            margin-left: 2vw;
+        }
+
+        /*Un pequeño retoque a Indy */
+        #indiana {
+            margin-left: 2vw;
+        }
+
+        /*Modificando anchura de los contenedores
+        de la sección primera */
+        .pop div, .container div {
+            width: 95vw;
+        }
+
+        /*Aumentar el tamaño de la fuente
+        de los párrafos */
+        p {
+            font-size: 3vw;
+        }
+
+        /*Aumentamos tamaño de las imágenes
+        de comic */
+        .comic img {
+            width: 30vw;
+            margin: 2% 8%;
+        }
+
+        /*Y aumentamos tamaño de sus contenedores */
+        .comic div {
+            width: 43vw;
+            margin-top: 8%;
+        }
+
+        /*Modificamos la altura de los contenedores
+        de los superheroes*/
+        #supes, #bats, #wolvie, #thing {
+            height: 115vh;        
+        }
+
+        /*Más pequeños ajustes para posicionar
+        a los chicos de Marvel */
+        #thing {
+            margin-right: 4%;
+        }
+
+        #wolvie {
+            margin-left: 3%;
+        }
+
+        /*Ajustes para los contenedores de la última sección */
+        .tales {
+            clear: both;
+            width: 93%;        
+            height: 80%;
+            margin-left: 1.8vw;
+        }
+
+        /*Tamaño de las imágenes de esta clase */
+        .literature img {
+            width: 40%;
+        }
+
+        .headers {
+            height: 30vh;
+        
+    }   
+
 }
