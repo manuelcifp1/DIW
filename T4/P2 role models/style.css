@@ -108,12 +108,12 @@ h4 {
 /*Con esto nos ocupamos del posicionamiento
 de potter e indiana*/
 .container {
-    width: 90vw;
-    height: 42vh;
+    width: 90vw;    
     clear: both;    
 }
 
-/*Más estilos para los div de las clases pop y container */
+/*Más estilos para los div de las clases pop y container, más otro
+fondo art-decó para ellos. */
 .pop div, .container div {    
     border: 2px solid var(--naranja);
     border-radius: 5px;
@@ -121,8 +121,7 @@ de potter e indiana*/
     background-size: 20vw;
     background-color: rgba(9, 10, 27, 0.7);
     background-blend-mode: overlay;/*Para mezclar color y fondo*/       
-    width: 26.3vw;
-    height: 41vh;
+    width: 26.3vw;    
     margin: 2vw;
     padding: 12px;    
 } 
@@ -132,13 +131,17 @@ de potter e indiana*/
     margin-left: 2vw;
 }
 
+.container div {
+    height: 40vh;
+}
+
 /*Y estilos para sus div */
 .comic div {
     border: 2px solid var(--naranja);
     border-radius: 5px;    
     background: linear-gradient(to bottom, var(--azul) 0.2%, var(--azulTrans) 99.98%);
     width: 17vw;
-    height: 93vh;    
+    height: 90vh;    
     padding: 8px;
 }
 
@@ -189,7 +192,7 @@ a la clase tales, para poder posicionarlos con float */
     float:left;
     width: 22%; /* Ajusta el ancho para que quepan los cuatro elementos*/
     margin: 3% 1%; /*Agrega espacio entre los elementos*/
-    height: 80vh;
+    height: 73vh;
     border-radius: 10px;
     background-color: var(--azulLiterature);    
 }
