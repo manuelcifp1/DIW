@@ -74,7 +74,7 @@ en % para que todo quedara bien, así como cambiar el orden de "chicle" en el ht
     float:right;      
     background-color: #e01a4f;
     width: 25%;
-    height: 75.6%; /*Ajustando la altura al dedillo para que el lado de abajo esté alineado con
+    height: 71.9%; /*Ajustando la altura al dedillo para que el lado de abajo esté alineado con
     el lado inferior del contenedor naranja3*/
     text-align: justify;
     padding: 7px;    
@@ -97,7 +97,7 @@ en % para que todo quedara bien, así como cambiar el orden de "chicle" en el ht
     padding: 10px;
     border: 2px solid white;
     margin-left: 10%;
-    margin-top: 0;    
+    margin-top: 1.7%;    
     float: left;    
 }
 
