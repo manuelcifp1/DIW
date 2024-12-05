@@ -4,7 +4,31 @@
     padding: 0;
 }
 
-body {
+html {
     background-image: url("./img/burger.jpg");
-    background-size: cover;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+h1 {
+    font-family: "Permanent Marker", sans-serif;
+    color: white;
+    margin-left: 10%;
+    margin-top: 6%;
+    font-size: 4vw;
+    word-spacing: 2px;
+}
+
+#parrafada {
+    background-color: rgb(245, 245, 245, 0.5);
+    font-family: "Cantarell", sans-serif;
+    padding: 10px;
+    border-radius: 15px;
+    margin-left: 10%;
+    margin-top: 5%;
+    width: 60%;
 }
