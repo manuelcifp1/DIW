@@ -16,41 +16,37 @@
     <link rel="stylesheet" href="./style.css">
     <title>Simple burger menu</title>
 </head>
-
-    <body>
-        <h1>The world's best hamburger</h1>
-        <div id="parrafada"><p>At any time of the day, nothing is more appealing than a delicious hamburger menu.
-             Its spectacular animation (full of details and magic) gives a stunning dash of pizzazz to even
-              the simplest of web pages. CSS makes us so extremely happy that, without a doubt, designing a beautiful
-               hamburger menu was the best thing that could happen to us on a day like today.
-                Click on the menu at the right hand side to visualize our wonderful creation,
-                 feel the pride of a job well done and possibly dream of the bright future that awaits us
-                  as Front-end Developers in the best companies in the world.</p></div> 
-        <div class="menHam">
-            <input type="checkbox" checked>
-        <div class="contenedor-lineas">
-            <hr></hr>
-            <hr></hr>
-            <hr></hr>
+<body>
+    <h1>The world's best hamburger</h1>
+    <div id="parrafada"><p>At any time of the day, nothing is more appealing than a delicious hamburger menu.
+            Its spectacular animation (full of details and magic) gives a stunning dash of pizzazz to even
+            the simplest of web pages. CSS makes us so extremely happy that, without a doubt, designing a beautiful
+            hamburger menu was the best thing that could happen to us on a day like today.
+            Click on the menu at the right hand side to visualize our wonderful creation,
+                feel the pride of a job well done and possibly dream of the bright future that awaits us
+                as Front-end Developers in the best companies in the world.</p></div> 
+    <div class="menHam">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="contenedor-lineas">
+            <hr class="linea-superior">
+            <hr class="linea-intermedia">
+            <hr class="linea-inferior">
+        </label>
+    </div>
+    <div class="fondo">
+        <div class="transp"></div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">Appetizers</a></li>
+                <li><a href="#">Half Pound Burgers</a></li>
+                <li><a href="#">Sandwiches & Tacos</a></li>
+                <li><a href="#">Salads</a></li>
+                <li><a href="#">Side Dishes</a></li>
+                <li><a href="#">Desserts</a></li>
+                <li><a href="#">Beverages</a></li>                
+            </ul>
+            <img src="./img/logo.jpg" alt="logo">
         </div>
-        </div>
-        <div class="fondo">
-            <div class="transp">
-                <div class="menu">
-                    <ul>
-                        <li>Appetizers</li>
-                        <li>Half Pound Burgers</li>
-                        <li>Sandwiches & Tacos</li>
-                        <li>Salads</li>
-                        <li>Side Dishes</li>
-                        <li>Desserts</li>
-                        <li>Beverages</li>                
-                    </ul>
-                    <img src="./img/logo.jpg" alt="logo">
-                </div>
-            </div>
-        </div>
-                    
-    </body>
-
+    </div>                
+</body>
 </html>
