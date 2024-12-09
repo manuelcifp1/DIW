@@ -37,29 +37,33 @@ h1 {
 }
 
 .fondo {
-    background: linear-gradient(180deg, rgba(50, 19, 37, 0.9) 0%, rgba(95, 15, 64, 0.9) 50%, rgba(206, 74, 17, 0.9) 100%);
-    height: 700px;
-    width: 30%;  
-    float: right;    
-    position: relative; /* Para contener la textura */
-    z-index: 1; /* Asegura que esté detrás de otros elementos */   
-    
+    position: fixed; /* Mantener el menú lateral fijo */
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 30%;
+    background: linear-gradient(180deg, rgba(50, 19, 37, 0.9), rgba(95, 15, 64, 0.9), rgba(206, 74, 17, 0.9));
+    transform: translateX(100%); /* Fuera de la vista inicialmente */
+    transition: transform 0.5s ease;
+    z-index: 1;
 }
 
 .transp {
     background: url(./img/texture.png) center/cover no-repeat;
-    position: absolute;
-    top: 0; /* Alinear con el contenedor padre */
-    left: 0;
     height: 100%;
-    width: 100%;
-    opacity: 0.5; /* Transparencia de la textura */
-    z-index: 2; /* Encima del degradado */
+    opacity: 0.5;
+
+}    
+
+input {
+    visibility: hidden;
 }
 
 .menu {
     position: relative;
-    z-index: 3; /* Asegura que el contenido esté encima de la textura */
+    z-index: 2;
+    padding: 20px;
+    color: #DAFF7D;
 }
 
 img[alt="logo"]{
