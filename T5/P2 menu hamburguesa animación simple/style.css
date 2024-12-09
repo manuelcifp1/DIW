@@ -17,10 +17,11 @@ html {
 h1 {
     font-family: "Permanent Marker", sans-serif;
     color: white;
-    margin-left: 10%;
+    margin-left: 7%;
     margin-top: 6%;
     font-size: 4vw;
     word-spacing: 2px;
+    float: left;
 }
 
 #parrafada {
@@ -28,31 +29,44 @@ h1 {
     font-family: "Cantarell", sans-serif;
     padding: 10px;
     border-radius: 15px;
-    margin-left: 10%;
+    margin-left: 7%;
     margin-top: 5%;
     width: 55%;
     color: #000000;
+    float: left;
 }
 
 .fondo {
-    background-color: #321325e6 (0%), 5f0f40e6 (50%), #ce4a11e6 (100%);
-    height: 500px;
-    width: 30%;
-    margin-left: 70%;
+    background: linear-gradient(180deg, rgba(50, 19, 37, 0.9) 0%, rgba(95, 15, 64, 0.9) 50%, rgba(206, 74, 17, 0.9) 100%);
+    height: 700px;
+    width: 30%;  
+    float: right;    
+    position: relative; /* Para contener la textura */
+    z-index: 1; /* Asegura que esté detrás de otros elementos */   
     
 }
 
 .transp {
-    background-image: url(./img/texture.png);    
+    background: url(./img/texture.png) center/cover no-repeat;
+    position: absolute;
+    top: 0; /* Alinear con el contenedor padre */
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5; /* Transparencia de la textura */
+    z-index: 2; /* Encima del degradado */
+}
+
+.menu {
     position: relative;
-    height: 500px;
-    width: 30%;
+    z-index: 3; /* Asegura que el contenido esté encima de la textura */
 }
 
 img[alt="logo"]{
     width: 190px;
     border-radius: 50%;
-    margin-left: 25%;
+    margin-left: 17%;
+    margin-top: 20%;
     
 }
 
@@ -60,4 +74,29 @@ ul {
     color: #DAFF7D;
     list-style: none;
     text-align: center;
+    font-family: "Cantarell", sans-serif;
+    z-index: 3;
+    position: relative;
+}
+
+li {
+    padding-bottom: 20px;
+}
+
+.menHam {   
+    margin-left: 95%;
+    margin-top: 3%;
+    width: 1%;
+}
+
+
+
+hr {
+    height: 5px; /* Grosor de la línea */
+    width: 30px; /* Longitud de la línea */
+    background-color: #f1f113; /* Color de la línea */
+    margin-top: 3px; /* Centrar la línea horizontalmente */   
+    border-radius: 100px;
+    
+
 }
