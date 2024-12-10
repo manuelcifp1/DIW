@@ -4,14 +4,16 @@
     padding: 0;
 }
 
+/*Situamos la foto de las hamburguesas adecuadamente
+(cosa que debería ser básica pero a veces puede ser un
+dolor de cabeza, al menos para mí) */
 html {
     background-image: url("./img/burger.jpg");
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100vw;
-    height: 100vh;
-    
+    height: 100vh;    
 }
 
 h1 {
@@ -21,7 +23,7 @@ h1 {
     margin-top: 6%;
     font-size: 4vw;
     word-spacing: 2px;
-    float: left;
+    float: left;/*He situado el título con un float ¿por qué no? */
 }
 
 #parrafada {
@@ -33,116 +35,157 @@ h1 {
     margin-top: 5%;
     width: 55%;
     color: #000000;
-    float: left;
+    float: left;/*Y el párrafo también. Con lo harto que terminé
+    del float y los pingüinos y fíjate, vuelvo a por más */
 }
 
 .fondo {
-    position: fixed;
+    position: fixed;/*Con esto y las 2 propiedades siguientes
+    hacemos que el menú lateral se quede pegado a la esquina superior
+    derecha, como debe ser. */
     top: 0;
     right: 0;
     height: 100%;
     width: 30%;
-    background: linear-gradient(180deg, rgba(50, 19, 37, 0.9), rgba(95, 15, 64, 0.9), rgba(206, 74, 17, 0.9));
+    /*Degradado con transparencia de regalo*/ 
+    background: linear-gradient(
+        to bottom,
+        rgba(50, 19, 37, 0.9) 0%, 
+        rgba(95, 15, 64, 0.9) 50%, 
+        rgba(206, 74, 17, 0.9) 100%
+    );
+    /*Esto es lo que mantiene oculto el menú lateral,
+    pues se mueve sobre el eje horizontal (X) un 100%
+    de su propio ancho hacia la derecha. Luego veremos
+    como aparece con el valor translateX(0), como si fuera
+    una puerta corredera moviéndose por un riel.*/    
     transform: translateX(100%);
     transition: transform 0.5s ease, opacity 0.5s ease;
-    z-index: 1;
-    overflow: visible; /* Evita recortes */
+    /*Veremos varios z-index en esta práctica, para hacer
+    que cada elemento aparezca sobre otro o debajo, según
+    el caso.*/
+    z-index: 1;    
 }
 
 .transp {
-    background: url(./img/texture.png) center/cover no-repeat;
+    /*La textura de madera con sus estilos que consiguen
+    que se transparente y que con otro z-index quede sobre
+    el color que hay en la regla .fondo {} */
+    background: url(./img/texture.png);
     height: 100%;
-    opacity: 0.5;
+    opacity: 0.6;
+    /*Ahora posicionamos al elemento transp con su menú dentro
+    de manera absoluta respecto a .fondo, que está fixed,
+    y top/left lo situan en la esquina superior izquierda de su
+    contenedor */
     position: absolute;
-    z-index: 9;
-
-}    
-
-input {
-    visibility: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
 }
 
-a {
-    color:#DAFF7D;
-    text-decoration: none;
+/*Esto oculta el checkbox que hay en el menú hamburguesa */
+input {
+    visibility: hidden;
 }
 
 .menu {
     position: relative;
     font-family: "Cantarell", sans-serif;    
-    z-index: 10; /* Asegúrate de que esté encima */
+    z-index: 10; /*Nos aseguramos que los enlaces del menu
+    queden sobradamente encima de todas las capas anteriores.
+    Esto es importante, porque si hay alguna capa encima que tenga
+    transparencia, veríamos el texto pero no podríamos hacer click
+    sobre él. */
     padding: 20px;
-    padding-top: 100px;    
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7); /* Mejor visibilidad */
+    padding-top: 100px;        
 }
 
 img[alt="logo"] {
     display: block;
     margin: 20px auto;
     width: 150px;
-    height: 150px; /* Asegura proporciones cuadradas */
-    border-radius: 100%; /* Hace que los bordes sean circulares */
-    object-fit: cover; /* Ajusta la imagen al contenedor */
-    padding-top: 0; /* Elimina padding innecesario */
+    height: 150px; /*Asegura que sea un cuadrado, lo cual 
+    facilita su conversión a círculo perfecto
+    con border-radius */
+    border-radius: 100%;    
 }
 
-.menu ul {
-    
-    list-style: none;
-    padding: 0;
-    text-align: center;
+.menu ul {    
+    list-style: none;/*Quitamos las viñetas propias de la 
+    lista desordenada*/    
+    text-align: center;    
+}
+
+/*Separamos adecuadamente cada elemento
+de la lista */
+.menu ul li {
+    margin: 20px 0;    
+}
+
+.menu ul li a {    
+    text-decoration: none; /*Eliminamos el subrayado que llevan
+    los enlaces por defecto*/
+    font-size: 1.2em;/*Aquí he usado un em, que los uso poco, pobrecillos.*/    
+    color:#DAFF7D;
+}
+/*Aquí lo que pasa cuando hacemos hover sobre los elementos del
+menú: cambio de color, aparece el subrayado y la fuente se pone en
+negrita*/
+.menu ul li a:hover {
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+} 
+
+/*Nuestro menú hamburguesa, fijado en su posición,
+y con un z-index que lo mantenga sobre todas las capas,
+incluso cuando aparece el contenedor del menu/lista */
+.menHam {   
+    position: fixed;
+    top: 25px;    
+    right: 40px;
     z-index: 3;
 }
 
-.menu ul li {
-    margin: 20px 0;
-}
-
-.menu ul li a {
-   
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
-}
-
-.menu ul li a:hover {
-    color: white;
-
-}    
-
-.menHam {   
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 3; /* Encima del menú lateral */
-}
-
-#menu-toggle {
-    display: none;
-}
-
+/*Se convierte el cursor en pointer. En este caso
+no necesitamos añadir la pseudo-clase :hover, ya que la propiedad
+cursor no la necesita, se activa ella solita.*/
 .contenedor-lineas {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    cursor: pointer;    
     height: 50px;
-    width: 50px;
-    background: transparent;
-    z-index: 3; /* Encima del menú lateral */
+    width: 50px;      
 }
 
 /* Líneas del menú hamburguesa */
 .linea-superior, .linea-intermedia, .linea-inferior {
     width: 30px;
-    height: 4px;
+    height: 5px;
     background: #f1f113;
-    margin: 3px 0;
-    border-radius: 5px;
+    border-radius: 100px;
+    position: absolute; /* Para posicionar las líneas manualmente
+    (lo hacemos en las siguientes reglas)*/    
+    transform: translateX(-50%); /* Ajuste fino para centrar */
     transition: transform 0.5s ease, opacity 0.5s ease;
-    z-index: 3;
+    z-index: 3;    
+    border:none;/*Esto lo he tenido que añadir por haber
+    usado hr en lugar de span o div al hacer las líneas del
+    menú hamburguesa. Sirve para eliminar el borde por defecto
+    que estropea su aspecto, en especial el de la X que forman
+    al aparecer el menú/lista */
+}
+
+.linea-superior {
+    top: 10px; /* Posición superior */
+}
+
+.linea-intermedia {
+    top: 22.5px; /* Espaciado entre líneas */
+}
+
+.linea-inferior {
+    top: 34px; /* Posición inferior */
 }
 
 /* Mostrar menú lateral al activar el checkbox */
@@ -152,8 +195,8 @@ img[alt="logo"] {
 
 /* Líneas transformándose en X */
 #menu-toggle:checked + .contenedor-lineas .linea-superior {
-    transform: rotate(45deg) translate(9px, 9px);
-    background-color: #ff685a;
+    transform: rotate(45deg) translate(11.5px, 11.5px);
+    background-color: #ff685a;    
 }
 
 #menu-toggle:checked + .contenedor-lineas .linea-inferior {
@@ -166,10 +209,3 @@ img[alt="logo"] {
 }
 
 
-hr {
-    height: 5px; /* Grosor de la línea */
-    width: 30px; /* Longitud de la línea */
-    background-color: #f1f113; /* Color de la línea */
-    margin-top: 3px; /* Centrar la línea horizontalmente */   
-    border-radius: 100px;
-}
