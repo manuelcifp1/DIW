@@ -80,8 +80,10 @@ img[alt="logo"] {
     display: block;
     margin: 20px auto;
     width: 150px;
-    border-radius: 100%;
-    padding-top: 70px;
+    height: 150px; /* Asegura proporciones cuadradas */
+    border-radius: 100%; /* Hace que los bordes sean circulares */
+    object-fit: cover; /* Ajusta la imagen al contenedor */
+    padding-top: 0; /* Elimina padding innecesario */
 }
 
 .menu ul {
@@ -140,6 +142,7 @@ img[alt="logo"] {
     margin: 3px 0;
     border-radius: 5px;
     transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 3;
 }
 
 /* Mostrar menú lateral al activar el checkbox */
@@ -149,11 +152,13 @@ img[alt="logo"] {
 
 /* Líneas transformándose en X */
 #menu-toggle:checked + .contenedor-lineas .linea-superior {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(9px, 9px);
+    background-color: #ff685a;
 }
 
 #menu-toggle:checked + .contenedor-lineas .linea-inferior {
     transform: rotate(-45deg) translate(5px, -5px);
+    background-color: #ff685a;
 }
 
 #menu-toggle:checked + .contenedor-lineas .linea-intermedia {
