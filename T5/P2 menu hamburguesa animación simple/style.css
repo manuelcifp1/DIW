@@ -168,7 +168,7 @@ cursor no la necesita, se activa ella solita.*/
     (lo hacemos en las siguientes reglas)*/    
     transform: translateX(-50%); /* Ajuste fino para centrar */
     transition: transform 0.5s ease, opacity 0.5s ease;
-    z-index: 3;    
+    z-index: 3; /*Para que quede encima del menú desplegable*/   
     border:none;/*Esto lo he tenido que añadir por haber
     usado hr en lugar de span o div al hacer las líneas del
     menú hamburguesa. Sirve para eliminar el borde por defecto
@@ -177,28 +177,33 @@ cursor no la necesita, se activa ella solita.*/
 }
 
 .linea-superior {
-    top: 10px; /* Posición superior */
+    top: 10px;
 }
 
 .linea-intermedia {
-    top: 22.5px; /* Espaciado entre líneas */
+    top: 22.5px;
 }
 
 .linea-inferior {
-    top: 34px; /* Posición inferior */
+    top: 34px;
 }
 
-/* Mostrar menú lateral al activar el checkbox */
+/* Mostrar menú lateral al activar el checkbox.
+ Cuando el checkbox #menu-toggle está marcado (:checked),
+ selecciona el elemento .fondo que es un hermano posterior del checkbox. */
 #menu-toggle:checked ~ .fondo {
-    transform: translateX(0); /* El menú se muestra completamente */
+    transform: translateX(0); /*El menú se muestra completamente,
+     como comentamos al principio.*/
 }
 
-/* Líneas transformándose en X */
+/*Líneas transformándose en X. Seleccionamos el siguiente hermano
+ inmediato de #menu-toggle, que en este caso es .contenedor-lineas y, 
+ dentro de este, selecciona el elemento .linea-superior*/
 #menu-toggle:checked + .contenedor-lineas .linea-superior {
     transform: rotate(45deg) translate(11.5px, 11.5px);
     background-color: #ff685a;    
 }
-
+/*El mismo principio que antes.*/
 #menu-toggle:checked + .contenedor-lineas .linea-inferior {
     transform: rotate(-45deg) translate(5px, -5px);
     background-color: #ff685a;
