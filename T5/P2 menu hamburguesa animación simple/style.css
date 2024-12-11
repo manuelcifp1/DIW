@@ -36,7 +36,7 @@ h1 {
     width: 55%;
     color: #000000;
     float: left;/*Y el párrafo también. Con lo harto que terminé
-    del float y los pingüinos y fíjate, vuelvo a por más */
+    del float y los pingüinos y fíjate, vuelvo a por más.*/
 }
 
 .fondo {
@@ -69,7 +69,7 @@ h1 {
 
 .transp {
     /*La textura de madera con sus estilos que consiguen
-    que se transparente y que con otro z-index quede sobre
+    que sea transparente y que con otro z-index quede sobre
     el color que hay en la regla .fondo {} */
     background: url(./img/texture.png);
     height: 100%;
@@ -106,7 +106,7 @@ img[alt="logo"] {
     display: block;
     margin: 20px auto; /*Margen arriba y abajo y
     automático a los lados para centrar la imagen */
-    width: 150px;/*Igual ancho que largo aseguran
+    width: 150px;/*Igual ancho que alto aseguran
      que sea un cuadrado, lo cual facilita su conversión
      a círculo perfecto con border-radius */
     height: 150px; 
