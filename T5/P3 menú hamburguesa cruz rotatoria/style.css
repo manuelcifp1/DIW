@@ -5,43 +5,63 @@
 }
 
 :root {
-    --amarillo:rgb(215, 215, 47);
-    --morado1:blueviolet;
+    --blanco: rgba(236, 224, 224, 0.87);
+    --rojo:rgb(209, 29, 29);
 }
 
 html {
-    background-image: url("./img/seamless.webp");
-    background-size: 100px;    
+    background-image: url("./img/pexels-enginakyurt-1435895.jpg");
+    background-size: 100vw 180vh;
+       
    
 }
 
 h1 {
-    font-family: "DynaPuff", system-ui;
+    font-family: "Shantell Sans", system-ui;
     font-weight: 900;
     font-style: normal;
-    color: var(--amarillo);
+    color: var(--rojo);
     padding: 5px;
+    text-align: center;
 }
 
 #titulo {
-    background-color: var(--morado1);
-    border: 6px var(--amarillo) solid;
-    margin: 3vh 10vw;
+    background-color: var(--blanco);
+    border: 6px var(--rojo) solid;
+    margin: 3vh 15vw;
     text-align: center;   
 }
 
 #titulo2 {
-    background-color: var(--morado1);
+    background-color: var(--blanco);
     border-radius: 15px;
     font-size: 2vw;
     text-align: center;
-    margin: 3vh 20vw;
+    margin: 5vh 20vw;
 }
 
 #container {
-    background-color: rgb(42, 2, 80, 0.8);
+    background-color: rgb(0, 0, 0, 0.8);    
+    height: 87vh;
+    width: 70%;
+    margin: 5vh 15vw;    
+    padding: 0.5px 20px;
+    text-align: justify;
+    border-radius: 20px;
 }
 
 p {
-    color: var(--amarillo);
+    color: whitesmoke;
+    font-family: "Niconne";
+    font-weight: 400;
+    font-style: normal;
+    font-size: 130%;
+}
+
+#pie {
+    background-color: var(--blanco);
+    width: 100%;       
+    position:fixed;
+    bottom: 10%;
+    left
 }
