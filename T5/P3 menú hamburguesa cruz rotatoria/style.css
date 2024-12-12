@@ -3,3 +3,45 @@
     margin: 0;
     padding: 0;
 }
+
+:root {
+    --amarillo:rgb(215, 215, 47);
+    --morado1:blueviolet;
+}
+
+html {
+    background-image: url("./img/seamless.webp");
+    background-size: 100px;    
+   
+}
+
+h1 {
+    font-family: "DynaPuff", system-ui;
+    font-weight: 900;
+    font-style: normal;
+    color: var(--amarillo);
+    padding: 5px;
+}
+
+#titulo {
+    background-color: var(--morado1);
+    border: 6px var(--amarillo) solid;
+    margin: 3vh 10vw;
+    text-align: center;   
+}
+
+#titulo2 {
+    background-color: var(--morado1);
+    border-radius: 15px;
+    font-size: 2vw;
+    text-align: center;
+    margin: 3vh 20vw;
+}
+
+#container {
+    background-color: rgb(42, 2, 80, 0.8);
+}
+
+p {
+    color: var(--amarillo);
+}
