@@ -70,6 +70,10 @@ p {
     font-size: 4.5vh;
 }
 
+br {
+    margin-bottom: 15px;
+}
+
 #pie {
     background-color: var(--blanco);
     width: 100%;       
