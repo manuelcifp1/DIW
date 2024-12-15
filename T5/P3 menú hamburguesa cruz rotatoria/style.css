@@ -15,7 +15,50 @@ html {
     background-repeat: no-repeat;   
 }
 
+.contenedor-lineas {
+    cursor: pointer;    
+    height: 50px;
+    width: 50px;      
+}
 
+/* Líneas del menú hamburguesa */
+.linea-superior, .linea-intermedia, .linea-inferior {
+    width: 30px;
+    height: 5px;
+    background: black;
+    border-radius: 100px;
+    position: absolute; /* Para posicionar las líneas manualmente
+    (lo hacemos en las siguientes reglas)*/
+    top: 50px; 
+    left: 50px;   
+    transform: translateX(-50%); /* Ajuste fino para centrar */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 3; /*Para que quede encima del menú desplegable*/   
+    border:none;/*Esto lo he tenido que añadir por haber
+    usado hr en lugar de span o div al hacer las líneas del
+    menú hamburguesa. Sirve para eliminar el borde por defecto
+    que estropea su aspecto, en especial el de la X que forman
+    al aparecer el menú/lista */
+}
+
+
+
+.linea-superior {
+    top: 15px;
+}
+
+.linea-intermedia {
+    top: 25px;
+}
+
+.linea-inferior {
+    top: 34px;
+}
+
+/*Esto oculta el checkbox que hay en el menú hamburguesa */
+input {
+    visibility: hidden;
+}
 
 #titulo {
     background-color: var(--blanco);
@@ -29,16 +72,13 @@ html {
     text-align: center;
     position:fixed;
     top:40px;
-    left: 124px;
-    
-           
+    left: 124px;          
 }
 
 #titulo2 {
     background-color: var(--blanco);
     font-family: "Shantell Sans", system-ui;
-    color: var(--rojo);
-    
+    color: var(--rojo);    
     border-radius: 15px;
     font-size: 2vw;
     text-align: center;
