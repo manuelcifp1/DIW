@@ -18,22 +18,23 @@ html {
 .contenedor-lineas {
     cursor: pointer;    
     height: 50px;
-    width: 50px;      
+    width: 50px;
+    z-index: 20;
+    position: relative;      
 }
 
 /* Líneas del menú hamburguesa */
 .linea-superior, .linea-intermedia, .linea-inferior {
     width: 30px;
     height: 5px;
-    background: black;
+    background: rgb(0, 0, 0, 0.7);
     border-radius: 100px;
     position: absolute; /* Para posicionar las líneas manualmente
-    (lo hacemos en las siguientes reglas)*/
-    top: 50px; 
-    left: 50px;   
-    transform: translateX(-50%); /* Ajuste fino para centrar */
+    (lo hacemos en la siguientes reglas)*/    
+    left: 20px;
+    /*Para la transición del menú hamburguesa */    
     transition: transform 0.5s ease, opacity 0.5s ease;
-    z-index: 3; /*Para que quede encima del menú desplegable*/   
+     /*Para que quede encima del menú desplegable*/   
     border:none;/*Esto lo he tenido que añadir por haber
     usado hr en lugar de span o div al hacer las líneas del
     menú hamburguesa. Sirve para eliminar el borde por defecto
@@ -41,14 +42,12 @@ html {
     al aparecer el menú/lista */
 }
 
-
-
 .linea-superior {
     top: 15px;
 }
 
 .linea-intermedia {
-    top: 25px;
+    top: 24px;
 }
 
 .linea-inferior {
@@ -86,12 +85,147 @@ input {
     font-size: 1.7em;    
 }
 
+/*Estas 2 siguientes son las reglas para el código javascript.*/
 .desaparecido {
     visibility: hidden;
 }
 
 .aparecido {
     visibility: visible;
+}
+
+.transp {    
+    background-color: rgb(0, 0, 0, 0.9);
+    height: 100%;    
+    /*Ahora posicionamos al elemento transp con su menú dentro
+    de manera absoluta respecto a .fondo, que está fixed,
+    y top/left lo situan en la esquina superior izquierda de su
+    contenedor */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;    
+    /*Esto es lo que mantiene oculto el menú lateral,
+    pues se mueve sobre el eje horizontal (X) un -100%
+    de su propio ancho hacia la derecha. Luego veremos
+    como aparece con el valor translateX(0), como si fuera
+    una puerta corredera moviéndose por un riel.*/    
+    transform: translateX(-100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    /*Veremos varios z-index en esta práctica, para hacer
+    que cada elemento aparezca sobre otro o debajo, según
+    el caso.*/
+    z-index: 10;    
+}
+
+.contenedor-imagen {
+    position: relative; /*Permite posicionar el texto respecto a la imagen */
+    width: 150px;
+    height: auto; /* Mantener proporciones */
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.contenedor-imagen img {
+    display: block;
+    width: 100%; /*La imagen ocupa todo el ancho del contenedor */
+    height: auto;
+    border: 3px white solid;
+    opacity: 0; /* Inicialmente oculta */
+    transform: translateX(-100%); /* Fuera de la pantalla */
+    transition: transform 1s ease, opacity 1s ease; /* Transición suave */   
+}
+
+.sobretexto {
+    position: absolute;
+    top: 50%; /*Centra verticalmente */
+    left: 50%; /*Centra horizontalmente */
+    transform: translate(-50%, -50%); /*Ajusta al centro exacto */
+    width: 98%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 5px 0;    
+    font-family: "Shantell Sans", sans-serif;
+}
+
+.menu {
+    position: relative;        
+    z-index: 10; /*Nos aseguramos que los enlaces del menu
+    queden sobradamente encima de todas las capas anteriores.
+    Esto es importante, porque si hay alguna capa encima que tenga
+    transparencia, veríamos el texto pero no podríamos hacer click
+    sobre él. */
+    padding: 20px;
+    padding-top: 10px;            
+}
+
+.menu ul {    
+    list-style: none;/*Quitamos las viñetas propias de la 
+    lista desordenada*/    
+    text-align: center;        
+}
+
+/*Separamos adecuadamente cada elemento
+de la lista */
+.menu ul li {
+    margin: 20px;    
+}
+
+.menu ul li a {    
+    text-decoration: none; /*Eliminamos el subrayado que llevan
+    los enlaces por defecto*/        
+    color:whitesmoke;
+    font-family: "Niconne",sans-serif;
+    font-size: 30px;
+}
+/*Aquí lo que pasa cuando hacemos hover sobre los elementos del
+menú.*/
+.menu ul li a:hover {
+    color: rgb(194, 29, 29);
+    text-decoration: underline;
+    font-weight: bold;
+} 
+
+/* Cuando el checkbox está activado, muestra el menú */
+#menu-toggle:checked ~ .transp {
+    transform: translateX(0); /* Mueve el menú a la posición visible */
+    opacity: 1;
+    transition: transform 0.5s ease, opacity 0.5s ease;    
+    z-index: 10; /* Asegura que esté encima de otros elementos */
+}
+
+#menu-toggle:checked ~ .transp .contenedor-imagen img {
+    opacity: 1; /* Visible */
+    transform: translateX(0); /* En su posición final */
+}
+
+/* Cambiar color de las líneas del menú hamburguesa a blanco cuando
+ el contenedor .transp esté desplegado para que destaquen sobre el fondo negro. */
+#menu-toggle:checked ~ .contenedor-lineas .linea-superior,
+#menu-toggle:checked ~ .contenedor-lineas .linea-intermedia,
+#menu-toggle:checked ~ .contenedor-lineas .linea-inferior {
+    background-color: white;
+}
+
+/* Esconde la imagen y el menú junto con .transp */
+.transp img,
+.transp .menu {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.5s, opacity 0.5s ease; /* Sincroniza visibilidad y opacidad */
+}
+
+/*Cuando el menú está activo, también muestra su contenido */
+#menu-toggle:checked ~ .transp img,
+#menu-toggle:checked ~ .transp .menu {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    z-index: 11; /*Encima del fondo semitransparente */
 }
 
 #container {
@@ -125,5 +259,169 @@ br {
     bottom: 3%;
     font-family: "Shantell Sans", system-ui;
     color:var(--rojo);
-    text-align: center;    
+    text-align: center;
+    z-index: 20;    
 }
+
+#menu-toggle:checked + .contenedor-lineas .linea-superior {
+    transform: translateY(9px) rotate(45deg); /* Baja al centro y rota */
+    transition: transform 0.5s ease;
+            
+}
+
+#menu-toggle:checked + .contenedor-lineas .linea-intermedia {
+    transform: translateX(-100%); /* Se desliza hacia la izquierda */
+    opacity: 0; /*Desaparece */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/*El mismo principio que antes.*/
+#menu-toggle:checked + .contenedor-lineas .linea-inferior {
+    transform: translateY(-9px) rotate(-45deg); /*Sube al centro y rota */
+    transition: transform 0.5s ease;    
+}
+
+#menu-toggle:checked + .contenedor-lineas {
+    transform: rotate(-90deg); /*Gira el conjunto hacia la izquierda */
+    transition: transform 0.5s ease;
+
+}
+/*Así es como aparecen las líneas del menú desde la izquierda.*/
+.transp .menu ul li {
+    opacity: 0; /*Inicialmente invisible */
+    transform: translateX(-100%);
+    background-color: transparent; /*Fuera de la pantalla */    
+    padding: 5px;
+    width: 90%;
+    margin: 5px auto; /*Centramos el contenido */
+    transition: transform 0.5s ease, opacity 0.5s ease, background-color 0.5s ease;
+}
+
+/*Aquí las reglas para la animación de entrada de los <li> del menú */
+#menu-toggle:checked ~ .transp .menu ul li:nth-child(1) {
+    opacity: 1; /*Visible */
+    transform: translateX(0); /*En su posición final */
+    transition-delay: 0s; /*Retraso para la primera línea */
+    background-color: red;
+    animation: desaparece1 5s ease forwards;
+}
+
+#menu-toggle:checked ~ .transp .menu ul li:nth-child(2) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.5s; /*Retraso mayor */
+    background-color: rgb(189, 74, 93);
+    animation: desaparece2 6s ease forwards;
+}
+
+#menu-toggle:checked ~ .transp .menu ul li:nth-child(3) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 1s;
+    background-color: pink;
+    animation: desaparece3 7s ease forwards;
+}
+
+#menu-toggle:checked ~ .transp .menu ul li:nth-child(4) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 1.5s;
+    background-color: red;
+    animation: desaparece4 8s ease forwards;
+}
+
+#menu-toggle:checked ~ .transp .menu ul li:nth-child(5) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 2s;
+    background-color: rgb(189, 74, 93);
+    animation: desaparece5 9s ease forwards;
+}
+
+#menu-toggle:checked ~ .transp .menu ul li:nth-child(6) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 2.5s;
+    background-color: pink;
+    animation: desaparece6 6s ease forwards;
+}
+
+
+
+
+@keyframes desaparece1 {
+    0% {
+        background-color: red;
+
+    }
+
+    100% {
+        background-color: transparent;
+    }
+    
+}
+
+@keyframes desaparece2 {
+    0% {
+        background-color: rgb(189, 74, 93);
+
+    }
+    
+    100% {
+        background-color: transparent;
+    }
+    
+}
+
+@keyframes desaparece3 {
+    0% {
+        background-color: pink;
+
+    }
+    
+    100% {
+        background-color: transparent;
+    }
+    
+}
+
+@keyframes desaparece4 {
+    0% {
+        background-color: red;
+
+    }
+    
+    100% {
+        background-color: transparent;
+    }
+    
+}
+
+@keyframes desaparece5 {
+    0% {
+        background-color: rgb(189, 74, 93);
+
+    }
+    
+    100% {
+        background-color: transparent;
+    }
+    
+}
+
+@keyframes desaparece6 {
+    0% {
+        background-color: pink;
+
+    }
+    
+    100% {
+        background-color: transparent;
+    }
+    
+}
+
+
+
+
+
