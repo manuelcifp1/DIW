@@ -5,16 +5,14 @@
 }
 
 :root {
-    --blanco: rgba(236, 224, 224, 0.87);
+    --blanco: rgba(236, 224, 224);
     --rojo:rgb(209, 29, 29);
 }
 
 html {
     background-image: url("./img/pexels-enginakyurt-1435895.jpg");
     background-size: 100vw 191vh;
-    background-repeat: no-repeat;
-       
-   
+    background-repeat: no-repeat;   
 }
 
 
@@ -40,14 +38,20 @@ html {
     background-color: var(--blanco);
     font-family: "Shantell Sans", system-ui;
     color: var(--rojo);
-    border: 6px var(--rojo) solid;
+    
     border-radius: 15px;
     font-size: 2vw;
     text-align: center;
     margin: 10px 45px;
-    font-size: 1.7em;
+    font-size: 1.7em;    
+}
 
-    
+.desaparecido {
+    visibility: hidden;
+}
+
+.aparecido {
+    visibility: visible;
 }
 
 #container {
