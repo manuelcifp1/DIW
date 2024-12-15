@@ -424,6 +424,50 @@ para la desaparición final de sus background-color */
     }    
 }
 
+@media screen and (max-width:768px) {
+
+    html {
+        background-image: url("./img/mobileBackground.jpg");
+        background-size: contain;
+        background-attachment: fixed;
+        
+    }
+    
+    #titulo {
+        font-size: 8px;
+        position:fixed;
+        left: 50px;
+        top: 10px;       
+    }
+
+    .contenedor-lineas {        
+        position:fixed;
+        top:5px;
+        right: 280px;        
+    }
+
+    #titulo2 {
+        font-size: 15px;
+        width: 90%;
+        margin-left: 10px;
+        margin-top: 2px;
+    }
+
+    #container {
+        height: 410vh;
+        margin-top: 50px;
+    }
+
+    .linea-superior, .linea-intermedia, .linea-inferior {
+        background-color: rgb(209, 29, 29);
+    }
+
+    #pie {
+        font-size: 20px;
+    }
+    
+}
+
 
 
 
