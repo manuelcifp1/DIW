@@ -3,3 +3,10 @@
     margin: 0;
     padding: 0;
 }
+
+html {
+    background-image: url(./img/road.jpg);
+    background-size:100% 110vh;
+    background-position: top;
+    
+}
