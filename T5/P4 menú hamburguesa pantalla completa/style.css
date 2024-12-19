@@ -48,6 +48,38 @@ main {
     margin-right:15% ;
 }
 
+/* Líneas del menú hamburguesa */
+.linea-superior, .linea-intermedia, .linea-inferior {
+    width: 38px;
+    height: 4.5px;
+    background: #cb1da0;; /*Un poquito de transparencia al negro para que no quede tan intenso.*/
+    border-radius: 100px;
+    position: absolute; /* Para posicionar las líneas manualmente
+    (lo hacemos en la siguientes reglas)*/    
+    left: 110%;    
+    /*Para la transición del menú hamburguesa */    
+    transition: transform 0.5s ease, opacity 0.5s ease;
+     /*Para que quede encima del menú desplegable*/   
+    border:none;/*Esto lo he tenido que añadir por haber
+    usado hr en lugar de span o div al hacer las líneas del
+    menú hamburguesa. Sirve para eliminar el borde por defecto
+    que estropea su aspecto, en especial el de la X que forman
+    al aparecer el menú/lista */
+}
+
+/*Posicionando las líneas del menú hamburguesa.*/
+.linea-superior {
+    top: -90px;
+}
+
+.linea-intermedia {
+    top: -80px;    
+}
+
+.linea-inferior {
+    top: -70px;
+}
+
 #principal {
     
     width: 80%;
