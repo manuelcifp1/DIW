@@ -49,8 +49,8 @@ h1 {
     color: #cb1da0;
     transform: scaleX(1.3);
     display: inline-block;
-    font-size: 3em;
-    text-align: center;    
+    font-size: 4em;
+    text-align: center;      
 }
 
 hr {
@@ -67,7 +67,7 @@ main p {
     font-family: "PT Serif", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 18px;
+    font-size: 1.5em;
     width: 90%;
     margin: 0 auto;
     text-align: center;
@@ -80,14 +80,48 @@ main {
     margin-right:15% ;
 }
 
+/* Líneas del menú hamburguesa */
+.linea-superior, .linea-intermedia, .linea-inferior {
+    width: 38px;
+    height: 4.5px;
+    background: #cb1da0;; /*Un poquito de transparencia al negro para que no quede tan intenso.*/
+    border-radius: 100px;
+    position: absolute; /* Para posicionar las líneas manualmente
+    (lo hacemos en la siguientes reglas)*/    
+    left: 110%;    
+    /*Para la transición del menú hamburguesa */    
+    transition: transform 0.5s ease, opacity 0.5s ease;
+     /*Para que quede encima del menú desplegable*/   
+    border:none;/*Esto lo he tenido que añadir por haber
+    usado hr en lugar de span o div al hacer las líneas del
+    menú hamburguesa. Sirve para eliminar el borde por defecto
+    que estropea su aspecto, en especial el de la X que forman
+    al aparecer el menú/lista */
+}
+
+/*Posicionando las líneas del menú hamburguesa.*/
+.linea-superior {
+    top: -90px;
+}
+
+.linea-intermedia {
+    top: -80px;    
+}
+
+.linea-inferior {
+    top: -70px;
+}
+
 #principal {
-    position:absolute;
-    left: 30%;
-    width: 60%;
+    
+    width: 80%;
+    height: 65vh;
     border:4px solid #cb1da0;
     border-radius: 10px; 
     padding: 20px 30px 100px;
-    background-color:#120f0fa3 ;  
+    background-color:#120f0fa3 ;
+    padding: 8%; 
+    margin-left: 19%; 
 }
 
 
