@@ -9,26 +9,19 @@
     <meta name="keywords" content="the road not taken, robert frost, poetry">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=BioRhyme:wght@200..800&family=Charm:wght@400;700&family=DM+Serif+Display:ital@0;1&family=Fredoka:wght@300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&family=Lunasima:wght@400;700&family=Monda:wght@400..700&family=Niconne&family=Pathway+Extreme:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=REM:ital,wght@0,100..900;1,100..900&family=Rakkas&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=BioRhyme:wght@200..800&family=Charm:wght@400;700&family=DM+Serif+Display:ital@0;1&family=Fredoka:wght@300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&family=Lunasima:wght@400;700&family=Monda:wght@400..700&family=Niconne&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Pathway+Extreme:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=REM:ital,wght@0,100..900;1,100..900&family=Rakkas&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100..900&family=Lato:wght@100;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Menu hamburguesa, pantalla completa</title>
 </head>
 <body>
-    <script>
-        $('.contenedor_icono_burger').on('click', function() {
-                    $(this).toggleClass('icono_cruz icono_barras');     
-                    $(".derecha").toggleClass('derecha_off derecha_on');   
-                    $(".izquierda").toggleClass('izquierda_off izquierda_on');                       
-        });
-    </script>
-    <main>
-        <div class="contenedor_icono_burger">            
-                <hr class="linea-superior">
-                <hr class="linea-intermedia">
-                <hr class="linea-inferior">            
-        </div>        
+    <div class="contenedor_icono_burger icono_barras">            
+        <hr class="linea-superior">
+        <hr class="linea-intermedia">
+        <hr class="linea-inferior">            
+    </div>    
+    <main>           
         <div id="principal">
             <h1>The Road Not Taken</h1>
             <hr>
@@ -37,6 +30,11 @@
                   or go it alone. If life is a journey, this poem highlights those
                    times in life when a decision has to be made. Which way will you go?</p>
         </div>
-    </main>    
+    </main>
+    <script>
+        $('.contenedor_icono_burger').on('click', function() {
+            $(this).toggleClass('icono_cruz icono_barras');                       
+        });
+    </script>    
 </body>
 </html>
