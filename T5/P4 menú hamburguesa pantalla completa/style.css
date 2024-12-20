@@ -17,7 +17,7 @@ html {
     right: 20px;
     width: 50px;
     height: 50px;
-    cursor: pointer;
+    cursor: pointer;    
 }
 
 /* Líneas del menú hamburguesa */
@@ -27,9 +27,10 @@ html {
     background: #cb1da0;
     border-radius: 100px;
     position: absolute;
-    left: 10px;
+    left: -30%; /* Centra las líneas horizontalmente */    
     transition: transform 0.5s ease, opacity 0.5s ease, background-color 0.5s ease;
     border:none;
+    z-index: 10;
 }
 
 /* Posicionar las líneas */
@@ -55,7 +56,7 @@ html {
     width: 39px;
     height: 39px;
     border: 3px solid white;
-    background-color: rgb(255, 255, 255, 0.5);
+    background-color: #f0f0f055;
     border-radius: 50%;
     z-index: -1;
     top: 50%;
@@ -72,13 +73,17 @@ html {
 
 /* Animaciones para las líneas */
 .contenedor_icono_burger.icono_cruz .linea-superior {
-    transform: rotate(585deg); /* 360° + 225° */
-    background-color: white;    
+    transform: translate(-50%, 0) rotate(585deg); /* Centrar y rotar */
+    background-color: #d1d1d1;
+    top: 13px;
+    left:-0.9px; /* Ajustar para centrar verticalmente */
 }
 
 .contenedor_icono_burger.icono_cruz .linea-inferior {
-    transform: rotate(-585deg); /* -360° - 225° */
-    background-color: white;
+    transform: translate(-50%, 0) rotate(-585deg); /* Centrar y rotar */
+    background-color: #d1d1d1;
+    top: 33px; /* Ajustar para centrar verticalmente */
+    left:-0.8px;
 }
 
 .contenedor_icono_burger.icono_cruz .linea-intermedia {
@@ -87,27 +92,27 @@ html {
 }
 
 /* Estilos principales */
-h1 {
-    font-family: "Lato", sans-serif;
+#principal h1 {
+    font-family: "Lexend Mega", serif;
     color: #cb1da0;
-    transform: scaleX(1.2);
+    
     text-align: center;
     font-size: 3em;      
 }
 
 #principal hr {
-    width: 54%;
+    width: 70%;
     height: 4px;    
     background-color: #cb1da0;
     border: none;
     margin-bottom: 35px;
     margin-top: 8px;
-    margin-left: 23%;    
+    margin-left: 15%;    
 }
 
 main p {
     color: #cb1da0;
-    font-family: "Noto Serif", serif;
+    font-family: "Lexend Mega", serif;
     font-size: 1.2em;
     width: 90%;
     margin: 0 auto;
@@ -129,3 +134,79 @@ main {
     padding: 4%; 
     margin-left: 10%; 
 }
+
+br {
+    margin-bottom: 15px;
+}
+
+/* Contenedores iniciales ocultos */
+#contenedor_poema, #contenedor_menu {
+    position: fixed;
+    top: 0;
+    height: 100vh;    
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+#contenedor_poema {
+    left: 0;
+    background-color: #1c262b;
+    font-family: "Habibi", serif;
+    color: #d1d1d1;
+    width: 40%;
+    padding: 0px 100px 20px;
+    text-align: center; 
+
+}
+
+#contenedor_menu {
+    right: 0;
+    left: auto;
+    background-image: url('./img/background.jpg');
+    background-size: cover;
+    transform: translateX(100%);
+    width: 60%;
+}
+
+/* Cuando están visibles */
+#contenedor_poema.visible, #contenedor_menu.visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Menú dentro del contenedor */
+#contenedor_menu ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+#contenedor_menu ul li {
+    margin: 20px 0;
+}
+
+#contenedor_menu ul li a {
+    text-decoration: none;
+    font-family: "Lexend Mega", serif;
+    font-size: 1.5em;
+    color: #d1d1d1;
+    transition: color 0.3s ease;
+}
+
+#contenedor_menu ul li a:hover {
+    color: #cb1da0;
+}
+
+#contenedor_menu h1 {
+    color: #d1d1d1;
+    font-family: "Lexend Mega", serif;
+}
+
+
+
+
