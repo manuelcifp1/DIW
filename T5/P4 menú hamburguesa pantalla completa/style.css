@@ -5,37 +5,119 @@
 }
 
 html {
+    /*He ajustado la posición de la imagen de fondo
+    para que se vea bien la carretera, como muestra
+    el modelo. La carretera es lo más importante de
+    la imagen. */
     background-image: url(./img/road.jpg);
-    background-size:100% 110vh;
-    background-position: top;    
+    background-size: 100% 110vh;
+    background-position: top;     
 }
 
-h1 {
-    font-family: "Lunasima", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #cb1da0;
-    transform: scaleX(1.3);
-    display: inline-block;
-    font-size: 4em;
-    text-align: center;      
+/* Posicionar el menú hamburguesa en la esquina
+ superior derecha */
+.contenedor_icono_burger {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 52px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 10;    
 }
 
-hr {
-    width: 100%;
+/* Líneas del menú hamburguesa */
+.linea-superior, .linea-intermedia, .linea-inferior {
+    width: 29px;
+    height: 5px;
+    background: #cb1da0;
+    border-radius: 100px;
+    position: absolute;    
+    transition: transform 0.5s ease, opacity 0.5s ease, background-color 0.5s ease;
+    border:none;
+    z-index: 10;
+}
+
+/*Posicionar las líneas del menú hamburguesa */
+.linea-superior {
+    top: 12px;
+    transform-origin: right;/*Esta propiedad en 
+    cada una de las líneas que giran establece
+    sobre que punto rotarán.*/
+}
+
+.linea-intermedia {
+    top: 22px;
+    opacity: 1;
+}
+
+.linea-inferior {
+    top: 32px;
+    transform-origin: right;
+}
+
+/*Círculo para la "X", oculto hasta el click.*/
+.contenedor_icono_burger::before {
+    content: "";
+    position: absolute;
+    width: 39px;
+    height: 39px;
+    border: 3px solid white;
+    background-color: #f0f0f055;
+    border-radius: 50%;    
+    top: 50%;
+    left: 48%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+/*Esto hace que el círculo que contiene la X aparezca
+cuando el menú burguer cambia a X. */
+.contenedor_icono_burger.icono_cruz::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;    
+}
+
+/* Animaciones para las líneas y transiciones para las líneas burguer.*/
+.contenedor_icono_burger.icono_cruz .linea-superior {
+    transform: translate(-50%, 0) rotate(585deg); /* Centrar y rotar */
+    background-color: #d1d1d1;
+    top: 13px;    
+}
+
+.contenedor_icono_burger.icono_cruz .linea-inferior {
+    transform: translate(-50%, 0) rotate(-585deg);
+    background-color: #d1d1d1;
+    top: 33px;    
+}
+
+.contenedor_icono_burger.icono_cruz .linea-intermedia {
+    opacity: 0; /*Desaparece la línea intermedia.*/
+    transform: translateX(-50px);
+}
+
+/*Estilos principales */
+#principal h1 {
+    font-family: "Lexend Mega", serif;
+    color: #cb1da0;    
+    text-align: center;
+    font-size: 3em;      
+}
+
+#principal hr {
+    width: 70%;
     height: 4px;    
-    margin-left:0.8%;
     background-color: #cb1da0;
     border: none;
     margin-bottom: 35px;
+    margin-top: 8px;
+    margin-left: 15%;    
 }
 
 main p {
     color: #cb1da0;
-    font-family: "PT Serif", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.5em;
+    font-family: "Lexend Mega", serif;
+    font-size: 1.2em;
     width: 90%;
     margin: 0 auto;
     text-align: center;
@@ -44,51 +126,159 @@ main p {
 main {
     position: relative;
     text-align: center;
-    margin-top: 8%;
-    margin-right:15% ;
-}
-
-/* Líneas del menú hamburguesa */
-.linea-superior, .linea-intermedia, .linea-inferior {
-    width: 38px;
-    height: 4.5px;
-    background: #cb1da0;; /*Un poquito de transparencia al negro para que no quede tan intenso.*/
-    border-radius: 100px;
-    position: absolute; /* Para posicionar las líneas manualmente
-    (lo hacemos en la siguientes reglas)*/    
-    left: 110%;    
-    /*Para la transición del menú hamburguesa */    
-    transition: transform 0.5s ease, opacity 0.5s ease;
-     /*Para que quede encima del menú desplegable*/   
-    border:none;/*Esto lo he tenido que añadir por haber
-    usado hr en lugar de span o div al hacer las líneas del
-    menú hamburguesa. Sirve para eliminar el borde por defecto
-    que estropea su aspecto, en especial el de la X que forman
-    al aparecer el menú/lista */
-}
-
-/*Posicionando las líneas del menú hamburguesa.*/
-.linea-superior {
-    top: -90px;
-}
-
-.linea-intermedia {
-    top: -80px;    
-}
-
-.linea-inferior {
-    top: -70px;
+    margin-top: 7%;
 }
 
 #principal {
-    
     width: 80%;
     height: 65vh;
-    border:4px solid #cb1da0;
+    border: 4px solid #cb1da0;
     border-radius: 10px; 
-    padding: 20px 30px 100px;
-    background-color:#120f0fa3 ;
-    padding: 8%; 
-    margin-left: 19%; 
+    background-color: #120f0fa3;
+    padding: 4%; 
+    margin-left: 10%; 
 }
+
+/*Contenedores inicialmente ocultos con poema
+y menú.*/
+#contenedor_poema, #contenedor_menu {
+    position: fixed;
+    top: 0;
+    height: 100vh;    
+    overflow: hidden;    
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+#contenedor_poema {
+    left: 0;
+    background-color: #1c262b;    
+    width: 40%;
+    padding-top: 40px;    
+}
+
+#contenedor_menu {
+    right: 0;
+    left: auto;
+    background-image: url('./img/background.jpg');
+    background-size: cover;
+    transform: translateX(100%);
+    width: 60%;
+    padding-top: 8% 10% 4%;
+}
+
+pre {
+    font-family: "Habibi", serif;
+    color: #d1d1d1;
+    font-size: 1em;
+    margin: 6% 14%;
+    text-align:center;
+}
+
+/* Cuando están visibles */
+#contenedor_poema.visible, #contenedor_menu.visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Menú dentro del contenedor */
+h2 {
+    font-size: 1em;
+}
+
+#contenedor_menu ul {
+    list-style: none;
+    text-align: center;
+    margin-top: 13%;
+}
+
+#contenedor_menu ul li {
+    margin: 20px 0;
+    font-family: "Lexend Mega", serif;
+    font-size: 1.5em;
+    color: #d1d1d1;
+}
+
+#contenedor_menu ul li a {
+    text-decoration: none;    
+    transition: color 0.3s ease;
+    color: #d1d1d1;
+    font-size: 1.4em;
+    font-weight:200;
+}
+
+#contenedor_menu ul li a:hover {
+    border: whitesmoke 1px solid;
+    padding: 3px 7px;
+    background-color: #1c262b;
+    border-radius: 5px;
+}
+
+#contenedor_menu h1 {
+    color: #d1d1d1;
+    font-family: "Lexend Mega", serif;
+}
+
+@media screen  and (max-width:768px) {
+    #principal h1 {
+        font-size: 18px;        
+    }
+    
+    main p {
+        font-size: 12px;        
+    }
+
+    #principal {
+        height: 80%;
+        margin-top: 90px;
+    }
+
+    #contenedor_menu h1 {
+        font-size: 20px;
+        margin-top: 30%;
+        text-align: center;        
+    }
+
+    h2 {
+        font-size: 15px;
+        text-align: center;        
+    }
+
+    #contenedor_menu ul li a {
+        font-size: 15px;        
+    }
+
+    #contenedor_menu {
+        top: 0; /* Empieza desde la parte superior */
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%; /* Ocupa el 55% de la altura */
+        transform: translateY(-100%); /* Ocultarlo inicialmente hacia arriba */
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    #contenedor_poema {
+        opacity: 0;
+    }
+
+    /* Cuando están visibles */
+    #contenedor_menu.visible {
+        transform: translateY(0); /* Despliegue desde arriba */
+        opacity: 1;
+    }
+    /*He decidido cepillarme al contenedor del poema
+    porque ya era demasiado contenido para una pantalla tan
+    pequeña. El usuario puede leerlo en el primer enlace si acaso.*/
+    #contenedor_poema.visible {
+        transform: translateY(0); /* Despliegue desde arriba */
+        opacity: 0;
+    }    
+}
+
+
+
 

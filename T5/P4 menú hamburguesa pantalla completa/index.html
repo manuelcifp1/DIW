@@ -9,28 +9,20 @@
     <meta name="keywords" content="the road not taken, robert frost, poetry">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=BioRhyme:wght@200..800&family=Charm:wght@400;700&family=DM+Serif+Display:ital@0;1&family=Fredoka:wght@300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&family=Lunasima:wght@400;700&family=Monda:wght@400..700&family=Niconne&family=Pathway+Extreme:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=REM:ital,wght@0,100..900;1,100..900&family=Rakkas&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=BioRhyme:wght@200..800&family=Charm:wght@400;700&family=DM+Serif+Display:ital@0;1&family=Fredoka:wght@300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&family=Lunasima:wght@400;700&family=Monda:wght@400..700&family=Niconne&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Pathway+Extreme:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=REM:ital,wght@0,100..900;1,100..900&family=Rakkas&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Habibi&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Menu hamburguesa, pantalla completa</title>
 </head>
 <body>
-    <script>
-        $('.contenedor_icono_burger').on('click', function() {
-            $(this).toggleClass('icono_cruz icono_barras');
-            $(".derecha").toggleClass('derecha_off derecha_on');
-            $(".izquierda").toggleClass('izquierda_off izquierda_on');
-        });
-    </script>    
-    <main>
-        <div class="contenedor_icono_burger">
-            <label for="menu-toggle" class="contenedor-lineas">
-                <hr class="linea-superior">
-                <hr class="linea-intermedia">
-                <hr class="linea-inferior">
-            </label>
-        </div>
+    <div class="contenedor_icono_burger icono_barras">            
+        <hr class="linea-superior">
+        <hr class="linea-intermedia">
+        <hr class="linea-inferior">            
+    </div>
+
+    <main>           
         <div id="principal">
             <h1>The Road Not Taken</h1>
             <hr>
@@ -39,6 +31,59 @@
                   or go it alone. If life is a journey, this poem highlights those
                    times in life when a decision has to be made. Which way will you go?</p>
         </div>
-    </main>    
+    </main>
+
+    <div id="contenedor_poema" class="oculto">
+        <!--Aquí uso un pre para mantener el formato
+        poético que he establecido en el texto original
+        antes de copiarlo y pegarlo.-->
+        <pre>
+            Two roads diverged in a yellow wood,
+             And sorry I could not travel both
+             And be one traveler, long I stood
+            And looked down one as far as I could
+             To where it bent in the undergrowth;
+
+             Then took the other, as just as fair,
+            And having perhaps the better claim,
+           Because it was grassy and wanted wear;
+             Though as for that the passing there
+            Had worn them really about the same,
+
+            And both that morning equally lay
+           In leaves no step had trodden black.
+            Oh, I kept the first for another day!
+         Yet knowing how way leads on to way,
+          I doubted if I should ever come back.
+
+             I shall be telling this with a sigh
+             Somewhere ages and ages hence:
+          Two roads diverged in a wood, and I—
+              I took the one less traveled by,
+            And that has made all the difference.
+        </pre>
+    </div>
+
+    <div id="contenedor_menu" class="oculto">        
+        <ul>
+            <li><h1>The Road Not Taken</h1></li>
+            <li><h2>By Robert Frost</h2></li>
+            <li><a href="https://poemanalysis.com/robert-frost/the-road-not-taken/" target="_blank">Poem Analysis</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Robert_Frost" target="_blank">Biography</a></li>
+            <li><a href="https://en.wikiquote.org/wiki/Robert_Frost" target="_blank">Quotes</a></li>
+            <li><a href="https://www.amazon.com/Poetry-Robert-Frost-Collected-Poems/dp/0805069860/" target="_blank">Buy His Books</a></li>
+        </ul>
+    </div>
+    
+    <script>
+        $('.contenedor_icono_burger').on('click', function() {
+            /*Alternar clases para mostrar/ocultar. Aquí me he tomado una
+            licencia artística y he cambiado las clases para los desplegables
+            del poema y el menú/lista.*/
+            $('#contenedor_poema').toggleClass('visible');
+            $('#contenedor_menu').toggleClass('visible');
+            $(this).toggleClass('icono_cruz icono_barras'); //Cambiar entre la X y el menú hamburguesa
+        });
+    </script>  
 </body>
 </html>
