@@ -65,6 +65,7 @@ html {
     justify-content: space-evenly;
     margin: 10px;
     border-radius: 10px;
+    border: solid 2.5px var(--puntos);
     width: 80px;
     height: 160px;
 }
@@ -76,7 +77,7 @@ html {
     position:fixed;
 }
 
-.paraUno {
+.centro {
     display: flex;
     align-items: center; /* Centra verticalmente el punto */
     justify-content: center; /* Centra horizontalmente el punto */
@@ -92,9 +93,13 @@ html {
     border-radius: 50%;     
 }
 
-.dos {
+.dos, .tres, .cuatro, .cinco, .seis {
     display: flex;
     flex-direction: column;
 }
+
+
+
+
 
 
