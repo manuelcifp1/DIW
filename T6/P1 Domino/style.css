@@ -21,44 +21,80 @@ html {
 
 #container1 {
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     background-image: url(./img/velvet.jpg);
-    width: 80%;
+    width: 39.5%;
     border: var(--fuenteBorde) solid 3px;
-    border-radius: 5px;
+    border-radius: 10px;
+    margin:40px auto;
 }
 
 #juego {
     display:flex;
+    flex-direction: column;
 }
 
 #titulo {
-    font-size: 25px;
+    font-size: 31px;
     color: var(--fuenteBorde);
+    margin-top: 8px;
     margin-bottom: 5px;
-    text-align: center;
+    margin-left: 31%;    
 }
 
 #subrayado {
-    height: 5px;
-    width: 80%;
-    color: var(--fuenteBorde);
+    height: 3px;
+    width: 70%;
+    background-color: var(--fuenteBorde);
     margin-bottom: 15px;
+    margin-left: 15%;
+    
+}
+
+.fila {
+    display: flex;
+    flex-direction: row;
 }
 
 .ficha {
     background-color: var(--ficha);
     display: flex;
-    margin: 5px 10px;
-    border-radius: 5px;
+    align-items: center;    
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 10px;
+    border-radius: 10px;
     width: 80px;
     height: 160px;
-
-
 }
 
 .linea {
     background-color: var(--puntos);
-    height: 2px;
-    width: 90px;
+    height: 3px;
+    width: 70px;
+    position:fixed;
 }
+
+.paraUno {
+    display: flex;
+    align-items: center; /* Centra verticalmente el punto */
+    justify-content: center; /* Centra horizontalmente el punto */
+    height: 35%; /* Define la altura para centrar dentro de la mitad de la ficha */
+     /* Ocupa el ancho completo de la ficha */
+    
+}
+
+.uno {
+    background-color: var(--puntos);
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;     
+}
+
+.dos {
+    display: flex;
+    flex-direction: column;
+}
+
 
