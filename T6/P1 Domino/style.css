@@ -1,9 +1,16 @@
+
+/*En cuanto al código CSS me gustaría, a modo de prólogo, darte mis más sinceras felicitaciones porque esta vez te has superado.
+Deberías trabajar en Guantánamo torturando prisioneros con prácticas de CSS. Le pones esta a uno de ellos y en media hora te da la localización
+de todos los silos de misiles cubanos y hasta su número de la seguridad social cubana (si es que tienen). Lo de los daditos tenía que ser hasta simpático,
+pero esto raya en lo diabólico. Gracias mil.*/
+
 * {
     box-sizing: border-box;
     margin: 0;
     border: 0;
 }
 
+/*Las ya habituales variables de colores, nada nuevo bajo el sol. */
 :root {
     --fuenteBorde: #f5f5f5;
     --ficha: #f4f4db;
@@ -17,19 +24,23 @@ html {
     background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='69.283' height='40' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='%231b0a0aff'/><path d='M46.189-20L57.736 0M46.189 20l11.547 20m-46.189 0l11.547 20M11.547 0l11.547 20m40.415 30H40.415M28.868 30H5.774m23.094-40H5.774m57.735 20H40.415m0 20L28.868 50m11.547-60L28.868 10m46.188 0L63.509 30M5.774 10L-5.773 30m75.056 10H46.189L34.64 20 46.19 0h23.094C73.13 6.667 76.98 13.333 80.83 20zM57.736 60H34.64L23.094 40l11.547-20h23.095c3.848 6.667 7.698 13.333 11.547 20L57.736 60zm0-40H34.64L23.094 0l11.547-20h23.095L69.283 0c-3.87 6.7-8.118 14.06-11.547 20zM34.64 60H11.547L0 40l11.547-20h23.094L46.19 40 34.64 60zm0-40H11.547L0 0l11.547-20h23.094L46.19 0 34.64 20zM23.094 40H0l-5.773-10-5.774-10L0 0h23.094l11.547 20-11.547 20z'  stroke-width='1' stroke='%2358452dff' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
 }
 
+/*Ajusté el ancho para una fila de 7 fichas, como era pertinente.
+Sin altura, que ahora somos flexibles y el contenedor se expande.*/
 #container1 {       
     background-image: url(./img/velvet.jpg);
-    width: 42%;
+    width: 40%;
     border: var(--fuenteBorde) solid 3px;
     border-radius: 10px;
     margin:40px auto;
 }
 
+/*El contenedor de la fichas.*/
 #juego {
     display: flex;
     flex-direction: column;    
 }
 
+/*Un contenedor para el título y otro para fabricar el subrayado. */
 #titulo {
     font-size: 31px;
     color: var(--fuenteBorde);
@@ -45,29 +56,41 @@ html {
     margin-left: 15%;    
 }
 
+/*Los contenedores de fila, con un flex-wrap: wrap que hace
+que las fichas pasen la siguiente fila cuando la página se 
+pone respondona. Y un justify-content: space-evenly para igualar
+el espacio entre fichas.*/
 .fila {
     display: flex;
-    flex-wrap: wrap;     
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .ficha {
     background-color: var(--ficha);
     display: flex;      
-    flex-direction: column;    
-    margin: 10px;
+    flex-direction: row; 
+    flex-wrap: wrap; /*Esto lo quitas y se produce un desbordamiento que ni el del Ebro en el 2015.*/   
+    margin: 6px 6px;
     border-radius: 10px;
     border: solid 2.5px var(--puntos);
     width: 80px;
-    height: 160px;    
+    height: 160px;
+    padding-bottom: 5px;   
 }
 
-.linea {
+/*La línea intermedia de las fichas, bastante puñetera si te digo la verdad. */
+.linea {    
     background-color: var(--puntos);
-    height: 3px;
-    width: 70px;    
-    margin-top: 100%;
+    height: 2.7px;
+    width: 65px;   
+    align-items: center;
+    margin-left: 6px;
+    margin-bottom: 0.5px;
+    margin-top: 5px;
 }
 
+/*Aquí la clase del contenedor donde está el 1, aquí mi profesor de DIW.*/
 .centro {
     display: flex;
     align-items: center; /* Centra verticalmente el punto */
@@ -75,21 +98,116 @@ html {
     height: 50%; /* Define la altura para centrar dentro de la mitad de la ficha */        
 }
 
+/*Y este es el punto.*/
 .uno {
     background-color: var(--puntos);
     height: 12px;
     width: 12px;
-    border-radius: 50%;     
+    border-radius: 50%;
+    margin-left: 32px;        
 }
 
-.dos, .tres, .cuatro, .cinco, .seis {
+/*Una pizca de buena práctica para darle los estilos comunes a los div
+de cada mitad de la ficha. */
+.centro .dos, .tres, .cuatro, .cinco, .seis {
     display: flex;
     flex-direction: column;
+    height: 45%;
 }
 
+/*Más de lo anterior. */
+.derecha, .izquierda, .dchaIzq {
+    display: flex;
+    flex-direction: row;    
+}
+
+/*El espacio vacío, que también se merece tener
+su propio espacio de 46x50.*/
+.vacio {
+    height: 46%;
+    width: 50%;
+}
+
+/*Y aquí es donde empieza la verdadera diversión. He tenido casi que pactar con
+el mismo Diablo para ajustar los puntitos como era pertinente. Vas a ver de todo:
+valores en negativo (no me preguntes por qué), un nth-child(-n+2) para ajustar el primer
+y segundo div de un grupo de tres, un nth-child(odd) para seleccionar el primer div de un 
+grupo de dos, un id="six" en la línea intermedia de la pieza vacio|seis porque
+necesitaba un ajuste individual, etc... Como hacer un traje a medida vamos.*/
 .derecha {
     display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+}
+
+.izquierda {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.dchaIzq {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 3px;
+}
+
+.dchaIzq .uno {
+    margin-right: 40px;
+    margin-left: 2px;
+}
+
+.dos .derecha .uno {
+    margin-top: 6px;
+    margin-right: -54px;
+}
+
+.dos .izquierda .uno {    
+    margin-left: 5px ;   
     
+}
+
+.tres .derecha .uno {
+    margin-top: 6px;
+    margin-right: 10px;
+}
+
+.tres .centro .uno {
+    margin-top: -39px;
+    margin-right: 35px;
+}
+
+.tres .izquierda .uno {
+    margin-bottom: 5px;
+    margin-right: 60px;
+    margin-left: -10px;
+}
+
+.cuatro .dchaIzq:nth-child(odd) {
+    margin-bottom: 37px;
+}
+
+.cinco .dchaIzq:first-child {
+    margin-top: 4px;
+}
+
+.cinco .centro .uno {
+    margin-left: 10px;
+    margin-right: 46px;
+}
+
+.seis .dchaIzq:nth-child(-n+2) {
+    margin-bottom: 10px;
+}
+
+.seis .dchaIzq:first-child {
+    margin-top: 6px;
+}
+
+#six {
+    margin-top: 75px;
 }
 
 

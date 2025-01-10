@@ -15,25 +15,31 @@
     <title>The Domino Effect</title>
 </head>
 <body>
+    <!--Lo primero que me gustaría comentar sobre el código HTML es que con esta práctica he agotado mi existencias de <div>.
+        Mañana iré al super a comprar unos kilitos más. Hay un "container1" que los agrupa a todos, luego un div "juego" que agrupa
+        todas las fichas y luego empieza la diversión: un div para cada fila de fichas, otro para cada ficha, para cada lado de la ficha, para la línea intermedia,
+        para las filas de puntos (clases: "derecha", punto a la derecha; "izquierda", punto a la izquierda, "dchaIzq", un punto en cada extremo; "vacio", sin puntos) y
+         finalmente un div llamado "uno" para "fabricar" el punto negro. El desarrollo de este archivo index.html me ha recordado a esos castigos que nos ponían de pequeños
+         en los que había que copiar 1000 veces algo así como "No volveré a dejar que mi perro se coma los deberes."-->
     <div id="container1">
         <div id="titulo">The Domino Effect</div>
         <div id="subrayado"></div>
         <div id="juego">
             <div class="fila">
                 <div class="ficha">
-                    <div></div>
+                    <div class="vacio"></div>
                     <div class="linea"></div>
-                    <div></div>
+                    <div class="vacio"></div>
                 </div>
                 <div class="ficha">
-                    <div></div>
+                    <div class="vacio"></div>
                     <div class="linea"></div>
                     <div class="centro">
                         <div class="uno"></div>
                     </div>
                 </div>
                 <div class="ficha">
-                    <div></div>
+                    <div class="vacio"></div>
                     <div class="linea"></div>
                     <div class="dos">
                         <div class="derecha">
@@ -45,7 +51,7 @@
                     </div>
                 </div>
                 <div class="ficha">
-                    <div></div>
+                    <div class="vacio"></div>
                     <div class="linea"></div>
                     <div class="tres">
                         <div class="derecha">
@@ -60,7 +66,7 @@
                     </div>
                 </div>
                 <div class="ficha">
-                    <div></div>
+                    <div class="vacio"></div>
                     <div class="linea"></div>
                     <div class="cuatro">
                         <div class="dchaIzq">
@@ -74,7 +80,7 @@
                     </div>
                 </div>
                 <div class="ficha">
-                    <div></div>
+                    <div class="vacio"></div>
                     <div class="linea"></div>
                     <div class="cinco">
                         <div class="dchaIzq">
@@ -92,7 +98,7 @@
                 </div>
                 <div class="ficha">
                     <div></div>
-                    <div class="linea"></div>
+                    <div class="linea" id="six"></div>
                     <div class="seis">
                         <div class="dchaIzq">
                             <div class="uno"></div>
@@ -139,13 +145,13 @@
                     </div>
                     <div class="linea"></div>
                     <div class="tres">
-                        <div class="paraTres">
+                        <div class="derecha">
                             <div class="uno"></div>
                         </div>
-                        <div class="paraTres">
+                        <div class="centro">
                             <div class="uno"></div>
                         </div>
-                        <div class="paraTres">
+                        <div class="izquierda">
                             <div class="uno"></div>
                         </div>
                     </div>
@@ -158,16 +164,12 @@
                     <div class="cuatro">
                         <div class="dchaIzq">
                             <div class="uno"></div>
-                        </div>
-                        <div class="dchaIzq">
                             <div class="uno"></div>
                         </div>
                         <div class="dchaIzq">
                             <div class="uno"></div>
-                        </div>
-                        <div class="dchaIzq">
                             <div class="uno"></div>
-                        </div>
+                        </div>                        
                     </div>
                 </div>
                 <div class="ficha">
@@ -206,6 +208,7 @@
                         <div class="dchaIzq">
                             <div class="uno"></div>
                             <div class="uno"></div>
+                        </div>    
                     </div>
                 </div>
                 <div class="ficha">
@@ -318,6 +321,7 @@
                         <div class="dchaIzq">
                             <div class="uno"></div>
                             <div class="uno"></div>
+                        </div>    
                     </div>
                 </div>
                 <div class="ficha">
@@ -423,6 +427,7 @@
                         <div class="dchaIzq">
                             <div class="uno"></div>
                             <div class="uno"></div>
+                        </div>    
                     </div>
                 </div>
                 <div class="ficha">
@@ -498,6 +503,7 @@
                         <div class="dchaIzq">
                             <div class="uno"></div>
                             <div class="uno"></div>
+                        </div>    
                     </div>
                 </div>
                 <div class="ficha">
@@ -556,6 +562,7 @@
                         <div class="dchaIzq">
                             <div class="uno"></div>
                             <div class="uno"></div>
+                        </div>    
                     </div>
                 </div>
                 <div class="ficha">
@@ -571,6 +578,7 @@
                         <div class="dchaIzq">
                             <div class="uno"></div>
                             <div class="uno"></div>
+                        </div>    
                     </div>
                     <div class="linea"></div>
                     <div class="seis">
@@ -585,6 +593,7 @@
                         <div class="dchaIzq">
                             <div class="uno"></div>
                             <div class="uno"></div>
+                        </div>    
                     </div>
                 </div>
             </div>            
