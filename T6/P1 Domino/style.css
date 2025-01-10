@@ -82,6 +82,18 @@ html {
     border-radius: 50%;     
 }
 
+.dos, .tres, .cuatro, .cinco, .seis {
+    display: flex;
+    flex-direction: column;
+}
+
+.derecha {
+    display: flex;
+    
+}
+
+
+
 
 
 
