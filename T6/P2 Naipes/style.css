@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: "Literata", serif;
+    color: gainsboro;
+    font-size: 12px;
+    background-color: lightslategrey;    
+}
+
+#container1 {
+    background-color: darkslategrey;
+    width: 90%;
+    border: solid gainsboro 4px;
+    display: flex;
+    margin: auto;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#title {    
+    text-align: center;
+}
+
+#subrayado {
+    height: 3px;
+    width: 90%;
+    background-color: gainsboro;
+    margin-bottom: 15px;
+    margin-left: ;    
+}
