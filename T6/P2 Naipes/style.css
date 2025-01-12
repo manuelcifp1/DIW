@@ -13,7 +13,7 @@ html {
 
 #container1 {
     background-color: darkslategrey;
-    width: 90%;
+    width: 75%;
     border: solid gainsboro 4px;
     display: flex;
     margin: auto;
@@ -30,7 +30,33 @@ html {
 #subrayado {
     height: 3px;
     width: 90%;
+    background-color: gainsboro;    
+    margin:auto;
+    margin-bottom: 15px;    
+}
+
+#cartas {
+    display: flex;
+    flex-direction: column;
+}
+
+.A, .J, .Q, .K, .dos, .tres, .cuatro, .cinco, .seis, .siete, .ocho, .nueve, .diez {
+    width: 126px;
+    height: 182px;
     background-color: gainsboro;
-    margin-bottom: 15px;
-    margin-left: ;    
+    margin: 13px;
+    border-radius: 10px;    
+}
+
+.fila7 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.fila6 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
