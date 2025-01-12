@@ -13,7 +13,7 @@ html {
 
 #container1 {
     background-color: darkslategrey;
-    width: 75%;
+    width: 60%;
     border: solid gainsboro 4px;
     display: flex;
     margin: auto;
@@ -25,38 +25,50 @@ html {
 
 #title {    
     text-align: center;
+    margin-top: 15px;
 }
 
 #subrayado {
     height: 3px;
     width: 90%;
     background-color: gainsboro;    
-    margin:auto;
+    margin:auto; /*Misma distancia en ambos márgenes centrando el elemento.*/
     margin-bottom: 15px;    
 }
 
 #cartas {
     display: flex;
     flex-direction: column;
+    color: #443B3B;
 }
 
-.A, .J, .Q, .K, .dos, .tres, .cuatro, .cinco, .seis, .siete, .ocho, .nueve, .diez {
+/*He puesto dos clases a cada carta, una es "carta" y la otra el número o figura.
+Aquí establecemos el estilo del contenedor carta y la dirección de sus elementos internos.
+ESTRUCTURA DENTRO DE LA CARTA:
+He decidido organizar los elementos internos en fila, pero el interior de ellos estará en 
+columnas. Así por ejemplo, el 3 tendrá 3 elementos en fila y con space-between: número y símbolo de la esquina
+superior dcha., los tres símbolos grandes y número y símbolo de la esquina inferior izq.
+Y dentro de cada uno de estos la distribución será en columnas.*/
+.carta {
     width: 126px;
     height: 182px;
     background-color: gainsboro;
     margin: 13px;
-    border-radius: 10px;    
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;    
 }
 
 .fila7 {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-between; /*Para que los dos tipos de filas
+     estén alineadas en los extremos.*/
 
 }
 
 .fila6 {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-between; /*Lo dicho.*/
 }
