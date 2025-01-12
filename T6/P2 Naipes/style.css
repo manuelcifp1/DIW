@@ -72,3 +72,17 @@ Y dentro de cada uno de estos la distribución será en columnas.*/
     flex-direction: row;
     justify-content: space-between; /*Lo dicho.*/
 }
+
+.top {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    transform: rotate(180deg);/*Esto pone el elemento
+    boca abajo y además lo mueve hacia abajo, sin necesidad de
+    usar column-reverse (pensaba que iba a ser necesario).*/
+    
+}
