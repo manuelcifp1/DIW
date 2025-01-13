@@ -89,9 +89,7 @@ Y dentro de cada uno de estos la distribución será en columnas.*/
     usar column-reverse (pensaba que iba a ser necesario).*/    
 }
 
-img {
-    width: 90px;
-}
+
 
 /*Con esto selecciono todos los iconos de Bootstrap que necesitan aumentar
 de tamaño (los tréboles y picas que están en el interior de la carta, no las
@@ -176,4 +174,71 @@ que tiene la misma estructura.*/
 .seis > div:nth-child(3) {
     margin-right: -9px;
 }
+
+.dibujo1, .dibujo2, .dibujo3, .dibujo4, .dibujo5, .dibujo6 {    
+    width: 98px;    
+    position: relative;
+    margin-top: 20px;
+    margin-left: 5px;    
+}
+
+
+.dibujo1 {
+    background-image: url(./img/jc.png);
+    background-size: 90px;
+    background-repeat: no-repeat;
+}
+
+.dibujo2 {
+    background-image: url(./img/qc.png);
+    background-size: 90px;
+    background-repeat: no-repeat;
+}
+
+.dibujo3 {
+    background-image: url(./img/kc.png);
+    background-size: 90px;
+    background-repeat: no-repeat;
+}
+
+.dibujo4 {
+    background-image: url(./img/js.png);
+    background-size: 90px;
+    background-repeat: no-repeat;
+}
+
+.dibujo5 {
+    background-image: url(./img/qs.png);
+    background-size: 90px;
+    background-repeat: no-repeat;
+}
+
+.dibujo6 {
+    background-image: url(./img/ks.png);
+    background-size: 90px;
+    background-repeat: no-repeat;
+}
+
+#spade1, #spade3 {
+    position: absolute;
+    top: 63%;
+    left: 3%;
+}
+
+#spade2, #spade4 {
+    position:absolute;    
+    left: 65%;
+}
+
+#spade5 {
+    position: absolute;
+    top: 63%;
+    left: 65%;
+}
+
+#spade6 {
+    position: absolute;
+    left: 5%;
+}
+
 
