@@ -39,7 +39,7 @@ html {
 #cartas {
     display: flex;
     flex-direction: column;
-    color: #443B3B;    
+    color: #443B3B;     
 }
 
 /*He puesto dos clases a cada carta, una es "carta" y la otra el número o figura.
@@ -78,7 +78,7 @@ Y dentro de cada uno de estos la distribución será en columnas.*/
 .top {
     display: flex;
     flex-direction: column;
-    margin-left: -2px;
+    
 }
 
 .bottom {
@@ -90,7 +90,7 @@ Y dentro de cada uno de estos la distribución será en columnas.*/
 }
 
 img {
-    width: 95%;
+    width: 90px;
 }
 
 /*Con esto selecciono todos los iconos de Bootstrap que necesitan aumentar
@@ -110,7 +110,70 @@ de las esquinas que ya traen un tamaño adecuado.*/
 
 }
 
+/*Las siguientes reglas posicionan los tréboles y picas
+grandes. */
 .A :nth-child(even) {
+    justify-content: center;    
+}
+
+.dos :nth-child(even) {
+    justify-content: space-between;
+}
+
+.tres :nth-child(even) {
+    justify-content: space-between;
+}
+
+/*Aquí aplicamos margen pero sólo al div,
+no a los elementos internos del div.
+Las tres reglas siguientes separan
+las dos columnas del 6 adecuadamente.
+Repito las mismas más tarde pero para el 6,
+que tiene la misma estructura.*/
+.cuatro > div:nth-child(2){
+    margin-right: 10px;
+}
+
+.cuatro .top {
+    margin-right: -10px;
+}
+
+.cuatro > div:nth-child(3) {
+    margin-right: -9px;
+}
+
+.cuatro :nth-child(2),
+.cuatro :nth-child(3) {
+    justify-content: space-between;
+}
+
+.cinco :nth-child(2),
+.cinco :nth-child(4) {
+    justify-content: space-between;
+}
+
+.cinco :nth-child(3) {
     justify-content: center;
+}
+
+.seis :nth-child(2),
+.seis :nth-child(3) {
+    justify-content: space-between;
+}
+
+.seis > div:nth-child(2) {
+    margin-right: 12px;
+}
+
+.seis > div:nth-child(2){
+    margin-right: 10px;
+}
+
+.seis .top {
+    margin-right: -10px;
+}
+
+.seis > div:nth-child(3) {
+    margin-right: -9px;
 }
 
