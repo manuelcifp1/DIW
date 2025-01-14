@@ -11,6 +11,7 @@ html {
     background-color: lightslategrey;    
 }
 
+/*Contenedor de fondo verde. */
 #container1 {
     background-color: darkslategrey;
     width: 75%;
@@ -37,6 +38,7 @@ html {
     margin-bottom: 15px;    
 }
 
+/*Contenedor para las cartas */
 #cartas {
     display: flex;
     flex-direction: column;
@@ -47,9 +49,10 @@ html {
 Aquí establecemos el estilo del contenedor carta y la dirección de sus elementos internos.
 ESTRUCTURA DENTRO DE LA CARTA:
 He decidido organizar los elementos internos en fila, pero el interior de ellos estará en 
-columnas. Así por ejemplo, el 3 tendrá 3 elementos en fila y con space-between: número y símbolo de la esquina
-superior dcha., los tres símbolos grandes y número y símbolo de la esquina inferior izq.
-Y dentro de cada uno de estos la distribución será en columnas.*/
+columnas. Así por ejemplo, el 3 tendrá 3 elementos en fila con space-between:div con número y símbolo de la esquina
+superior izquierda, div con los tres símbolos grandes y div con número y símbolo de la esquina inferior derecha,
+Y dentro de cada uno de estos la distribución será en columnas, para poder posicionarlos dentro de la columna
+usando justify-content.*/
 .carta {
     width: 126px;
     height: 182px;
@@ -62,6 +65,7 @@ Y dentro de cada uno de estos la distribución será en columnas.*/
     font-size: 13px;    
 }
 
+/*Div para las filas de 7 cartas. */
 .fila7 {
     display: flex;
     flex-direction: row;
@@ -71,6 +75,7 @@ Y dentro de cada uno de estos la distribución será en columnas.*/
 
 }
 
+/*Div para las filas de 6 cartas. */
 .fila6 {
     display: flex;
     flex-direction: row;
@@ -78,23 +83,29 @@ Y dentro de cada uno de estos la distribución será en columnas.*/
     flex-wrap: wrap;
 }
 
+/*Div que incluye el icono de la esquina superior
+y su número o letra. */
 .top {
     display: flex;
     flex-direction: column;
     
 }
 
+/*Este para la esquina inferior, cuyo icono
+está boca abajo. */
 .bottom {
     display: flex;
     flex-direction: column;
-    transform: rotate(180deg);/*Esto pone el elemento
-    boca abajo y además lo mueve hacia abajo, sin necesidad de
-    usar column-reverse (pensaba que iba a ser necesario).*/    
+    transform: rotate(180deg);/*Esto pone al icono
+    boca abajo porque invertimos el contenedor que
+    lo contiene, consiguiendo así que se situe
+    en la esquina inferior.*/    
 }
 
 /*Con esto selecciono todos los iconos de Bootstrap que necesitan aumentar
 de tamaño (los tréboles y picas que están en el interior de la carta, no las
-de las esquinas que ya traen un tamaño adecuado.*/
+de las esquinas que ya traen un tamaño adecuado y son el primer y último
+hijo dentro de cada carta.*/
 .carta > div:not(:first-child):not(:last-child) {
     font-size: 25px;
 }
@@ -110,7 +121,8 @@ de las esquinas que ya traen un tamaño adecuado.*/
 }
 
 /*Las siguientes reglas posicionan los tréboles y picas
-grandes. */
+grandes dentro de las cartas, seleccionando los distintos
+div mediante el uso de la pseudoclase :nth-child(). */
 .A :nth-child(even) {
     justify-content: center;    
 }
@@ -123,12 +135,6 @@ grandes. */
     justify-content: space-between;
 }
 
-/*Aquí aplicamos margen pero sólo al div,
-no a los elementos internos del div.
-Las tres reglas siguientes separan
-las dos columnas del 6 adecuadamente.
-Repito las mismas más tarde pero para el 6,
-que tiene la misma estructura.*/
 .cuatro > div:nth-child(2){
     margin-right: 10px;
 }
@@ -160,6 +166,8 @@ que tiene la misma estructura.*/
     justify-content: space-between;
 }
 
+/*Con > evitamos que la regla se aplique a los nietos,
+biznietos y resto de descendientes. */
 .seis > div:nth-child(2) {
     margin-right: 12px;
 }
@@ -220,6 +228,10 @@ las cartas.*/
     margin-left: 5px;    
 }
 
+/*Las imágenes de las figuras son backgrounds de un div
+en el que también están los tréboles y picas que aparecen en
+ellas. Esto nos permite colocar los iconos sobre ellas
+como si fueran textos y posicionarlos con relative/absolute. */
 .dibujo1 {
     background-image: url(./img/jc.png);
     background-size: 90px;
@@ -256,33 +268,8 @@ las cartas.*/
     background-repeat: no-repeat;
 }
 
-/*Como la J y la Q tienen las picas en la misma
-posición, las 2 reglas siguientes se comparten entre ellas. */
-#spade1, #spade3 {
-    position: absolute;
-    top: 63%;
-    left: 3%;
-}
-
-#spade2, #spade4 {
-    position:absolute;    
-    left: 65%;
-}
-
-#spade5 {
-    position: absolute;
-    top: 63%;
-    left: 65%;
-}
-
-#spade6 {
-    position: absolute;
-    left: 5%;
-}
-
-
-/*Ocurre los mismo de antes con la J y Q 
-de tréboles. */
+/*Las siguientes reglas posicionan las picas y tréboles correctamente
+encima de las imágenes de las figuras. */
 #club1, #club3 {
     position:absolute;
     top:65%;
@@ -307,12 +294,41 @@ de tréboles. */
     
 }
 
+#spade1, #spade3 {
+    position: absolute;
+    top: 63%;
+    left: 3%;
+}
+
+#spade2, #spade4 {
+    position:absolute;    
+    left: 69%;
+}
+
+#spade5 {
+    position: absolute;
+    top: 63%;
+    left: 65%;
+}
+
+#spade6 {
+    position: absolute;
+    left: 5%;
+}
+
+/*Ajustando los mini símbolos y letras de
+las figuras. */
 .J .top, .Q .top, .K .top {
     margin-left: 3px;
 }
 
 .J .bottom, .Q .bottom, .K .bottom {
     margin-right: 3px;
+}
+
+@media screen and (width <=1500px) {
+    
+    
 }
 
 
