@@ -342,17 +342,17 @@ index desde el principio pensando en este responsive, cosa que yo no hice. He he
 lo de siempre: pensar en la versión responsive al final. Bien, sea lo que sea
 es muy tarde y hay que cenar y acostarse. Así lo entrego. */
 
-@media screen and (width <= 1409px) {
-    
+@media screen and (width <= 1409px) {  
 
-     /* Ajustamos el comportamiento general de las filas */
+     
      .fila7, .fila6 {
-        
-        justify-content: space-evenly; /* Distribución adecuada */
+                
+        justify-content: space-evenly;
+
+      }
+
     }
 
-    
-}
 
 
 
