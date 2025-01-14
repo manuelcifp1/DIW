@@ -92,8 +92,6 @@ Y dentro de cada uno de estos la distribución será en columnas.*/
     usar column-reverse (pensaba que iba a ser necesario).*/    
 }
 
-
-
 /*Con esto selecciono todos los iconos de Bootstrap que necesitan aumentar
 de tamaño (los tréboles y picas que están en el interior de la carta, no las
 de las esquinas que ya traen un tamaño adecuado.*/
@@ -212,6 +210,9 @@ que tiene la misma estructura.*/
     justify-content: space-around;
 }
 
+
+/*Medidas y posicionamiento de las figuras dentro de
+las cartas.*/
 .dibujo1, .dibujo2, .dibujo3, .dibujo4, .dibujo5, .dibujo6 {    
     width: 98px;    
     position: relative;
