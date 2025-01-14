@@ -13,6 +13,14 @@ html {
 
 /*Contenedor de fondo verde. */
 #container1 {
+    container-type: inline-size;/*Esto es MUY INTERESANTE. Para poder hacer
+    el responsive como se pide en el vídeo, se me ha ocurrido usar
+    container queries trabajando con el ancho de este contenedor.
+    Usando la información de medidas que me da la herramienta de inspección
+    del navegador, saco los distintos anchos del contenedor a medida que se reduce
+    y aplico los cambios pertinentes. No se si me va a salir bien.
+    Voy a tener que probarlo con Chrome, porque yo trabajo con Firefox y parece ser
+    que no es compatible con container queries. */
     background-color: darkslategrey;
     width: 75%;
     border: solid gainsboro 4px;
@@ -326,10 +334,27 @@ las figuras. */
     margin-right: 3px;
 }
 
-@media screen and (width <=1500px) {
+/*Bueno, pues finalmente no ha funcionado el responsive requerido. He probado con container query,
+y más cosas pero nada. Mañana en clase en cuanto entre el profe le rogaré que
+me diga cómo lo ha hecho para poder dormir tranquilo. Sospecho que dependía de una
+estructura HTML determinada para conseguirlo, que había que haber diseñado el 
+index desde el principio pensando en este responsive, cosa que yo no hice. He hecho
+lo de siempre: pensar en la versión responsive al final. Bien, sea lo que sea
+es muy tarde y hay que cenar y acostarse. Así lo entrego. */
+
+@media screen and (width <= 1409px) {
     
+
+     /* Ajustamos el comportamiento general de las filas */
+     .fila7, .fila6 {
+        
+        justify-content: space-evenly; /* Distribución adecuada */
+    }
+
     
 }
+
+
 
 
 
