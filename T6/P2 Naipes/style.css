@@ -13,7 +13,7 @@ html {
 
 #container1 {
     background-color: darkslategrey;
-    width: 60%;
+    width: 75%;
     border: solid gainsboro 4px;
     display: flex;
     margin: auto;
@@ -21,6 +21,7 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 8px;
 }
 
 #title {    
@@ -66,6 +67,7 @@ Y dentro de cada uno de estos la distribución será en columnas.*/
     flex-direction: row;
     justify-content: space-between; /*Para que los dos tipos de filas
      estén alineadas en los extremos.*/
+     flex-wrap: wrap;
 
 }
 
@@ -73,6 +75,7 @@ Y dentro de cada uno de estos la distribución será en columnas.*/
     display: flex;
     flex-direction: row;
     justify-content: space-between; /*Lo dicho.*/
+    flex-wrap: wrap;
 }
 
 .top {
@@ -175,13 +178,46 @@ que tiene la misma estructura.*/
     margin-right: -9px;
 }
 
+.siete :nth-child(even) {
+    justify-content: space-between;
+    margin-top: 10%;
+}
+
+.siete :nth-child(3) {
+    justify-content: center;
+    margin-bottom: 50%;
+}
+
+.ocho :nth-child(even) {
+    justify-content: space-between;
+}
+
+.ocho :nth-child(3) {
+    justify-content: space-around;
+}
+
+.nueve :nth-child(even) {
+    justify-content: space-around;
+}
+
+.nueve :nth-child(3) {
+    justify-content: center;    
+}
+
+.diez :nth-child(even) {
+    justify-content: space-around;
+}
+
+.diez :nth-child(3) {
+    justify-content: space-around;
+}
+
 .dibujo1, .dibujo2, .dibujo3, .dibujo4, .dibujo5, .dibujo6 {    
     width: 98px;    
     position: relative;
     margin-top: 20px;
     margin-left: 5px;    
 }
-
 
 .dibujo1 {
     background-image: url(./img/jc.png);
@@ -219,6 +255,8 @@ que tiene la misma estructura.*/
     background-repeat: no-repeat;
 }
 
+/*Como la J y la Q tienen las picas en la misma
+posición, las 2 reglas siguientes se comparten entre ellas. */
 #spade1, #spade3 {
     position: absolute;
     top: 63%;
@@ -240,5 +278,41 @@ que tiene la misma estructura.*/
     position: absolute;
     left: 5%;
 }
+
+
+/*Ocurre los mismo de antes con la J y Q 
+de tréboles. */
+#club1, #club3 {
+    position:absolute;
+    top:65%;
+    left: 3%;
+}
+
+#club2, #club4 {
+    position:absolute;
+    left: 66%;
+}
+
+#club5 {
+    position: absolute;
+    top: 65%;
+    left: 66%;
+
+}
+
+#club6 {
+    position: absolute;
+    left: 4%;
+    
+}
+
+.J .top, .Q .top, .K .top {
+    margin-left: 3px;
+}
+
+.J .bottom, .Q .bottom, .K .bottom {
+    margin-right: 3px;
+}
+
 
 
