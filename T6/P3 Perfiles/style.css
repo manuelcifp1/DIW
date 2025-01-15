@@ -3,3 +3,13 @@
     margin: 0;
     padding: 0;
 }
+
+html {
+    background-image: url(./img/pattern_chinese-13_1_2_0-0_0_1__hsla\(240\,\ 7_\,\ 18_\,\ 1.00\)_hsla\(47\,\ 81_\,\ 61_\,\ 1.00\).png);
+    background-repeat: repeat;
+    background-size: 380px;
+}
+
+#container1 {
+    
+}
