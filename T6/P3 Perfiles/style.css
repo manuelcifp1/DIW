@@ -8,26 +8,55 @@ html {
     background-image: url(./img/pattern_chinese-13_1_2_0-0_0_1__hsla\(240\,\ 7_\,\ 18_\,\ 1.00\)_hsla\(47\,\ 81_\,\ 61_\,\ 1.00\).png);
     background-repeat: repeat;
     background-size: 300px;
+    color: rgb(210, 210, 67);
+    
+}
+
+h1, h3, h4 {
     font-family: "Ma Shan Zheng", serif;
     font-weight: 400;
     font-style: normal;
+    text-align: center;
+    margin-top: 10px;
+}
+
+h3 {
+    font-size: 1.8em;
+}
+
+h4 {
+    font-size: 1.4em;
+}
+
+p {
+    font-family: "Space Grotesk", serif;
+    font-optical-sizing: auto;  
+    font-style: normal;
+    width: 85%;
+    font-size: 14px;
+    text-align: center;
+    text-align: justify;
+    margin: auto;
+    margin-top: 10px;
 }
 
 #container1 {
     background-color: rgb(0, 0, 0, 0.7);
-    width: 80%;
-    margin: auto;    
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;       
 }
 
-h1 {
-    
-    color: rgb(210, 210, 67);    
-    margin: 20px;
-    font-size: 50px;
-    text-shadow: 
-                0px 0px 10px rgba(255, 255, 0, 0.8),   /* Resplandor amarillo */
-                0px 0px 20px rgba(255, 255, 0, 0.6),   /* Resplandor más grande */
-                0px 0px 30px rgba(255, 255, 0, 0.4); 
+#fila1, #fila2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h1 {    
+    font-size: 300%;    
 }
 
 .dragon {
@@ -47,3 +76,162 @@ h1 {
     display: flex;
     flex-direction: row;
 }
+
+#becca, #doug, #vanessa, #henry {
+    width: 30%;
+}
+
+#jeff, #erica {
+    width: 20%;
+}
+
+.pic {
+    padding-top: 10px;
+}
+
+.pic img {
+    border-radius: 50%;
+    width:50%;    
+    object-fit: cover;
+    margin-left: 25%;
+    border: outset 5px rgb(210, 210, 67);
+    
+}
+
+#becca, #doug {
+    background-color: rgb(23, 23, 173);
+}
+
+#vanessa, #henry {
+    background-color: rgb(148, 15, 15);
+}
+
+#jeff {
+    background-color: rgb(50, 11, 11);
+}
+
+#erica {
+    background-color: rgb(6, 6, 65);
+}
+
+.card {
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;     
+    border: outset 5px rgb(210, 210, 67);
+    
+}
+
+.rrss {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 18px;
+    font-size: 25px;    
+    height: 22%;
+    overflow: hidden;
+    position: relative;    
+}
+
+.ptaIzq, .ptaDcha {
+    background-image: url("./img/TROZO.png");        
+    z-index: 10;    
+    position: absolute;
+    transition: transform 1s ease-in-out;
+    z-index: 10;
+    top: 0;   
+}
+
+.ptaIzq {
+    left: 0; /* Posiciona la puerta izquierda al borde izquierdo */
+    transform: translateX(0); /* Posición inicial */
+}
+
+.ptaDcha {
+    right: 0; /* Posiciona la puerta derecha al borde derecho */
+    transform: translateX(0); /* Posición inicial */
+
+}
+
+.card:hover .ptaIzq {
+    transform: translateX(-200%);/* Mueve la puerta izquierda fuera del contenedor */
+}
+
+.card:hover .ptaDcha {
+    transform: translateX(200%);/* Mueve la puerta derecha fuera del contenedor */
+}
+
+
+#becca .ptaIzq,
+#becca .ptaDcha,
+#doug .ptaIzq,
+#doug .ptaDcha,
+#henry .ptaIzq,
+#henry .ptaDcha  {
+    width: 50%;
+    height: 101%;
+    background-size: 70%;
+}
+
+#vanessa .ptaIzq,
+#vanessa .ptaDcha {
+    width: 50%;
+    height: 101%;
+    background-size: 70%;
+
+}
+
+#erica .ptaIzq,
+#erica .ptaDcha {
+    width: 50%;
+    height: 100%;
+    background-size: 100%;
+}
+
+#jeff .ptaIzq,
+#jeff .ptaDcha {
+    width: 50%;
+    height: 100%;
+    background-size: 100%;
+}
+
+i {
+    padding-bottom: 7px;
+    color: rgb(210, 210, 67);
+}
+
+.social-link {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover i {    
+    transform: scale(1.2); /* Agranda el ícono ligeramente */
+    color: yellow;    
+}
+
+#jeff p {
+    margin-bottom: 5px;
+}
+
+@media  screen and (max-width:768px) {
+    #fila1, #fila2 {
+        justify-content:space-evenly;
+    }
+    
+}
+
+
+@media screen and (max-width:480px) {
+    #fila1, #fila2 {
+        justify-content:space-evenly;
+    }
+}
+
+
+
+ 
+
+
+
+
