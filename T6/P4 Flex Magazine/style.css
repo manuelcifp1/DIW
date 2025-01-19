@@ -30,7 +30,7 @@ top contributors */
 span {
     font-size: 20px;
     font-weight: 600;
-    color:rgb(31, 31, 159)
+    color:rgb(31, 31, 159);
 }
 
 h1 {
@@ -42,6 +42,7 @@ h1 {
 #places section h3 {
     font-size: 1.4em;
     text-align: center;
+    color:rgb(31, 31, 159);
 }
 
 .articTitle {
@@ -242,13 +243,17 @@ Places to visit. */
 
 #trivia > section:nth-child(even) {
     margin-left:15%;
-    background-image: url("./img/snowflakes2edited.png");
-    background-size: 500px;
+    background-image: url("./img/snowflakes3.png");
+    background-size: 500px;    
 }
 
 @media (max-width: 768px) {
     #places {
         flex-direction: column;
+    }
+
+    #trivia > section:nth-child(even) {
+        margin: 0 auto;
     }
 }
 
@@ -269,7 +274,25 @@ Places to visit. */
         flex-direction: column;        
     }
 
+    /*intentando eliminar el margen
+    alterno del contenedor trivia pero
+    no hay manera. */
     #trivia > section:nth-child(even) {
-        margin-left: -15px;
-    } 
+        margin: 0 auto;
+    }
+
+    #trivia, #contributors, #places {
+        width: 100%;
+    }
+    
+    #trivia section,
+    #contributors section,
+    #places section {
+        width: 100%;
+    }
+
+    #places #left section,
+    #places #left section {
+        width: 100%;
+    }
 }
