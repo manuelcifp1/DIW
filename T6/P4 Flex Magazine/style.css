@@ -239,3 +239,21 @@ Places to visit. */
     font-style: normal;
     font-size: 1.3em;
 }
+
+#trivia > section:nth-child(even) {
+    margin-left:15%;
+    background-image: url("./img/snowflakes2edited.png");
+    background-size: 500px;
+}
+
+@media (max-width: 768px) {
+    #places {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 100px) {
+    main {
+        flex-direction: column;
+    } 
+}
