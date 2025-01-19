@@ -255,5 +255,10 @@ Places to visit. */
 @media (max-width: 100px) {
     main {
         flex-direction: column;
-    } 
+
+    }
+    
+    nav ul {
+        flex-direction: column;
+    }
 }
