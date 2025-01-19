@@ -252,13 +252,24 @@ Places to visit. */
     }
 }
 
-@media (max-width: 100px) {
+@media (max-width: 500px) {
     main {
         flex-direction: column;
+    }
 
+    .articTitle h3 {
+        font-size: 3px;
+    }
+
+    #places h3 {
+        font-size: 3px;
     }
     
     nav ul {
-        flex-direction: column;
+        flex-direction: column;        
     }
+
+    #trivia > section:nth-child(even) {
+        margin-left: -15px;
+    } 
 }
