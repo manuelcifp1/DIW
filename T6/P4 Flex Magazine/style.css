@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+
+}
+
+#fijo {
+    position:fixed;
+    top: 0px;
+    left: 40%;
+}
+
+#rrss {
+    margin-left: 34%;
+} 
+
+#subHeader {
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;    
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+#trivia {
+    display: flex;
+    flex-direction: column;
+}
+
+#trivia section {
+    display: flex;
+    flex-direction: column;
+}
+
+#contributors {
+    display: flex;
+    flex-direction: column;
+}
+
+#contributors img {
+    float: left;
+    width: 10%;
+}
+
+#contributors p {
+    float:right;
+}
+
+#places {
+    display: flex;
+    flex-direction: column;
+}
+
+#places img {
+    width: 30%;
+}
+
+#places footer {
+
+}
+
+#mainFooter {
+
+}
