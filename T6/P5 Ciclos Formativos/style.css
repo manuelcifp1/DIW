@@ -10,6 +10,7 @@ html {
     font-style: normal;
 }
 
+/*El menú con flex en row. */
 ul {
     display: flex;
     flex-direction: row;
@@ -39,6 +40,9 @@ a {
     width: 940px;     
 }
 
+/*Los lienzos principales tienen aplicada la propiedad flex,
+para centrar adecuadamente a los lienzos secundarios dentro
+de ellos. */
 .lienzo {
     display: flex;
     justify-content: center;
@@ -46,6 +50,7 @@ a {
 
 }
 
+/*Estilos con diferentes imágenes de background para cada lienzo principal. */
 .lienzoInicio {
     background-image: url("./img/foto1.jpg");
     background-size: cover;
@@ -95,6 +100,8 @@ a {
     height: 90vh;
 }
 
+/*Estilos para los lienzos secundarios. */
+
 .miniLienzo {
     width: 80vw;
     height: 80vh;
@@ -128,6 +135,7 @@ a {
     margin: 0 auto;
 }
 
+/*Estilos para el footer. */
 footer {
     background-color: #5e1357;    
 }
@@ -139,6 +147,13 @@ footer p {
     font-size: 20px;    
 }
 
+/*Regla que usa javascript para ocultar los lienzos
+no activos. */
+
 .invisible {
     display: none;
+}
+
+@media (max-width: 768px) {
+
 }

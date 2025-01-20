@@ -1,3 +1,5 @@
+/*Esto añade un evento que garantiza la carga completa de la página
+para que todo funcione correctamente.*/
 document.addEventListener("DOMContentLoaded", () => {
     // Selecciona todos los enlaces del menú
     const menuItems = document.querySelectorAll("nav ul li a");
