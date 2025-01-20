@@ -3,3 +3,37 @@
     margin: 0;
     padding: 0;
 }
+
+html {
+    font-family: "Electrolize", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;        
+    background-color: #5e1357;
+    height: 45px;
+    
+}
+
+li {
+    padding: 10px 38.3px;    
+    border-right: aliceblue solid 1px;
+    text-align: center;
+    
+}
+
+a {
+    text-decoration: none;
+    color:aliceblue;
+    font-size: 20px;          
+}
+
+#primero {
+    text-align: start; 
+    width: 500px;
+     
+}
