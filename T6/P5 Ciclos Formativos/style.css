@@ -110,6 +110,7 @@ a {
 .miniLienzo h2 {
     font-size: 2rem;           
     margin-bottom: 1rem;
+    color: #f5f5f5;
 }
 
 .miniLienzo img {
@@ -127,10 +128,12 @@ a {
 }
 
 footer {
-    background-color: #5e1357;
+    background-color: #5e1357;    
 }
 
 footer p {
     color: #f5f5f5;
-    
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;    
 }
