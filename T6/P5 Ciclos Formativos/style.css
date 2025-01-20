@@ -148,12 +148,12 @@ footer p {
 }
 
 /*Regla que usa javascript para ocultar los lienzos
-no activos. */
-
+no activos.*/
 .invisible {
     display: none;
 }
 
+/*El rollo responsive*/
 @media (max-width: 768px) {
 
 }
