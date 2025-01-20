@@ -15,12 +15,12 @@ ul {
     flex-direction: row;
     list-style: none;        
     background-color: #5e1357;
-    height: 45px;
+    height: 50px;
     
 }
 
 li {
-    padding: 10px 38.3px;    
+    padding: 14px 38.3px;    
     border-right: aliceblue solid 1px;
     text-align: center;
     
