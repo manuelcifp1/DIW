@@ -235,8 +235,6 @@ input {
     display: none;
 }
 
-
-
 /*El rollo responsive*/
 @media (max-width: 768px) {
     
@@ -270,6 +268,7 @@ input {
         padding-left: 46%;        
     }
 
+    /*Posiciona el burger menu */
     #contenedorBurger {
         position: absolute;        
         right: 185px;
