@@ -34,37 +34,37 @@ document.addEventListener("DOMContentLoaded", () => {
         lienzoInicial.classList.remove("invisible");
     }
 
-    // Selección de elementos
+    //Selección de elementos para los cambios del menú en la versión responsive.
     const burgerContainer = document.getElementById("contenedorBurger");
     const menuToggle = document.getElementById("menu-toggle");
     const mainMenu = document.querySelector("nav.menu");
 
-    // Alternar visibilidad del menú
+    //Alterna la visibilidad del menú
     menuToggle.addEventListener("click", () => {
         mainMenu.classList.toggle("visible");
     });
 
-    // Mostrar el menú hamburguesa al cargar
+    //Muestra el menú hamburguesa al cargar
     burgerContainer.classList.remove("invisible");
 
-    // Alternar visibilidad del menú principal al hacer clic en el menú hamburguesa
+    //Alterna la visibilidad del menú principal al hacer clic en el menú hamburguesa
     menuToggle.addEventListener("click", () => {
-        if (mainMenu.style.top === "50px") {
-            mainMenu.style.top = "-100%"; // Repliega el menú hacia arriba
+        if (mainMenu.style.top === "0px") {
+            mainMenu.style.top = "-100%"; //Repliega el menú hacia arriba
         } else {
-            mainMenu.style.top = "50px"; // Despliega el menú debajo del hamburguesa
+            mainMenu.style.top = "0px"; //Despliega el menú debajo del hamburguesa
         }
     });
 
-    // Cerrar el menú al hacer clic en cualquier elemento del menú
+    //Cierra el menú al hacer clic en cualquier elemento del menú.
     menuItems.forEach(item => {
         item.addEventListener("click", () => {            
-            mainMenu.style.top = "-100%"; // Repliega el menú hacia arriba
-            menuToggle.checked = false; // Resetea el estado del checkbox
+            mainMenu.style.top = "-100%"; //Repliega el menú hacia arriba
+            menuToggle.checked = false; //Resetea el estado del checkbox
         });
     });
 
-    // Asegurarse de cerrar el menú al cambiar de pantalla
+    //Asegura el cierre del menú al cambiar a pantalla grande.
     window.addEventListener("resize", () => {
         if (window.innerWidth > 768) {            
             mainMenu.style.top = ""; // Reinicia la posición del menú            

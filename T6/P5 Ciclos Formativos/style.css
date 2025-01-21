@@ -37,7 +37,8 @@ a {
 
 #primero {
     text-align: start; 
-    width: 940px;     
+    width: 940px;
+        
 }
 
 /*Los lienzos principales tienen aplicada la propiedad flex,
@@ -100,8 +101,7 @@ de ellos. */
     height: 90vh;
 }
 
-/*Estilos para los lienzos secundarios. */
-
+/*Estilos para los lienzos secundarios.*/
 .miniLienzo {
     width: 80vw;
     height: 80vh;
@@ -111,7 +111,6 @@ de ellos. */
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 .miniLienzo h2 {
@@ -153,6 +152,8 @@ no activos.*/
     display: none;
 }
 
+/*Todo sobre mi menú hamburguesa (by Pedro Almodóvar)
+En la versión responsive, javascript tiene mucho que ver.*/
 #contenedorBurger {
     position: relative;
 }
@@ -187,11 +188,10 @@ no activos.*/
     top: 43px;
 }
 
-/* Líneas del menú hamburguesa */
+/*Líneas del menú hamburguesa */
 .linea-superior, .linea-intermedia, .linea-inferior {
     width: 40px;
-    height: 5px;
-    /*Un poquito de transparencia al negro para que no quede tan intenso.*/
+    height: 5px;   
     border-radius: 100px;
     position: absolute; /* Para posicionar las líneas manualmente
     (lo hacemos en la siguientes reglas)*/    
@@ -210,9 +210,7 @@ no activos.*/
 y su transición a X.*/
 #menu-toggle:checked + .contenedor-lineas .linea-superior {
     transform: translateY(18px) rotate(45deg); /* Baja al centro y rota */
-    transition: transform 0.5s ease;
-    
-            
+    transition: transform 0.5s ease;            
 }
 
 #menu-toggle:checked + .contenedor-lineas .linea-intermedia {
@@ -241,12 +239,21 @@ input {
 
 /*El rollo responsive*/
 @media (max-width: 768px) {
+    
+    /*Aparecía la barra de desplazamiento por un 
+    pequeño desajuste de medidas. Nada grave. */
+    html {
+        overflow: hidden;
+    }
+    
+    /*Cambio de dirección del menú de fila a columna. */
     ul {
         flex-direction: column;
         margin: 0;
         padding:0;
     }
 
+    /*Hacemos que las li ocupen todo el ancho de la página. */
     li {
         background-color: #5e1357;
         width: 100%;
@@ -254,6 +261,7 @@ input {
         padding: 10px 0;
     }
 
+    /*Ajustamos el tamaño de los miniLienzos */
     .miniLienzo {
         height: 50%;        
     }
@@ -269,10 +277,12 @@ input {
         display: block;        
     }
 
+    /*Color para las líneas del menú hamburguesa*/
     hr {
         background-color:#f5f5f5;
     }
 
+    /*Oculta el input del menú hamburguesa.*/
     input {
         display: none;
     }
@@ -281,30 +291,29 @@ input {
         flex-direction: column;
         align-items: center;
         background-color: #5e1357;
-        position: fixed;         /* Justo debajo del menú hamburguesa */
+        position: fixed;
         left: 0;
         width: 100%;
         z-index: 10;
-        transition: top 0.5s ease; /* Animación al desplegar */
-    }
+        transition: top 0.5s ease; /*Animación al desplegar*/
+    }   
 
-    /* Menú visible al activarse */
-    nav.menu.visible {
-        display: flex;
-        
-    }
-
+    /*Ajustes de tamaño para los miniLienzos y los lienzos.*/
     .miniLienzo h2 {
         font-size: 140%;
+        text-align: center;
     }
 
     .miniLienzo p {
-        font-size: 80%;
+        font-size: 90%;
     }
 
     .lienzo {
-        height: 95vh
+        height: 95vh;
     }
 
-
+    .lienzo {
+        background-position:top;
+        background-size: 1800px;        
+    }
 }
