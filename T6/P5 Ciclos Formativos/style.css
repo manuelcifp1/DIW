@@ -32,7 +32,7 @@ li:hover {
 a {
     text-decoration: none;
     color:#f5f5f5;
-    font-size: 20px;          
+    font-size: 120%;          
 }
 
 #primero {
@@ -153,7 +153,158 @@ no activos.*/
     display: none;
 }
 
+#contenedorBurger {
+    position: relative;
+}
+
+.contenedor-lineas {
+    cursor: pointer;    
+    height: 50px;
+    width: 50px;
+    z-index: 20;
+    position:absolute;      
+}
+
+#menu-toggle {
+    position:absolute;
+}
+
+.contenedor-lineas, #menu-toggle {
+    top:20px;
+    left:100px;
+}
+
+/*Posicionando las líneas del menú hamburguesa.*/
+.linea-superior {
+    top: 15px;
+}
+
+.linea-intermedia {
+    top: 29px;
+}
+
+.linea-inferior {
+    top: 43px;
+}
+
+/* Líneas del menú hamburguesa */
+.linea-superior, .linea-intermedia, .linea-inferior {
+    width: 40px;
+    height: 5px;
+    /*Un poquito de transparencia al negro para que no quede tan intenso.*/
+    border-radius: 100px;
+    position: absolute; /* Para posicionar las líneas manualmente
+    (lo hacemos en la siguientes reglas)*/    
+    left: 20px;
+    /*Para la transición del menú hamburguesa */    
+    transition: transform 0.5s ease, opacity 0.5s ease;
+     /*Para que quede encima del menú desplegable*/   
+    border:none;/*Esto lo he tenido que añadir por haber
+    usado hr en lugar de span o div al hacer las líneas del
+    menú hamburguesa. Sirve para eliminar el borde por defecto
+    que estropea su aspecto, en especial el de la X que forman
+    al aparecer el menú/lista */
+}
+
+/*Cuatro reglas para la animación del menú hamburguesa
+y su transición a X.*/
+#menu-toggle:checked + .contenedor-lineas .linea-superior {
+    transform: translateY(18px) rotate(45deg); /* Baja al centro y rota */
+    transition: transform 0.5s ease;
+    
+            
+}
+
+#menu-toggle:checked + .contenedor-lineas .linea-intermedia {
+    transform: translateX(-100%); /* Se desliza hacia la izquierda */
+    opacity: 0; /*Desaparece */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/*El mismo principio que antes.*/
+#menu-toggle:checked + .contenedor-lineas .linea-inferior {
+    transform: translateY(-9px) rotate(-45deg); /*Sube al centro y rota */
+    transition: transform 0.5s ease;    
+}
+
+#menu-toggle:checked + .contenedor-lineas {
+    transform: rotate(-90deg); /*Gira el conjunto hacia la izquierda */
+    transition: transform 0.5s ease;
+    top:35px;
+}
+
+input {
+    display: none;
+}
+
+
+
 /*El rollo responsive*/
 @media (max-width: 768px) {
+    ul {
+        flex-direction: column;
+        margin: 0;
+        padding:0;
+    }
+
+    li {
+        background-color: #5e1357;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .miniLienzo {
+        height: 50%;        
+    }
+
+    #primero {
+        padding-left: 46%;        
+    }
+
+    #contenedorBurger {
+        position: absolute;        
+        right: 185px;
+        z-index: 20;
+        display: block;        
+    }
+
+    hr {
+        background-color:#f5f5f5;
+    }
+
+    input {
+        display: none;
+    }
+
+    nav.menu {        
+        flex-direction: column;
+        align-items: center;
+        background-color: #5e1357;
+        position: fixed;         /* Justo debajo del menú hamburguesa */
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        transition: top 0.5s ease; /* Animación al desplegar */
+    }
+
+    /* Menú visible al activarse */
+    nav.menu.visible {
+        display: flex;
+        
+    }
+
+    .miniLienzo h2 {
+        font-size: 140%;
+    }
+
+    .miniLienzo p {
+        font-size: 80%;
+    }
+
+    .lienzo {
+        height: 95vh
+    }
+
 
 }

@@ -33,4 +33,41 @@ document.addEventListener("DOMContentLoaded", () => {
     if (lienzoInicial) {
         lienzoInicial.classList.remove("invisible");
     }
+
+    // Selección de elementos
+    const burgerContainer = document.getElementById("contenedorBurger");
+    const menuToggle = document.getElementById("menu-toggle");
+    const mainMenu = document.querySelector("nav.menu");
+
+    // Alternar visibilidad del menú
+    menuToggle.addEventListener("click", () => {
+        mainMenu.classList.toggle("visible");
+    });
+
+    // Mostrar el menú hamburguesa al cargar
+    burgerContainer.classList.remove("invisible");
+
+    // Alternar visibilidad del menú principal al hacer clic en el menú hamburguesa
+    menuToggle.addEventListener("click", () => {
+        if (mainMenu.style.top === "50px") {
+            mainMenu.style.top = "-100%"; // Repliega el menú hacia arriba
+        } else {
+            mainMenu.style.top = "50px"; // Despliega el menú debajo del hamburguesa
+        }
+    });
+
+    // Cerrar el menú al hacer clic en cualquier elemento del menú
+    menuItems.forEach(item => {
+        item.addEventListener("click", () => {            
+            mainMenu.style.top = "-100%"; // Repliega el menú hacia arriba
+            menuToggle.checked = false; // Resetea el estado del checkbox
+        });
+    });
+
+    // Asegurarse de cerrar el menú al cambiar de pantalla
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {            
+            mainMenu.style.top = ""; // Reinicia la posición del menú            
+        }
+    });
 });
