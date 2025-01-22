@@ -109,21 +109,21 @@ body{
 
   #filaA .uno {
     position: relative;
-    width: 21.74%;    
+    width: 25.74%;    
     background-color: var(--gris);    
     border-bottom: solid 10px black;    
   }  
 
   #filaA .dos {
     position:relative;
-    width: 32.61%;    
+    width: 36.61%;    
     background-color: var(--blanco);    
     border-bottom: solid 10px black;
   } 
 
   #filaA .tres {
     position: relative;
-    width: 27.83%;
+    width: 31.83%;
     background-color: var(--amarillo);    
     border-bottom: solid 10px black;
   }
@@ -138,6 +138,11 @@ body{
     height: 67%; /* Deja el 1/3 superior sin borde */
     width: 10px; /* Grosor del borde */
     background-color: black; /* Color del borde */
+}
+
+#filaA .cuatro {
+    width: 5.82%;
+    background-color: var(--gris);
 }
 
 
