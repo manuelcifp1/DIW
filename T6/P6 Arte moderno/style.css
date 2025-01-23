@@ -4,6 +4,9 @@
     padding: 0;
 }
 
+/*Reglas para las colores, aprovechando la amabilidad
+del profesor que nos ha pasado los colores estructurados
+para construir variables. */
 :root {
     --gris:#a4a4a4;
     --rojo: #dd432b;
@@ -11,10 +14,11 @@
     --amarillo: #f3bb4a;
     --negro: #13190f;
     --blanco: #d8d8d8;
-    --borde:#d0cccc;
-    --bordeNegro:solid 10px black; 
+    --borde:#d0cccc;    
 }
 
+/*Dentro del body, 2 contenedores (texto y galeria),
+dispuestos con flex en row. */
 body{
     font-family: 'Urbanist',sans-serif;
     background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(54, 38%, 96%, 1)'/><path d='M10-6V6M10 14v12M26 10H14M6 10H-6'  stroke-linejoin='round' stroke-linecap='round' stroke-width='1' stroke='hsla(4, 90%, 58%, 0.07)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
@@ -23,6 +27,8 @@ body{
     justify-content: space-around;
   }
 
+  /*Estructuramos los elementos del primer contenedor en
+  flex column (título, párrafo e imagen)*/
   #texto {
     display: flex;
     flex-direction: column;
@@ -44,6 +50,8 @@ body{
     width: 20%;
   }
 
+  /*Márgenes y tamaños en unidades relativas, 
+  para facilitar el modo responsive. */
   #texto #titulo h2 {
     margin-bottom: 1rem;
     font-size: 2.4rem;
@@ -61,6 +69,9 @@ body{
     margin-bottom: 3%;
   }
 
+  /*Establecemos flex en el segundo contenedor,
+  en el que se encuentra el cuadro que construimos
+  nosotros. */
   #galeria {
     display: flex;
     flex-direction: column;
@@ -69,6 +80,10 @@ body{
 
   }
 
+  /*El contenedor cuadro, donde están todos los
+  rectángulos coloreados que componen esta obra de 
+  arte. Lo he estructurado en filas que, a su vez,
+  están organizadas en columna. */
   #cuadro { 
     display: flex;
     flex-direction: column;   
@@ -80,18 +95,23 @@ body{
     margin-top: 10vh;
   }
 
+  /*Las filas de rectángulos.*/
   #filaA, #filaB, #filaC, #filaD,
   #filaE, #filaF, #filaG {
     display: flex;
     flex-direction: row;
   }
 
+  /*Establecemos las alturas de cada fila. 
+  Los % están calculados en base al trabajo 
+  hecho en el pdf adjunto, en el que obtengo las 
+  proporciones para usar en CSS. */
   #filaA, #filaD, #filaE {
-    height: 10.87%;
+    height: 25.74%;
   }
 
   #filaB, #filaC  {
-    height: 21.74%;
+    height: 51.48%;
   }
 
   #filaF {
@@ -107,13 +127,17 @@ body{
     height: 100%;
   }
 
+  /*Empiezo a crear cada rectángulo de la filaA.
+  ¿Por qué position: relative? Porque nos va a hacer
+  falta después para crear los bordes especiales del 
+  cuadro que no llegan hasta el marco de la pintura. */
   #filaA .uno {
     position: relative;
     width: 25.74%;    
     background-color: var(--gris);    
     border-bottom: solid 10px black;    
-  }  
-
+  }   
+ 
   #filaA .dos {
     position:relative;
     width: 36.61%;    
@@ -128,21 +152,32 @@ body{
     border-bottom: solid 10px black;
   }
 
+  /*Esta es la regla que crea esos bordes especiales
+  que no llegan hasta el final de sus contenedores,
+  imitando fielmente a la pintura original. */
   #filaA .uno::before,
   #filaA .dos::before,
   #filaA .tres::before {
     content: '';
     position: absolute;
-    top: 33%; /* Inicia el borde desde 1/3 de la altura */
+    top: 33%; /*Inicia el borde desde 1/3 de la altura*/
     right: 0;
-    height: 67%; /* Deja el 1/3 superior sin borde */
-    width: 10px; /* Grosor del borde */
-    background-color: black; /* Color del borde */
+    height: 70%; /*Deja el 1/3 superior sin borde*/
+    width: 10px; /*Grosor del borde*/
+    background-color: black; /*Color del borde*/
 }
 
 #filaA .cuatro {
     width: 5.82%;
     background-color: var(--gris);
+}
+
+#filaB .uno {
+    position: relative;
+    width: 12.87%;    
+    background-color: var(--blanco);  
+    border-right: solid 10px black;
+    border-bottom: solid 10px black;
 }
 
 
