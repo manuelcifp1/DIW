@@ -93,6 +93,8 @@ body{
     margin-right: 15vw;
     margin-left: -8vw;
     margin-top: 10vh;
+    filter: contrast(90%) brightness(95%) saturate(80%); /*Esto es para darle un
+    aspecto más envejecido, más apagado, como el cuadro real. */
   }
 
   /*Las filas de rectángulos.*/
@@ -104,8 +106,8 @@ body{
 
   /*Establecemos las alturas de cada fila. 
   Los % están calculados en base al trabajo 
-  hecho en el pdf adjunto, en el que obtengo las 
-  proporciones para usar en CSS. Todo está calculado
+  hecho en el pdf adjunto y reajustado según la tabla de Excel también adjunta,
+   con los que obtengo las proporciones para usar en CSS. Todo está calculado
   perfectamente en base a esas medidas, usando calculadora.
   Es cierto que, al plasmar las medidas en CSS, he tenido que
   ajustar un poco a veces para que todo cuadrara, pero me ha 
