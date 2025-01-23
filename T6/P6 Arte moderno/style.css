@@ -149,8 +149,7 @@ body{
   #filaA .uno {
     position: relative;
     width: 25.74%;    
-    background-color: var(--gris);    
-    border-bottom: solid 10px black;    
+    background-color: var(--gris);        
   }   
  
   #filaA .dos {
@@ -193,7 +192,7 @@ body{
     width: 12.87%;    
     background-color: var(--blanco);  
     border-right: solid 10px black;
-    border-bottom: solid 10px black;
+    
 }
 
 #filaB .dos {
@@ -245,7 +244,7 @@ body{
     width: 12.87%;
     background-color: var(--gris);
     border-right: solid 10px black;
-    border-bottom: solid 10px black;
+    
 }
 
 #filaD .dos,
@@ -342,19 +341,18 @@ body{
 #filaG .uno {
     width: 12.87%;
     background-color: var(--amarillo);
-    border-right: solid 10px black;
+    
 }
 
 #filaG .dos {
     width: 25.74%;
     background-color: var(--blanco);
-    border-right: solid 10px black;
+    
 }
 
 #filaG .tres {
     width: 55.53%;
-    background-color: var(--blanco);
-    border-right: solid 10px black;
+    background-color: var(--blanco);    
 }
 
 #filaG .cuatro {
@@ -370,6 +368,51 @@ Piet Mondrian, para poner la guinda en el pastel. */
     padding: 1.5%;
 }
 
+#filaA .uno::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Posicionar el borde en la parte inferior del contenedor */
+    left: 15%; /* El borde comienza 1/3 del ancho desde el borde izquierdo */    
+    height: 10px; /* Grosor del borde */
+    width: 81%; /* El borde ocupa los 2/3 restantes del ancho */
+    background-color: black;
+}
+
+/*Y como "coup de grâce", con estas tres reglas finales
+consigo el efecto de borde incompleto que tiene la pintura original
+en el lado izquierdo e inferior. */
+
+#filaB .uno::after,
+#filaD .uno::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Posicionar el borde en la parte inferior del contenedor */
+    left: 30%; /* El borde comienza 1/3 del ancho desde el borde izquierdo */
+    height: 10px; /* Grosor del borde */
+    width: 70%; /* El borde ocupa los 2/3 restantes del ancho */
+    background-color: black;
+}
+
+#filaG .uno::after,
+#filaG .dos::after,
+#filaG .tres::after {
+    content: '';
+    position: absolute;
+    right: 0; /* Posicionar el borde en el lado derecho */
+    bottom: 30%; /* El borde termina 1/3 de la altura antes de la parte inferior */
+    height: 70%; /* El borde ocupa los 2/3 inferiores del contenedor */
+    width: 10px; /* Grosor del borde */
+    background-color: black;
+}
+
+#filaA .uno,
+#filaB .uno,
+#filaD .uno,
+#filaG .uno,
+#filaG .dos,
+#filaG .tres {
+    position: relative;
+}
 
 
   
