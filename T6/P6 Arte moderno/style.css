@@ -87,7 +87,8 @@ body{
   #cuadro { 
     display: flex;
     flex-direction: column;   
-    border:ridge 10px var(--borde);    
+    border:ridge 10px var(--borde); /*Otra licencia artística que me he tomado:
+    ponerle al borde del cuadro un estilo ridge que queda mucho más chupiti.*/    
     width: 40vw;
     height: 40vw ;
     margin-right: 15vw;
@@ -95,6 +96,10 @@ body{
     margin-top: 10vh;
     filter: contrast(90%) brightness(95%) saturate(80%); /*Esto es para darle un
     aspecto más envejecido, más apagado, como el cuadro real. */
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4), 
+                -4px -4px 10px rgba(255, 255, 255, 0.2); /*Y siguiendo con las licencias
+                artísticas, ¿por qué no una elegante sombra para darle más realismo
+                a nuestra obra de arte? */
   }
 
   /*Las filas de rectángulos.*/
@@ -370,6 +375,11 @@ Piet Mondrian, para poner la guinda en el pastel. */
     padding: 1.5%;
 }
 
+
+
+/*Y como "coup de grâce", con estas 4 reglas finales
+consigo el efecto de borde incompleto que tiene la pintura original
+en el lado izquierdo e inferior. Esto lo llevo a Sotheby's y me forro. */
 #filaA .uno::after {
     content: '';
     position: absolute;
@@ -379,10 +389,6 @@ Piet Mondrian, para poner la guinda en el pastel. */
     width: 81%; /* El borde ocupa los 2/3 restantes del ancho */
     background-color: black;
 }
-
-/*Y como "coup de grâce", con estas tres reglas finales
-consigo el efecto de borde incompleto que tiene la pintura original
-en el lado izquierdo e inferior. Esto lo llevo a Sotheby's y me forro. */
 
 #filaB .uno::after,
 #filaD .uno::after {
@@ -416,5 +422,92 @@ en el lado izquierdo e inferior. Esto lo llevo a Sotheby's y me forro. */
     position: relative;
 }
 
+@media screen and (max-width:768px) {
 
+    /*Cambiamos la disposición a column para
+    que los elementos queden unos encima de otros,
+    como pide la práctica. */
+    body {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8%;        
+    }
+
+    /*Con las dos reglas siguientes, cambiamos el orden
+    de los 2 contenedores secundarios para que el cuadro 
+    quede encima del todo.*/
+    #galeria {
+        order: 1;
+        width: 90vw;
+        height: 90vw;
+    }
+
+    #texto {
+        order: 2;
+        margin: 0;
+        width: 90%;
+        align-items: center;
+    }
+
+    /*Ajustes generales de medidas para encoger 
+    todo y que se adapte bien a la pequeña pantalla. */
+    #cuadro {
+        width: 85vw;
+        height: 85vw;
+        margin: 7px auto; 
+        margin-top: 20px;       
+    }
+
+    #texto #titulo h2 {
+        margin-top: 15px;
+        margin-bottom: 0;
+        width: 60%;
+        margin-left: 20%;
+        font-size: 33px;
+        
+    }
+
+    #texto #parrafo {
+        width: 90%;
+        margin: 0 auto;
+        font-size: 20px;
+    }
+
+    #texto img {
+        width: 60%;
+        margin-bottom: 15px;
+    }
+
+    /*Y con estas reglas finales he ajustado los bordes y los 
+    pseudo-bordes incompletos, ya que al reducir el cuadro
+     quedaban muy gruesos porque no se pueden aplicar unidades
+      relativas a los bordes. */
+    #cuadro, #cuadro * {
+        border-width: 5px !important;
+    }
+
+    #filaA .uno::before,
+    #filaA .dos::before,
+    #filaA .tres::before {
+        width:5px;
+  }
+
+    #filaA .uno::after {
+        height: 5px;
+    }
+
+    #filaB .uno::after,
+    #filaD .uno::after {
+        height: 5px;
+    }
+
+    #filaG .uno::after,
+    #filaG .dos::after,
+    #filaG .tres::after {
+        width: 5px;
+    }
+
+    
+}
   
