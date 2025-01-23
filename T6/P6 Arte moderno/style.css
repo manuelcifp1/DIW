@@ -105,21 +105,29 @@ body{
   /*Establecemos las alturas de cada fila. 
   Los % están calculados en base al trabajo 
   hecho en el pdf adjunto, en el que obtengo las 
-  proporciones para usar en CSS. */
-  #filaA, #filaD, #filaE {
-    height: 25.74%;
+  proporciones para usar en CSS. Todo está calculado
+  perfectamente en base a esas medidas, usando calculadora.
+  Es cierto que, al plasmar las medidas en CSS, he tenido que
+  ajustar un poco a veces para que todo cuadrara, pero me ha 
+  ayudado mucho empezar con medidas casi perfectas. */
+  #filaA {
+    height: 19%;
+  }
+
+  #filaD, #filaE {
+    height: 22.78%;
   }
 
   #filaB, #filaC  {
-    height: 51.48%;
+    height: 45.56%;
   }
 
   #filaF {
-    height: 6.52%;
+    height: 8.52%;
   }
 
   #filaG {
-    height: 4.35%;
+    height: 5.35%;
   }
   
   .A, .B, .C, .D,
@@ -130,7 +138,14 @@ body{
   /*Empiezo a crear cada rectángulo de la filaA.
   ¿Por qué position: relative? Porque nos va a hacer
   falta después para crear los bordes especiales del 
-  cuadro que no llegan hasta el marco de la pintura. */
+  cuadro que no llegan hasta el marco de la pintura.*/
+
+  /*Es verdad que hay rectángulos en distintas filas
+  que tienen las mismas propiedades y podría haber 
+  ahorrado código y que compartieran sus estilos en
+  una sola regla, pero he preferido, en pro de la claridad
+  del código, que cada rectángulo de cada fila tuviera su regla.
+  Solo han compartido regla los que estuvieran en contacto.*/
   #filaA .uno {
     position: relative;
     width: 25.74%;    
@@ -153,8 +168,9 @@ body{
   }
 
   /*Esta es la regla que crea esos bordes especiales
-  que no llegan hasta el final de sus contenedores,
-  imitando fielmente a la pintura original. */
+  que van hacia arriba y que no llegan hasta el final
+   de sus contenedores, imitando fielmente a la pintura
+    original. */
   #filaA .uno::before,
   #filaA .dos::before,
   #filaA .tres::before {
@@ -178,6 +194,180 @@ body{
     background-color: var(--blanco);  
     border-right: solid 10px black;
     border-bottom: solid 10px black;
+}
+
+#filaB .dos {
+    width: 49.5%;
+    background-color: var(--rojo);
+    border-right: solid 10px black;
+}
+
+#filaB .tres {
+    width: 31.83%;
+    background-color: var(--amarillo);
+    border-right: solid 10px black;
+    border-bottom: solid 10px black;
+
+}
+
+#filaB .cuatro {
+    width: 5.82%;
+    background-color: var(--gris);
+}
+
+#filaC .uno {
+    width: 12.87%;
+    background-color: var(--gris);
+    border-right: solid 10px black;
+}
+
+#filaC .dos {
+    width: 49.5%;
+    background-color: var(--rojo);
+    border-right: solid 10px black;
+    border-bottom: solid 10px black;
+}
+
+#filaC .tres,
+#filaC .cuatro {
+    width: 15.915%;
+    background-color: var(--blanco);
+    border-right: solid 10px black;
+    border-bottom: solid 10px black;
+}
+
+#filaC .cinco {
+    width: 5.82%;
+    background-color: var(--gris);    
+}
+
+#filaD .uno {
+    width: 12.87%;
+    background-color: var(--gris);
+    border-right: solid 10px black;
+    border-bottom: solid 10px black;
+}
+
+#filaD .dos,
+#filaD .tres {
+    width: 12.87%;
+    background-color: var(--negro);
+    border-right: solid 10px black;
+    border-bottom: solid 10px black;
+}
+
+#filaD .cuatro {
+    width: 23.7%;
+    background-color: var(--gris);
+    border-right: solid 10px black;
+    border-bottom: solid 10px black;
+}
+
+#filaD .cinco {
+    width: 31.83%;
+    background-color: var(--blanco);
+    border-right: solid 10px black;
+    border-bottom: solid 10px black;
+}
+
+#filaD .seis {
+    width: 5.82%;
+    background-color: var(--gris);
+    border-bottom: solid 10px black;
+}
+
+#filaE .uno {
+    width: 12.87%;
+    background-color: var(--amarillo);
+    border-right: solid 10px black;
+}
+
+#filaE .dos,
+#filaE .tres {
+    width: 12.87%;
+    background-color: var(--negro);
+    border-right: solid 10px black;
+    border-bottom: solid 10px black;
+}
+
+#filaE .cuatro {
+    width: 23.7%;
+    background-color: var(--gris);
+    border-right: solid 10px black;
+    border-bottom: solid 10px black;
+}
+
+#filaE .cinco {
+    width: 31.83%;
+    background-color: var(--azul);
+    border-right: solid 10px black;
+}
+
+#filaE .seis {
+    width: 5.82%;
+    background-color: var(--rojo);
+}
+
+#filaF .uno {
+    width: 12.87%;
+    background-color: var(--amarillo);
+    border-right: solid 10px black;
+}
+
+#filaF .dos {
+    width: 25.74%;
+    background-color: var(--blanco);
+    border-right: solid 10px black;
+}
+
+#filaF .tres {
+    width: 23.7%;
+    background-color: var(--negro);
+    border-right: solid 10px black;
+    border-bottom: solid 10px black;
+}
+
+#filaF .cuatro {
+    width: 31.83%;
+    background-color: var(--azul);
+    border-right: solid 10px black;
+    border-bottom: solid 10px black;
+}
+
+#filaF .cinco {
+    width: 5.82%;
+    background-color: var(--rojo);
+}
+
+#filaG .uno {
+    width: 12.87%;
+    background-color: var(--amarillo);
+    border-right: solid 10px black;
+}
+
+#filaG .dos {
+    width: 25.74%;
+    background-color: var(--blanco);
+    border-right: solid 10px black;
+}
+
+#filaG .tres {
+    width: 55.53%;
+    background-color: var(--blanco);
+    border-right: solid 10px black;
+}
+
+#filaG .cuatro {
+    width: 5.82%;
+    background-color: var(--rojo); 
+}
+
+/*Aquí, con la originalidad que me caracteriza,
+he añadido un archivo de imagen con la firma de 
+Piet Mondrian, para poner la guinda en el pastel. */
+#filaG .tres img {
+    width: 20%;
+    padding: 1.5%;
 }
 
 
