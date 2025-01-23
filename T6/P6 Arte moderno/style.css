@@ -87,7 +87,7 @@ body{
   #cuadro { 
     display: flex;
     flex-direction: column;   
-    border:solid 10px var(--borde);
+    border:ridge 10px var(--borde);    
     width: 40vw;
     height: 40vw ;
     margin-right: 15vw;
@@ -176,7 +176,7 @@ body{
   #filaA .tres::before {
     content: '';
     position: absolute;
-    top: 33%; /*Inicia el borde desde 1/3 de la altura*/
+    top: 30%; /*Inicia el borde desde 1/3 de la altura*/
     right: 0;
     height: 70%; /*Deja el 1/3 superior sin borde*/
     width: 10px; /*Grosor del borde*/
