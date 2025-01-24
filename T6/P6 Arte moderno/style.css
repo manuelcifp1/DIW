@@ -173,10 +173,19 @@ body{
     border-bottom: solid 10px black;
   }
 
-  /*Esta es la regla que crea esos bordes especiales
-  que van hacia arriba y que no llegan hasta el final
-   de sus contenedores, imitando fielmente a la pintura
-    original. */
+  /*Esta es la regla que crea esos bordes especiales que van hacia arriba y que no
+   llegan hasta el final de sus contenedores, imitando fielmente a la pintura
+    original. ¿Cómo funciona? Utilizo los pseudo-elementos ::before y más adelante
+     ::after, para añadir un contenido adicional antes y después del contenido previo
+    al pseudo-elemento. Normalmente se usa para añadir algún pequeño elemento,
+    que se incluye con la propiedad content (una flechita, una imagen, lo que sea),
+    pero en este caso dejamos content vacío para aplicarle estilo y lo posicionamos
+    usando position (relative en el elemento principal y absolute en el que estamos
+    creando). Luego añadimos top (ya que estamos con los "bordes" de la parte superior,
+    con los "bordes" de la izquierda y de abajo usaremos la propiedad para posicionar 
+    que corresponda. Con height, width y background-color creamos el borde falso.
+    Hay que tener en cuenta que según dónde está el borde falso (parte superior, izquierda
+    o inferior de la pintura), width y height funcionarán de distinta manera. */
   #filaA .uno::before,
   #filaA .dos::before,
   #filaA .tres::before {
