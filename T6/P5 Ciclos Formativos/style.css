@@ -265,7 +265,7 @@ input {
     }
 
     #primero {
-        padding-left: 46%;        
+        padding-left: 30%;        
     }
 
     /*Posiciona el burger menu */
@@ -321,15 +321,15 @@ input {
     ul :nth-child(1) {
         order: 7;
     }
-
     
     #primero a::before {
-        content: 'Volver a la portada'; /* Texto nuevo */
+        content: 'Volver a la portada'; /*Texto nuevo*/
     }
     #primero a {
-        color: #f5f5f5; /* Ajusta el color del texto */
+        color: #f5f5f5; /*Ajusta el color del texto*/
+        text-align: center;
     }
     #primero a span {
-        display: none; /* Oculta el texto original */
+        display: none; /*Oculta el texto original*/
     }
 }
