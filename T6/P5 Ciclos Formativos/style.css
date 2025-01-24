@@ -20,9 +20,11 @@ ul {
 }
 
 li {
-    padding: 14px 38.3px;    
+    padding: 14px 35px;    
     border-right: #f5f5f5 solid 1px;
-    text-align: center;    
+    text-align: center;     
+    white-space: nowrap; /*Esto para que los ciclos de 2 palabras no salte la segunda
+    a la línea siguiente.*/ 
 }
 
 li:hover {
@@ -37,8 +39,7 @@ a {
 
 #primero {
     text-align: start; 
-    width: 940px;
-        
+    width: 940px;        
 }
 
 /*Los lienzos principales tienen aplicada la propiedad flex,
@@ -48,7 +49,6 @@ de ellos. */
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 /*Estilos con diferentes imágenes de background para cada lienzo principal. */
@@ -314,5 +314,22 @@ input {
     .lienzo {
         background-position:top;
         background-size: 1800px;        
+    }
+
+    /*Con esto envio al elemento "inicio" 
+    del menú al último lugar del menú. */
+    ul :nth-child(1) {
+        order: 7;
+    }
+
+    
+    #primero a::before {
+        content: 'Volver a la portada'; /* Texto nuevo */
+    }
+    #primero a {
+        color: #f5f5f5; /* Ajusta el color del texto */
+    }
+    #primero a span {
+        display: none; /* Oculta el texto original */
     }
 }
