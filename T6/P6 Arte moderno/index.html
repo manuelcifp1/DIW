@@ -23,20 +23,23 @@
       no la reproducción del profesor. Como yo he organizado los recuadros por filas, (Lo cual es más lógico usando el cuadro original, ya que en la reproducción del profesor
       ha hecho una pequeña alteración en la línea inferior del primer rectángulo de la segunda fila, que provoca que no coincida con la línea inferior del tercer rectángulo
       de la misma fila). 
-      También, para ser fiel a la pintura original, he creado un sucedáneo de border para los extremos de los bordes negros, para que respeten la obra y 
-      no lleguen hasta el marco del cuadro.-->
+      También, para ser fiel a la pintura original, he creado un sucedáneo de border usando la propiedad content para los extremos de los bordes negros,
+       para que respeten la obra y no lleguen hasta el marco del cuadro. (esto se explica detenidamente en el archivo style.css)-->
 
     <div id="texto">
+
         <div id="titulo"><h2>Revolutionary Abstract Art: Mondrian</h2></div>
         <div id="parrafo"><p>Piet Mondrian was a Dutch painter and art theoretician who is regarded as one of the greatest artists of the 20th century. He is known for being one of the pioneers of 20th-century abstract art, as he changed his artistic direction from figurative painting to an increasingly abstract style, until he reached a point where his artistic vocabulary was reduced to simple geometric elements.<br>
 
             Let's recreate one of his most celebrated paintings using CSS Flexbox. How exciting is that?<br>
             
             This is "Composition in yellow, red, black, blue and grey" (Compositie met groot rood vlak, geel, zwart, grijs en blauw), painted in 1920.</p></div>
-        <div id="cuadrito"><a href="https://www.kunstmuseum.nl/en/collection/composition-large-red-plane-yellow-black-gray-and-blue"><img src="./img/painting.jpg" alt=""></a></div>    
+        <div id="cuadrito"><a href="https://www.kunstmuseum.nl/en/collection/composition-large-red-plane-yellow-black-gray-and-blue"><img src="./img/painting.jpg" alt=""></a></div>
+            
     </div>
 
     <div id="galeria">
+
         <div id="cuadro">
             <div id="filaA">
                 <div class="A uno"></div>
@@ -92,7 +95,9 @@
                 <div class="G tres"><img src="./img/mondrian signature.png" alt="mondrian signature"></div>
                 <div class="G cuatro"></div>
             </div>
+
         </div>
+
     </div>
 
 </body>

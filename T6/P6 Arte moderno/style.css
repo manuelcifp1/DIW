@@ -38,8 +38,7 @@ body{
     text-align: center;
     gap: 1rem;
     margin-top: 15vh;
-    margin-right: 8vw;
-   
+    margin-right: 8vw;   
   }
 
   #texto #cuadrito {
@@ -77,7 +76,6 @@ body{
     flex-direction: column;
     justify-content: center;
     width: 35%;
-
   }
 
   /*El contenedor cuadro, donde están todos los
@@ -110,10 +108,11 @@ body{
   }
 
   /*Establecemos las alturas de cada fila. 
-  Los % están calculados en base al trabajo 
-  hecho en el pdf adjunto y reajustado según la tabla de Excel también adjunta,
-   con los que obtengo las proporciones para usar en CSS. Todo está calculado
-  perfectamente en base a esas medidas, usando calculadora.
+  Los % están calculados en base al trabajo hecho en el pdf adjunto
+   y reajustado según la tabla de Excel también adjunta,
+   con los que obtengo las proporciones para usar en CSS.
+   Todo está calculado perfectamente en base a esas medidas,
+   usando calculadora.
   Es cierto que, al plasmar las medidas en CSS, he tenido que
   ajustar un poco a veces para que todo cuadrara, pero me ha 
   ayudado mucho empezar con medidas casi perfectas. */
@@ -207,8 +206,7 @@ body{
     position: relative;
     width: 12.87%;    
     background-color: var(--blanco);  
-    border-right: solid 10px black;
-    
+    border-right: solid 10px black;    
 }
 
 #filaB .dos {
@@ -222,7 +220,6 @@ body{
     background-color: var(--amarillo);
     border-right: solid 10px black;
     border-bottom: solid 10px black;
-
 }
 
 #filaB .cuatro {
@@ -259,8 +256,7 @@ body{
 #filaD .uno {
     width: 12.87%;
     background-color: var(--gris);
-    border-right: solid 10px black;
-    
+    border-right: solid 10px black;    
 }
 
 #filaD .dos,
@@ -356,14 +352,12 @@ body{
 
 #filaG .uno {
     width: 12.87%;
-    background-color: var(--amarillo);
-    
+    background-color: var(--amarillo);    
 }
 
 #filaG .dos {
     width: 25.74%;
-    background-color: var(--blanco);
-    
+    background-color: var(--blanco);    
 }
 
 #filaG .tres {
@@ -383,8 +377,6 @@ Piet Mondrian, para poner la guinda en el pastel. */
     width: 20%;
     padding: 1.5%;
 }
-
-
 
 /*Y como "coup de grâce", con estas 4 reglas finales
 consigo el efecto de borde incompleto que tiene la pintura original
@@ -489,7 +481,7 @@ en el lado izquierdo e inferior. Esto lo llevo a Sotheby's y me forro. */
     }
 
     /*Y con estas reglas finales he ajustado los bordes y los 
-    pseudo-bordes incompletos, ya que al reducir el cuadro
+    content-bordes incompletos, ya que al reducir el cuadro
      quedaban muy gruesos porque no se pueden aplicar unidades
       relativas a los bordes. */
     #cuadro, #cuadro * {
@@ -509,12 +501,17 @@ en el lado izquierdo e inferior. Esto lo llevo a Sotheby's y me forro. */
     #filaB .uno::after,
     #filaD .uno::after {
         height: 5px;
+        width: 22px;
     }
 
-    #filaG .uno::after,
+    
     #filaG .dos::after,
     #filaG .tres::after {
         width: 5px;
+    }
+
+    #filaG .uno::after {
+        width: 4px;
     }
 
     
