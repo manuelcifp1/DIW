@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const lienzos = document.querySelectorAll(".lienzo");
 
     function cambiarLienzo(e) {
-    e.preventDefault(); //Evita el comportamiento predeterminado del enlace        
+    //e.preventDefault(); //Evita el comportamiento predeterminado del enlace        
 
     // Obtiene el ID del lienzo desde el href del enlace clicado
     const targetId = e.target.getAttribute("href").replace("#", "");
