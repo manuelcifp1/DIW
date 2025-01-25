@@ -3,13 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const lienzos = document.querySelectorAll(".lienzo");
 
     function cambiarLienzo(e) {
-    //e.preventDefault(); //Evita el comportamiento predeterminado del enlace        
 
-    // Obtiene el ID del lienzo desde el href del enlace clicado
+    e.preventDefault(); //Previene el comportamiento predeterminado del enlace    
+    //Obtiene el ID del lienzo desde el href del enlace clicado
     const targetId = e.target.getAttribute("href").replace("#", "");
     const lienzoSeleccionado = document.getElementById(targetId);
 
-    // Si el lienzo seleccionado existe
+    
+    //Si el lienzo seleccionado existe
     if (lienzoSeleccionado) {
         // Oculta todos los lienzos excepto el seleccionado
         lienzos.forEach(lienzo => {
@@ -17,8 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 lienzo.classList.add("invisible");
             } else {
                 lienzo.classList.remove("invisible");
-                lienzo.scrollIntoView({ behavior: "smooth" }); // Opcional: animación de scroll
-            }
+                lienzo.scrollIntoView({ behavior: "smooth" }); //Opcional: animación de scroll
+                
+            } 
         });
     } 
 }
