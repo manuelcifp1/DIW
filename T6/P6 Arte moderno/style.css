@@ -155,7 +155,9 @@ body{
   #filaA .uno {
     position: relative;
     width: 25.74%;    
-    background-color: var(--gris);        
+    background-color: var(--gris);
+    border-bottom: solid 10px black;
+    border-right: solid 10px black;        
   }   
  
   #filaA .dos {
@@ -163,6 +165,7 @@ body{
     width: 36.61%;    
     background-color: var(--blanco);    
     border-bottom: solid 10px black;
+    border-right: solid 10px black;
   } 
 
   #filaA .tres {
@@ -170,9 +173,11 @@ body{
     width: 31.83%;
     background-color: var(--amarillo);    
     border-bottom: solid 10px black;
+    border-right: solid 10px black;
   }
 
-  /*Esta es la regla que crea esos bordes especiales que van hacia arriba y que no
+  /*COMO HE MENCIONADO EN EL HTML, COMENTO EL CÓDIGO DE LOS BORDES ESPECIALES.
+  Esta es la regla que crea esos bordes especiales que van hacia arriba y que no
    llegan hasta el final de sus contenedores, imitando fielmente a la pintura
     original. ¿Cómo funciona? Utilizo los pseudo-elementos ::before y más adelante
      ::after, para añadir un contenido adicional antes y después del contenido previo
@@ -184,18 +189,18 @@ body{
     con los "bordes" de la izquierda y de abajo usaremos la propiedad para posicionar 
     que corresponda. Con height, width y background-color creamos el borde falso.
     Hay que tener en cuenta que según dónde está el borde falso (parte superior, izquierda
-    o inferior de la pintura), width y height funcionarán de distinta manera. */
+    o inferior de la pintura), width y height funcionarán de distinta manera. 
   #filaA .uno::before,
   #filaA .dos::before,
   #filaA .tres::before {
     content: '';
     position: absolute;
-    top: 30%; /*Inicia el borde desde 1/3 de la altura*/
+    top: 30%; 
     right: 0;
-    height: 70%; /*Deja el 1/3 superior sin borde*/
-    width: 10px; /*Grosor del borde*/
-    background-color: black; /*Color del borde*/
-}
+    height: 70%; 
+    width: 10px; 
+    background-color: black; 
+} */
 
 #filaA .cuatro {
     width: 5.82%;
@@ -206,7 +211,8 @@ body{
     position: relative;
     width: 12.87%;    
     background-color: var(--blanco);  
-    border-right: solid 10px black;    
+    border-right: solid 10px black;
+    border-bottom: solid 10px black;    
 }
 
 #filaB .dos {
@@ -256,7 +262,8 @@ body{
 #filaD .uno {
     width: 12.87%;
     background-color: var(--gris);
-    border-right: solid 10px black;    
+    border-right: solid 10px black;
+    border-bottom: solid 10px black;    
 }
 
 #filaD .dos,
@@ -352,17 +359,20 @@ body{
 
 #filaG .uno {
     width: 12.87%;
-    background-color: var(--amarillo);    
+    background-color: var(--amarillo);
+    border-right: solid 10px black;    
 }
 
 #filaG .dos {
     width: 25.74%;
-    background-color: var(--blanco);    
+    background-color: var(--blanco);
+    border-right: solid 10px black;    
 }
 
 #filaG .tres {
     width: 55.53%;
-    background-color: var(--blanco);    
+    background-color: var(--blanco);
+    border-right: solid 10px black;    
 }
 
 #filaG .cuatro {
@@ -380,14 +390,14 @@ Piet Mondrian, para poner la guinda en el pastel. */
 
 /*Y como "coup de grâce", con estas 4 reglas finales
 consigo el efecto de borde incompleto que tiene la pintura original
-en el lado izquierdo e inferior. Esto lo llevo a Sotheby's y me forro. */
+en el lado izquierdo e inferior. Esto lo llevo a Sotheby's y me forro. 
 #filaA .uno::after {
     content: '';
     position: absolute;
-    bottom: 0; /* Posicionar el borde en la parte inferior del contenedor */
-    left: 15%; /* El borde comienza 1/3 del ancho desde el borde izquierdo */    
-    height: 10px; /* Grosor del borde */
-    width: 81%; /* El borde ocupa los 2/3 restantes del ancho */
+    bottom: 0; 
+    left: 15%;     
+    height: 10px;
+    width: 81%; 
     background-color: black;
 }
 
@@ -395,10 +405,10 @@ en el lado izquierdo e inferior. Esto lo llevo a Sotheby's y me forro. */
 #filaD .uno::after {
     content: '';
     position: absolute;
-    bottom: 0; /* Posicionar el borde en la parte inferior del contenedor */
-    left: 30%; /* El borde comienza 1/3 del ancho desde el borde izquierdo */
-    height: 10px; /* Grosor del borde */
-    width: 70%; /* El borde ocupa los 2/3 restantes del ancho */
+    bottom: 0; 
+    left: 30%; 
+    height: 10px;
+    width: 70%; 
     background-color: black;
 }
 
@@ -407,10 +417,10 @@ en el lado izquierdo e inferior. Esto lo llevo a Sotheby's y me forro. */
 #filaG .tres::after {
     content: '';
     position: absolute;
-    right: 0; /* Posicionar el borde en el lado derecho */
-    bottom: 30%; /* El borde termina 1/3 de la altura antes de la parte inferior */
-    height: 70%; /* El borde ocupa los 2/3 inferiores del contenedor */
-    width: 10px; /* Grosor del borde */
+    right: 0; 
+    bottom: 30%; 
+    height: 70%; 
+    width: 10px; 
     background-color: black;
 }
 
@@ -421,8 +431,9 @@ en el lado izquierdo e inferior. Esto lo llevo a Sotheby's y me forro. */
 #filaG .dos,
 #filaG .tres {
     position: relative;
-}
+} */
 
+/*Media query ============================================================================== */
 @media screen and (max-width:768px) {
 
     /*Cambiamos la disposición a column para
