@@ -7,13 +7,15 @@
 /* General */
 body {
     font-family: Arial, sans-serif;
-    background-color: #333;
+    background-image: url(./img/DIW\ GRID.png);
+    background-size: 100vw;
     color: #fff;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+
 }
 
 #horario-container {
@@ -33,19 +35,23 @@ h1 {
     display: grid;
     grid-template-columns: 1.5fr repeat(5, 1fr); /* Intervalos + 5 días */
     grid-template-rows: auto repeat(6, 1fr);    /* Encabezado + 6 intervalos */
-    gap: 2px;
-    background-color: #444;
+    gap: 2px;    
     padding: 10px;
     border-radius: 10px;
 }
 
 /* Encabezados */
 .header {
-    background-color: #555;
+    background-color: rgb(221, 221, 227);
     text-align: center;
     font-weight: bold;
     padding: 10px 0;
     border-radius: 5px;
+    font-family: "Aldrich", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 200%;
+    color: rgb(6, 6, 246);
 }
 
 
@@ -59,56 +65,157 @@ h1 {
     font-size: 0.9rem;
     border-radius: 5px;
     text-align: center;
+    font-family: "Mohave", serif;
+    font-optical-sizing: auto;  
+    font-style: normal;
+    font-size: 180%;
 }
 
-
-
 /* Colores personalizados para materias */
-.diw { background-color: #4b5dfc; }
-.daw { background-color: #f25050; }
-.dwes { background-color: #24a19c; }
-.dwec { background-color: #f28c28; }
-.eiem { background-color: #009a00; }
+.diw { background-color: rgb(231, 111, 81); }
+.daw { background-color: rgb(42, 157, 143); }
+.dwes { background-color: rgb(233, 196, 106); }
+.dwec { background-color: rgb(244, 162, 97); }
+.eiem { background-color: rgb(38, 70, 83); }
 
-/* Posicionamiento preciso */
+/*Contenedor vacío para la esquina superior izquierda.*/
 .empty {grid-column: 1; grid-row: 1}
-#diw-lunes { grid-column: 2; grid-row: 2 / 4; }
-#daw-lunes { grid-column: 2; grid-row: 6;}
-#eiem-lunes {grid-column: 2; grid-row: 7;}
-#daw-martes { grid-column: 3; grid-row: 2 / 4; }
-#dwec-miercoles1 { grid-column: 4; grid-row: 2; }
-#dwec-miercoles2 { grid-column: 4 / 6; grid-row: 3; }
-#dwes-lunes { grid-column: 2; grid-row: 4 / 6; }
-#diw-miercoles { grid-column: 3 / 5; grid-row: 4 / 6; }
-#dwes-martes { grid-column: 3; grid-row: 6 / 7; }
-#dwes-martes2 { grid-column: 3 / 5; grid-row: 7;}
-#eiem-miercoles {grid-column: 4; grid-row: 6;}
-#daw-jueves { grid-column: 5; grid-row: 2; }
-#dwec-jueves { grid-column: 5; grid-row: 4; }
-#dwec-jueves2 { grid-column: 5; grid-row: 4}
-#dwes-jueves { grid-column: 5; grid-row: 5; }
-#diw-jueves { grid-column: 5; grid-row: 6 / 8;}
-#dwes-viernes { grid-column: 6; grid-row: 2 / 4; }
-#eiem-viernes {grid-column: 6; grid-row: 4;}
-#daw-viernes { grid-column: 6; grid-row: 5; }
-#dwec-viernes { grid-column: 6; grid-row: 6 / 8; }
-#final-row { grid-column: 1 / 7; grid-row: 9}
+
+/*Lunes*/
+#diw-lunes {
+    grid-column: 2;
+    grid-row: 2 / 4; 
+}
+
+#dwes-lunes {
+    grid-column: 2;
+    grid-row: 4 / 6; 
+}
+
+#daw-lunes {
+    grid-column: 2;
+    grid-row: 6;
+}
+
+#eiem-lunes {
+    grid-column: 2;
+    grid-row: 7;
+}
+
+/*Martes*/
+#daw-martes {
+    grid-column: 3;
+    grid-row: 2 / 4; 
+}
+
+#diw-miercoles {
+    grid-column: 3 / 5;
+    grid-row: 4 / 6; 
+}
+
+#dwes-martes {
+    grid-column: 3;
+    grid-row: 6 / 7; 
+}
+
+#dwes-martes2 {
+    grid-column: 3 / 5;
+    grid-row: 7;
+}
+
+/*Miércoles */
+#dwec-miercoles1 {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+#dwec-miercoles2 {
+    grid-column: 4 / 6;
+    grid-row: 3;
+}
+#eiem-miercoles {
+    grid-column: 4;
+    grid-row: 6;
+}
+
+/*Jueves */
+#daw-jueves {
+    grid-column: 5;
+    grid-row: 2;
+}
+
+#dwec-jueves {
+    grid-column: 5;
+    grid-row: 4; 
+}
+
+#dwec-jueves2 {
+    grid-column: 5;
+    grid-row: 4
+}
+
+#dwes-jueves {
+    grid-column: 5;
+    grid-row: 5;
+}
+
+#diw-jueves {
+    grid-column: 5;
+    grid-row: 6 / 8;
+}
+
+/*Viernes */
+#dwes-viernes {
+    grid-column: 6;
+    grid-row: 2 / 4;
+}
+
+#eiem-viernes {
+    grid-column: 6;
+    grid-row: 4;
+}
+
+#daw-viernes {
+    grid-column: 6;
+    grid-row: 5;
+}
+
+#dwec-viernes {
+    grid-column: 6;
+    grid-row: 6 / 8;
+}
+
+/*Fila final*/
+#final-row {
+    grid-column: 1 / 7;
+    grid-row: 9
+}
 
 .time {
     grid-column: 1; /* Asegura que todas las horas estén en la primera columna */
-    background-color: #666;
+    background-color: rgb(221, 221, 227);
     text-align: center;
     font-size: 0.9rem;
     padding: 10px 0;
     border-radius: 5px;
+    font-family: "Mohave", serif;
+    font-optical-sizing: auto;  
+    font-style: normal;
+    font-size: 170%;
+    color: rgb(6, 6, 246);
 }
 
 #final-row {
-    background-color: #666;
+    background-color: rgb(221, 221, 227);
     text-align: center;
     font-size: 0.9rem;
     padding: 10px 0;
     border-radius: 5px;
+    font-family: "Aldrich", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 200%;
+    color: rgb(6, 6, 246);
 }
 
 
