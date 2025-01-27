@@ -1,28 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8">
-        <meta name="description" content="April calendar made with grid">
-        <meta name="author" content="Manuel Alba">
-        <meta name="keywords" content="April, grid, White Week, Eastern Holiday, school calendar">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./style.css">
+    <meta name="description" content="April calendar made with grid">
+    <meta name="author" content="Manuel Alba">
+    <meta name="keywords" content="Abril, grid, Semana Santa, calendario escolar">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
     <title>Calendario Abril</title>
 </head>
 <body>
     <div id="container">
         <h1>Abril 2025</h1>
         <div id="calendario">
-            <div id="lunes week">L</div>
-            <div id="martes week">M</div>
-            <div id="miercoles week">X</div>
-            <div id="jueves week">J</div>
-            <div id="viernes week">V</div>
-            <div id="sabado week">S</div>
-            <div id="domingo week">D</div>
+            <!--Días de la semana-->
+            <div id="izq" class="week">L</div>
+            <div class="week">M</div>
+            <div class="week">X</div>
+            <div class="week">J</div>
+            <div class="week">V</div>
+            <div class="week">S</div>
+            <div id="dcha" class="week">D</div>
+            <!--Aquí un div vacío para que ocupe el hueco del lunes.-->
+            <div class="empty"></div>
+            <!--Días del mes-->
             <div class="day">1</div>
             <div class="day">2</div>
             <div class="day">3</div>
@@ -55,6 +59,5 @@
             <div class="day">30</div>
         </div>
     </div>
-    
 </body>
 </html>

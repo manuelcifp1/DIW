@@ -1,63 +1,115 @@
+/* Reseteamos medidas como es habitual*/
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
-}
-
-:root {
-    --azul:#424EEB;
-    --verde: #85FA4B;
-    --naranja: #EB6933;
+    padding: 0;    
 }
 
 html {
-    font-family: "Roboto Condensed", serif;
-    font-optical-sizing: auto;    
-    font-style: normal;
-    background-image: url("./img/pattern_brick-wall.png");
-    background-size: 600px;
+    font-family: 'Jura', serif;
+    background-size: cover;
+    color: inherit;
 }
 
+/*Un poco de flex para centrar el container en la pantalla */
 body {
     display: flex;
-    justify-content: center;    
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("./img/DIW\ GRID.png");
+    background-size: 100%;
 }
 
 h1 {
-    font-size: 3vw;
-    text-align: center;    
+    text-align: center;
+    margin-bottom: 1rem;
+    color: yellow;
+    font-size: 380%;
+    
 }
 
+/*Contenedor principal*/
 #container {
-    width: 75vw;
-    height: 40vw;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 15px;
+    padding: 1rem;    
+    background-image: url("./img/purple-texture-background-3ljrrdowhvo0ic3c.jpg");
+    background-size: 40%;
+    border: ridge rgb(217, 217, 18) 5px; /*Me gustan los bordes ridge.*/
+}
+
+/*Calendario grid*/
+#calendario {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    grid-template-areas: 
-    "header header header header header header header"
-    ". day day day day day day"
-    "day day day day day day day"
-    "day day day day day day day"
-    "day day day day day day day"
-    "day day day . . . .";
-    background-color: rgb(183, 202, 220);
-    margin-top: 10vh;
-    border-radius: 10px;
-    border: solid var(--azul) 5px;
-    gap: 4px;
-    
-    
+    grid-template-columns: repeat(7, 1fr);    
 }
 
-.week {
-    background-color: var(--azul);
-    font-size: 100px;
-    width: 15%;
-    grid-area: header;
+/*Estilo para los días de la semana*/
+.week {    
+    text-align: center;
+    padding: 0.5rem 0;    
+    background-color: rgb(224, 224, 25);
+    font-size: 230%;
+    color: rgb(70, 34, 106);
+    font-weight:900;
+    margin-bottom: 4px;       
 }
 
+/*Estas dos reglas para redondear las esquinas de lunes y domingo,
+ya que todos los días de la semana comparten background. */
+#izq {
+    border-top-left-radius: 5px ;
+    border-bottom-left-radius: 5px;
+}
+
+#dcha {
+    border-top-right-radius: 5px ;
+    border-bottom-right-radius: 5px;
+}
+
+/*Estilo para los días del mes*/
 .day {
-    grid-area: day;
+    text-align: center;
+    padding: 0.8rem 0;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    font-size: 200%;
+    background-color: rebeccapurple;
+    color: yellow;
+    font-weight: 900;
+    margin: 3px;
 }
 
+/*Las dos reglas siguientes para colorear vacaciones
+y fines de semana.*/
+#calendario :nth-child(15),
+#calendario :nth-child(16),
+#calendario :nth-child(17),
+#calendario :nth-child(18),
+#calendario :nth-child(19),
+#calendario :nth-child(22),
+#calendario :nth-child(23),
+#calendario :nth-child(24),
+#calendario :nth-child(25),
+#calendario :nth-child(26) {
+    background-color: rgb(23, 23, 176);
+}
+
+#calendario :nth-child(13),
+#calendario :nth-child(14),
+#calendario :nth-child(20),
+#calendario :nth-child(21),
+#calendario :nth-child(27),
+#calendario :nth-child(28),
+#calendario :nth-child(34),
+#calendario :nth-child(35) {
+    background-color: rgb(30, 33, 121);
+}
+
+/*El hover para los días del mes. */
+.day:hover {
+    transform: scale(1.07);
+    color: rgb(0, 0, 0);
+}
