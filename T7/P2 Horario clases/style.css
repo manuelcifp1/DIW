@@ -18,20 +18,21 @@ body {
 
 #horario-container {
     width: 90%;
-    max-width: 1000px;
+    max-width: 1200px;
     text-align: center;
 }
 
 h1 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #fff;
 }
 
 /* Horario grid */
 #horario {
     display: grid;
-    grid-template-columns: 1fr repeat(5, 1fr); /* 1 columna de tiempo, 5 días */
-    grid-template-rows: auto repeat(6, 1fr); /* Encabezado + 6 intervalos de tiempo */
+    grid-template-columns: 1.5fr repeat(5, 1fr); /* Intervalos + 5 días */
+    grid-template-rows: auto repeat(6, 1fr);    /* Encabezado + 6 intervalos */
     gap: 2px;
     background-color: #444;
     padding: 10px;
@@ -40,58 +41,78 @@ h1 {
 
 /* Encabezados */
 .header {
-    background-color: #777;
+    background-color: #555;
     text-align: center;
     font-weight: bold;
     padding: 10px 0;
+    border-radius: 5px;
 }
 
-/* Intervalos de tiempo */
-.time {
-    background-color: #555;
-    text-align: center;
-    font-size: 0.9rem;
-    padding: 10px 0;
-}
 
 /* Materias */
 .subject {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
     font-weight: bold;
+    color: #fff;
     font-size: 0.9rem;
-    border: 1px solid #000;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+
+/* Colores personalizados para materias */
+.diw { background-color: #4b5dfc; }
+.daw { background-color: #f25050; }
+.dwes { background-color: #24a19c; }
+.dwec { background-color: #f28c28; }
+.eiem { background-color: #009a00; }
+
+/* Posicionamiento preciso */
+.empty {grid-column: 1; grid-row: 1}
+#diw-lunes { grid-column: 2; grid-row: 2 / 4; }
+#daw-lunes { grid-column: 2; grid-row: 6;}
+#eiem-lunes {grid-column: 2; grid-row: 7;}
+#daw-martes { grid-column: 3; grid-row: 2 / 4; }
+#dwec-miercoles1 { grid-column: 4; grid-row: 2; }
+#dwec-miercoles2 { grid-column: 4 / 6; grid-row: 3; }
+#dwes-lunes { grid-column: 2; grid-row: 4 / 6; }
+#diw-miercoles { grid-column: 3 / 5; grid-row: 4 / 6; }
+#dwes-martes { grid-column: 3; grid-row: 6 / 7; }
+#dwes-martes2 { grid-column: 3 / 5; grid-row: 7;}
+#eiem-miercoles {grid-column: 4; grid-row: 6;}
+#daw-jueves { grid-column: 5; grid-row: 2; }
+#dwec-jueves { grid-column: 5; grid-row: 4; }
+#dwec-jueves2 { grid-column: 5; grid-row: 4}
+#dwes-jueves { grid-column: 5; grid-row: 5; }
+#diw-jueves { grid-column: 5; grid-row: 6 / 8;}
+#dwes-viernes { grid-column: 6; grid-row: 2 / 4; }
+#eiem-viernes {grid-column: 6; grid-row: 4;}
+#daw-viernes { grid-column: 6; grid-row: 5; }
+#dwec-viernes { grid-column: 6; grid-row: 6 / 8; }
+#final-row { grid-column: 1 / 7; grid-row: 9}
+
+.time {
+    grid-column: 1; /* Asegura que todas las horas estén en la primera columna */
+    background-color: #666;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 10px 0;
     border-radius: 5px;
 }
 
-/* Colores personalizados para materias */
-.diw {
-    background-color: #4b5dfc;
-}
-.daw {
-    background-color: #f25050;
-}
-.dwes {
-    background-color: #24a19c;
-}
-.dwec {
-    background-color: #f28c28;
-}
-.eiem {
-    background-color: #009a00;
+#final-row {
+    background-color: #666;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 10px 0;
+    border-radius: 5px;
 }
 
-/* Grid Areas */
-#horario {
-    grid-template-areas:
-        ".       lunes   martes   miercoles jueves viernes"
-        "time1   lunes1  martes1  miercoles1 jueves1 viernes1"
-        "time2   lunes2  martes2  miercoles2 jueves2 viernes2"
-        "time3   lunes3  martes3  miercoles3 jueves3 viernes3"
-        "time4   lunes4  martes4  miercoles4 jueves4 viernes4"
-        "time5   lunes5  martes5  miercoles5 jueves5 viernes5"
-        "time6   lunes6  martes6  miercoles6 jueves6 viernes6";
-}
+
+
+
+
 
