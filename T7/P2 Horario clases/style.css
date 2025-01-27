@@ -3,25 +3,3 @@
     margin: 0;
     padding: 0;
 }
-
-:root {
-    --azul:#424EEB;
-    --verde: #85FA4B;
-    --naranja: #EB6933;
-}
-
-html {
-    font-family: "Roboto Condensed", serif;
-    font-optical-sizing: auto;    
-    font-style: normal;
-    background-image: url("./img/pattern_brick-wall.png");
-    background-size: 300px;
-}
-
-#container {
-    width: 75vw;
-    height: 40vw;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-}
