@@ -9,44 +9,33 @@ body {
     font-family: Arial, sans-serif;
     background-image: url(./img/DIW\ GRID.png);
     background-size: 100vw;
-    color: #fff;
-    margin: 0;
+    color: #fff;    
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-
 }
 
 #horario-container {
-    width: 90%;
-    max-width: 1200px;
+    width: 60%;    
     text-align: center;
 }
 
-h1 {
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-    color: #fff;
-}
-
-/* Horario grid */
+/*Horario grid*/
 #horario {
     display: grid;
-    grid-template-columns: 1.5fr repeat(5, 1fr); /* Intervalos + 5 días */
-    grid-template-rows: auto repeat(6, 1fr);    /* Encabezado + 6 intervalos */
-    gap: 2px;    
-    padding: 10px;
-    border-radius: 10px;
+    grid-template-columns: 1.5fr repeat(5, 1fr); /*La columna con las horas un 50% más ancha que el resto, luego repetimos 1fr 5 veces*/
+    grid-template-rows: auto repeat(6, 1fr);    /*La primera fila con los días de semana se ajusta a su contenido (mejora el responsive), el resto 1fr de tamaño.*/
+    gap: 3px;    
+    padding: 10px;    
 }
 
-/* Encabezados */
+/*Los días de la semana*/
 .header {
     background-color: rgb(221, 221, 227);
     text-align: center;
     font-weight: bold;
-    padding: 10px 0;
-    border-radius: 5px;
+    padding: 10px 0;    
     font-family: "Aldrich", serif;
     font-weight: 400;
     font-style: normal;
@@ -54,32 +43,39 @@ h1 {
     color: rgb(6, 6, 246);
 }
 
-
-/* Materias */
+/*Asignaturas*/
 .subject {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: #fff;
-    font-size: 0.9rem;
-    border-radius: 5px;
+    justify-content: center;    
+    color: rgb(6, 6, 246);
+    font-size: 0.9rem;    
     text-align: center;
     font-family: "Mohave", serif;
     font-optical-sizing: auto;  
     font-style: normal;
     font-size: 180%;
+    font-weight:600;
 }
 
-/* Colores personalizados para materias */
-.diw { background-color: rgb(231, 111, 81); }
-.daw { background-color: rgb(42, 157, 143); }
-.dwes { background-color: rgb(233, 196, 106); }
-.dwec { background-color: rgb(244, 162, 97); }
-.eiem { background-color: rgb(38, 70, 83); }
+/*Colores para cada asignatura*/
+.diw {
+    background-color: rgb(231, 111, 81);
+}
+.daw {
+    background-color: rgb(42, 157, 143);
+}
+.dwes {
+    background-color: rgb(233, 196, 106);
+}
+.dwec {
+    background-color: rgb(244, 162, 97);
+}
+.eiem {
+    background-color: rgb(38, 70, 83);
+}
 
-/*Contenedor vacío para la esquina superior izquierda.*/
-.empty {grid-column: 1; grid-row: 1}
+/*Posicionamientos grid*/
 
 /*Lunes*/
 #diw-lunes {
@@ -191,13 +187,13 @@ h1 {
     grid-row: 9
 }
 
+/*Estilos para las horas y la fila final.*/
 .time {
     grid-column: 1; /* Asegura que todas las horas estén en la primera columna */
     background-color: rgb(221, 221, 227);
     text-align: center;
     font-size: 0.9rem;
-    padding: 10px 0;
-    border-radius: 5px;
+    padding: 10px 0;    
     font-family: "Mohave", serif;
     font-optical-sizing: auto;  
     font-style: normal;
@@ -209,13 +205,13 @@ h1 {
     background-color: rgb(221, 221, 227);
     text-align: center;
     font-size: 0.9rem;
-    padding: 10px 0;
-    border-radius: 5px;
+    padding: 10px 0;    
     font-family: "Aldrich", serif;
     font-weight: 400;
     font-style: normal;
     font-size: 200%;
     color: rgb(6, 6, 246);
+    margin-top: -3px;
 }
 
 
