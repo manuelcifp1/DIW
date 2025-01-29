@@ -6,9 +6,11 @@
 
 html {
     font-family: "Tomorrow", sans-serif;
+    background-image: url("./img/lines.jpg");
+    background-size: contain;
 }
 
 h1 {
-    text-align: center;
+    text-align: center;    
 }
 
