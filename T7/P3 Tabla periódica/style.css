@@ -4,13 +4,184 @@
     padding: 0;
 }
 
-html {
+body {
     font-family: "Tomorrow", sans-serif;
     background-image: url("./img/lines.jpg");
-    background-size: contain;
+    background-size: 100vw;    
 }
 
 h1 {
-    text-align: center;    
+    text-align: center;
+    color: aliceblue;
+    margin-bottom: 1rem;    
 }
+
+/* Configuración de la cuadrícula */
+.tablaper {
+    display: grid;    
+    grid-template-columns: repeat(18, 1fr); /* 9 columnas */
+    grid-template-rows: repeat(9, auto);  /* 9 filas */
+    gap: 5px; /* Espacio entre celdas */
+    width: 65vw; /* Tamaño adaptable */ 
+    height: 60vh;   
+    margin: 0 auto;        
+    border-radius: 10px;
+    
+}
+
+/* Estilos para las celdas */
+.tablaper li {
+    list-style: none;    
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  
+}
+
+.tablaper li h2 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    order: 2;    
+}
+
+.tablaper li .numatomico {    
+    font-size: 0.7rem;
+    order: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding: 2px;
+}
+
+.tablaper li .nomelemento {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    font-size: 0.5rem;
+    padding: 2px;
+    order:3;
+}
+
+/*Leyendas*/
+.leyenda {
+    grid-column: span 2;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+    text-align: center;
+    height: auto;
+                
+}
+
+.leyenda h3 {
+    font-weight: normal;
+    font-size: 0.7rem;    
+    margin-top: 10%;        
+}
+
+/*Familias de elementos*/
+.nometalesreactivos, .l1 {
+    background: #a5dfdf;
+}
+
+.gasesnobles, .l2 {
+    background: #5D6BEA;
+}
+
+.alcalinoterreos, .l3 {
+    background: #fbab88;
+}
+
+.alcalinos, .l4 {
+    background: #f5ce8f;
+}
+
+.metaloides, .l5 {
+    background: #4ABFBF;
+}
+
+.metalesdetransicion, .l6 {
+    background: #c398eb;
+}
+
+.postransicionales, .l7 {
+    background: #e285d4;
+}
+
+.lantanidos, .l8 {
+    background: #F76526;
+}
+
+.lantanidos {
+    grid-row: 8;
+    grid-column: 4;
+}
+
+.actinidos, .l9 {
+    background: #E19214;
+}
+
+.propiedadesdesconocidas, .l10 {
+    background: #bbbbbb
+}
+
+/*Posicionamiento especial para algunos elementos*/
+#helio {
+    grid-column: 18;
+}
+
+#boro {
+    grid-column: 13 / span 1;
+}
+
+#aluminio {
+    grid-column: 13;
+}
+
+#cerio {
+    grid-row: 8;
+    grid-column: 4;
+}
+
+#hafnio {
+    grid-column: 4;
+    grid-row: 6;
+}
+
+#lantano {
+    grid-row: 6;
+    grid-column: 3;
+}
+
+.l1, .l2, .l3, .l4 {
+    grid-row: 1;
+}
+
+.l1, .l5 {   
+    grid-column: 4 / span 2;    
+}
+.l2 {    
+    grid-column: 6 / span 2;
+}
+
+.l3 {    
+    grid-column: 8 /span 2;
+}
+
+.l4 {
+    grid-column: 10 /span 2;
+}
+
+.l5, .l6, .l7, .l8 {
+    grid-row: 2;
+}
+
+
+
+
 
