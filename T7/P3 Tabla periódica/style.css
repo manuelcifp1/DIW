@@ -13,23 +13,26 @@ body {
 h1 {
     text-align: center;
     color: aliceblue;
-    margin-bottom: 1rem;    
+    margin-bottom: 1rem;
+    margin-top: 8%;    
 }
 
-/* Configuración de la cuadrícula */
+/*Configuración de la cuadrícula:
+El plan es crear 18 columnas y 9 filas y
+como las leyendas son el doble de anchas 
+que los elementos, aplicarles un grid-column: span 2*/
 .tablaper {
     display: grid;    
-    grid-template-columns: repeat(18, 1fr); /* 9 columnas */
-    grid-template-rows: repeat(9, auto);  /* 9 filas */
-    gap: 5px; /* Espacio entre celdas */
-    width: 65vw; /* Tamaño adaptable */ 
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: repeat(9, auto);
+    gap: 5px;
+    width: 65vw;
     height: 60vh;   
     margin: 0 auto;        
-    border-radius: 10px;
-    
+    border-radius: 10px;    
 }
 
-/* Estilos para las celdas */
+/*Estilos para las celdas y los elementos dentro de ellas*/
 .tablaper li {
     list-style: none;    
     border-radius: 3px;
@@ -68,23 +71,17 @@ h1 {
 
 /*Leyendas*/
 .leyenda {
-    grid-column: span 2;
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;    
-    align-items: center;
-    text-align: center;
-    height: auto;
-                
+    grid-column: span 2;    
+    text-align: center;                    
 }
 
 .leyenda h3 {
     font-weight: normal;
     font-size: 0.7rem;    
-    margin-top: 10%;        
+    margin-top: 12%;        
 }
 
-/*Familias de elementos*/
+/*Colores para las familias de elementos y las leyendas*/
 .nometalesreactivos, .l1 {
     background: #a5dfdf;
 }
@@ -117,11 +114,6 @@ h1 {
     background: #F76526;
 }
 
-.lantanidos {
-    grid-row: 8;
-    grid-column: 4;
-}
-
 .actinidos, .l9 {
     background: #E19214;
 }
@@ -143,19 +135,9 @@ h1 {
     grid-column: 13;
 }
 
-#cerio {
-    grid-row: 8;
-    grid-column: 4;
-}
-
 #hafnio {
     grid-column: 4;
     grid-row: 6;
-}
-
-#lantano {
-    grid-row: 6;
-    grid-column: 3;
 }
 
 .l1, .l2, .l3, .l4 {
@@ -165,20 +147,423 @@ h1 {
 .l1, .l5 {   
     grid-column: 4 / span 2;    
 }
-.l2 {    
+.l2, .l6, .l9 {    
     grid-column: 6 / span 2;
 }
 
-.l3 {    
+.l3, .l7, .l10 {    
     grid-column: 8 /span 2;
 }
 
-.l4 {
+.l4, .l8 {
     grid-column: 10 /span 2;
 }
 
 .l5, .l6, .l7, .l8 {
     grid-row: 2;
+}
+
+.l9, .l10 {
+    grid-row: 3;
+}
+
+#actinio {
+    grid-row: 7;
+    grid-column: 3;
+}
+
+#lantano {
+    grid-row: 6;
+    grid-column: 3;
+}
+
+#cerio {
+    grid-row: 8;
+    grid-column: 4;   
+}
+
+#torio {
+    grid-column: 4;
+    grid-row: 9;
+}
+
+/*Pues este es el fracaso de la práctica. Por muchas vueltas que le he dado
+ (y no estoy muy brillante con este horrible gripazo) no he encontrado la manera
+ de que el resto de los lantánidos y actínidos se posicionaran en las 2 últimas líneas
+ automaticamente. Nota para los dioses de CSS: ¿por qué no creais una propiedad de grid
+ con la que puedas poner un elemento de una clase en una cuadrícula y los demás elementos
+ de esa clase rellenen las cuadrículas siguientes de la fila o columna automáticamente? */
+
+#pra, #neo, #pro, #sam, #eur, #gad, #ter, #dis, #hol, #erb, #tul, #ite, #lut {
+    grid-row: 8;
+}
+
+#pra, #prot {
+    grid-column: 5;
+
+}
+#neo, #uran {
+    grid-column: 6;
+
+}
+#pro, #nept {
+    grid-column: 7;
+}
+
+#sam, #plut {
+    grid-column: 8;
+}
+
+#eur, #amer {
+    grid-column: 9;
+}
+#gad, #curi  {
+    grid-column: 10;
+}
+#ter, #berk {
+    grid-column: 11;
+}
+#dis, #cali {
+    grid-column: 12;
+}
+#hol, #eins {
+    grid-column: 13;
+}
+#erb, #ferm {
+    grid-column: 14;
+}
+#tul, #mend {
+    grid-column: 15;
+}
+#ite, #nobe {
+    grid-column: 16;
+}
+#lut, #laur {
+    grid-column: 17;
+}
+
+#prot, #uran, #nept, #plut, #amer, #curi, #berk, #cali, #eins, #ferm, #mend, #nobe, #laur {
+    grid-row: 9;
+}
+
+/*================media query=========================== 
+
+No funciona, da igual las medidas que ponga, hace lo que le da
+la gana.*/
+
+@media screen and (max-width: 480px) {
+    body {
+        background-color: #16585b;
+        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2355dde1' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: 7px; 
+    }
+
+    h1 {
+        font-size: 30px;
+        margin-top: 10px;
+    }
+    .tablaper {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        width: 90%;
+    }
+   
+    .tablaper li {        
+        height: 40px;
+        flex-direction: row;
+        position: relative;        
+    }
+
+    .tablaper li h2 {
+        font-size: 1.7rem;       
+        position:absolute;
+        left: 45%;
+        text-align: center;              
+    }
+
+    .tablaper li .numatomico {
+        font-size: 1.4rem; /* Ajusta el tamaño de textos pequeños */
+        padding: 3px;        
+    }
+
+    .tablaper li .nomelemento {
+        font-size: 1.2rem;
+    }      
+    
+    .leyenda h3 {        
+        margin: auto;
+        margin-top: 6px;
+        font-size: 22px;        
+    }
+
+    .leyenda h3 br {
+        display:none;        
+    }
+  
+
+}
+
+@media screen and (width: 768px) {
+    body {
+        background-color: #16585b;
+        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2355dde1' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: 7px; 
+    }
+
+    .tablaper {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        width: 98%;
+    }
+
+    .tablaper li {        
+        height: 40px;
+        flex-direction: row;
+        position: relative;                
+    }
+
+    .tablaper li h2 {
+        font-size: 1.7rem;       
+        position:absolute;
+        left: 45%;
+        text-align: center;              
+    }
+
+    .tablaper li .numatomico {
+        font-size: 1.4rem; /* Ajusta el tamaño de textos pequeños */
+        padding: 3px;        
+    }
+
+    .tablaper li .nomelemento {
+        font-size: 1.2rem;
+    }      
+    
+    .leyenda h3 {        
+        margin: auto;
+        margin-top: 6px;
+        font-size: 22px;        
+    }
+
+    .leyenda h3 br {
+        display:none;        
+    }
+
+    .tablaper .l1 {
+        order: -1;
+    }
+
+    .l2 {
+        order: -2;
+    }
+
+    .l3 {
+        order: -3;
+    }
+
+    .l4 {
+        order: -4;
+    }
+
+    .l5 {
+        order: -5;
+    }
+
+    .l6 {
+        order: -6;
+    }
+
+    .l7 {
+        order: -7;
+    }
+
+    .l8 {
+        order: -8;
+    }
+
+    .l9 {
+        order: -9;
+    }
+
+    .l10 {
+        order: -10;
+    }
+
+    .nometalesreactivos,
+    .actinidos,
+    .alcalinos,
+    .alcalinoterreos,
+    .gasesnobles,
+    .lantanidos,
+    .metalesdetransicion,
+    .metaloides,
+    .postransicionales,
+    .propiedadesdesconocidas {
+        width: 50%;
+    }
+
+
+}
+
+@media screen and (width: 1024px) {
+    
+    body {
+        background-color: #16585b;
+        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2355dde1' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: 7px; 
+    }
+
+    h1 {
+        font-size: 30px;
+        margin-top: 10px;
+    }
+    .tablaper {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        width: 90%;
+    }
+   
+    .tablaper li {        
+        height: 40px;
+        flex-direction: row;
+        position: relative;        
+    }
+
+    .tablaper li h2 {
+        font-size: 1.7rem;       
+        position:absolute;
+        left: 45%;
+        text-align: center;              
+    }
+
+    .tablaper li .numatomico {
+        font-size: 1.4rem; /* Ajusta el tamaño de textos pequeños */
+        padding: 3px;        
+    }
+
+    .tablaper li .nomelemento {
+        font-size: 1.2rem;
+    }      
+    
+    .leyenda h3 {        
+        margin: auto;
+        margin-top: 6px;
+        font-size: 22px;        
+    }
+
+    .leyenda h3 br {
+        display:none;        
+    }
+  
+
+}
+
+@media screen and ( max-width: 768px) {
+    body {
+        background-color: #16585b;
+        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2355dde1' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: 7px; 
+    }
+
+    .tablaper {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        width: 98%;
+    }
+
+    .tablaper li {        
+        height: 40px;
+        flex-direction: row;
+        position: relative;                
+    }
+
+    .tablaper li h2 {
+        font-size: 1.7rem;       
+        position:absolute;
+        left: 45%;
+        text-align: center;              
+    }
+
+    .tablaper li .numatomico {
+        font-size: 1.4rem; /* Ajusta el tamaño de textos pequeños */
+        padding: 3px;        
+    }
+
+    .tablaper li .nomelemento {
+        font-size: 1.2rem;
+    }      
+    
+    .leyenda h3 {        
+        margin: auto;
+        margin-top: 6px;
+        font-size: 22px;        
+    }
+
+    .leyenda h3 br {
+        display:none;        
+    }
+
+    .tablaper .l1 {
+        order: -1;
+    }
+
+    .l2 {
+        order: -2;
+    }
+
+    .l3 {
+        order: -3;
+    }
+
+    .l4 {
+        order: -4;
+    }
+
+    .l5 {
+        order: -5;
+    }
+
+    .l6 {
+        order: -6;
+    }
+
+    .l7 {
+        order: -7;
+    }
+
+    .l8 {
+        order: -8;
+    }
+
+    .l9 {
+        order: -9;
+    }
+
+    .l10 {
+        order: -10;
+    }
+    
+    
+    .leyenda {
+        width: 100%;
+    }
+
+    .nometalesreactivos,
+    .actinidos,
+    .alcalinos,
+    .alcalinoterreos,
+    .gasesnobles,
+    .lantanidos,
+    .metalesdetransicion,
+    .metaloides,
+    .postransicionales,
+    .propiedadesdesconocidas {
+        width: 31%;
+    }
+
 }
 
 
