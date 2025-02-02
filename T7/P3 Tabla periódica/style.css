@@ -20,7 +20,7 @@ h1 {
 /*Configuración de la cuadrícula:
 El plan es crear 18 columnas y 9 filas y
 como las leyendas son el doble de anchas 
-que los elementos, aplicarles un grid-column: span 2*/
+que los elementos, aplicarles un grid-column: 1 / span 2 */
 .tablaper {
     display: grid;    
     grid-template-columns: repeat(18, 1fr);
@@ -140,6 +140,8 @@ que los elementos, aplicarles un grid-column: span 2*/
     grid-row: 6;
 }
 
+/*Posicionamiento de las leyendas*/
+
 .l1, .l2, .l3, .l4 {
     grid-row: 1;
 }
@@ -190,9 +192,7 @@ que los elementos, aplicarles un grid-column: span 2*/
 /*Pues este es el fracaso de la práctica. Por muchas vueltas que le he dado
  (y no estoy muy brillante con este horrible gripazo) no he encontrado la manera
  de que el resto de los lantánidos y actínidos se posicionaran en las 2 últimas líneas
- automaticamente. Nota para los dioses de CSS: ¿por qué no creais una propiedad de grid
- con la que puedas poner un elemento de una clase en una cuadrícula y los demás elementos
- de esa clase rellenen las cuadrículas siguientes de la fila o columna automáticamente? */
+ automaticamente.*/
 
 #pra, #neo, #pro, #sam, #eur, #gad, #ter, #dis, #hol, #erb, #tul, #ite, #lut {
     grid-row: 8;
@@ -246,12 +246,281 @@ que los elementos, aplicarles un grid-column: span 2*/
     grid-row: 9;
 }
 
-/*================media query=========================== 
-
-No funciona, da igual las medidas que ponga, hace lo que le da
-la gana.*/
+/*================media query===============================================================
+Creo que está todo correcto, la cuestión es que al ir estrechando la ventana del navegador, aplica las media
+querys como le da la gana. Ya no puedo seguir probando, se acabó el tiempo porque tengo mucho que hacer.*/
 
 @media screen and (max-width: 480px) {
+
+    /*Con esto vamos a eliminar el posicionamiento específico que les
+    dimos a algunos elementos en las reglas generales. */ 
+    #helio, #lantano, #actinio, #cerio, 
+    #pra, #neo, #pro, #sam, #eur, 
+    #gad, #ter, #dis, #hol, #erb, 
+    #tul, #ite, #lut, #hafnio,
+    #lantano, #actinio, #torio,
+    #prot, #uran, #nept, #plut,
+    #amer, #curi, #berk, #cali,
+    #boro, #eins, #aluminio,
+    #ferm, #mend, #nobe,
+    #laur {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+    }  
+
+    body {
+        background-color: #16585b;
+        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2355dde1' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: 7px; 
+    }
+
+    h1 {
+        font-size: 25px;
+        margin-top: 10px;
+    }
+    .tablaper {
+        display: grid;
+        grid-template-columns: 1fr; /* Una sola columna */
+        grid-template-rows: repeat(128, 1fr); /* 128 filas de igual tamaño */       
+        gap: 2px;
+        width: 90%;
+    }
+   
+    .tablaper li {        
+        height: 40px;
+        flex-direction: row;
+        position: relative;
+        grid-column: 1;        
+    }
+
+    .tablaper li h2 {
+        font-size: 1.7rem;       
+        position:absolute;
+        left: 45%;
+        text-align: center;              
+    }
+
+    .tablaper li .numatomico {
+        font-size: 1.4rem; /* Ajusta el tamaño de textos pequeños */
+        padding: 3px;        
+    }
+
+    .tablaper li .nomelemento {
+        font-size: 1.2rem;
+    }      
+    
+    .leyenda h3 {        
+        margin: auto;
+        margin-top: 6px;
+        font-size: 22px;        
+    }
+
+    .leyenda h3 br {
+        display:none;        
+    }
+
+    /*Posicionamos las leyendas en las 10 primeras filas. */
+    .l1 {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    .l2 {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    .l3 {
+        grid-row: 3;
+        grid-column: 1;
+    }
+
+    .l4 {
+        grid-row: 4;
+        grid-column: 1;
+    }
+
+    .l5 {
+        grid-row: 5;
+        grid-column: 1;
+    }
+
+    .l6 {
+        grid-row: 6;
+        grid-column: 1;
+    }
+
+    .l7 {
+        grid-row: 7;
+        grid-column: 1;
+    }
+
+    .l8 {
+        grid-row: 8;
+        grid-column: 1;
+    }
+
+    .l9 {
+        grid-row: 9;
+        grid-column: 1;
+    }
+
+    .l10 {
+        grid-row: 10;
+        grid-column: 1;
+    }
+
+    /*Ahora situamos el primer <li> en la fila 11, columna 1. Los demás deberían
+        seguirle y ocupar las demás cuadrículas. */
+        .tablaper li:not(.leyenda) {
+            grid-column: 1;
+        }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    /*Con esto vamos a eliminar el posicionamiento específico que les
+    dimos a algunos elementos en las reglas generales. */ 
+    #helio, #lantano, #actinio, #cerio, 
+    #pra, #neo, #pro, #sam, #eur, 
+    #gad, #ter, #dis, #hol, #erb, 
+    #tul, #ite, #lut, #hafnio,
+    #lantano, #actinio, #torio,
+    #prot, #uran, #nept, #plut,
+    #amer, #curi, #berk, #cali,
+    #boro, #eins, #aluminio,
+    #ferm, #mend, #nobe,
+    #laur {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+    }  
+   
+    
+    body {
+        background-color: #16585b;
+        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2355dde1' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: 7px; 
+    }
+
+    .tablaper {        
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Una sola columna */
+        grid-template-rows: auto; /* 128 filas de igual tamaño */        
+        gap: 2px;
+        grid-auto-flow: row;
+        width: 90%;       
+    }
+
+    .tablaper li {        
+        height: 40px;
+        flex-direction: row;
+        position: relative;                
+    }
+
+    .tablaper li h2 {
+        font-size: 1.4rem;       
+        position:absolute;
+        left: 45%;
+        text-align: center;              
+    }
+
+    .tablaper li .numatomico {
+        font-size: 1.2rem; /* Ajusta el tamaño de textos pequeños */
+        padding: 3px;        
+    }
+
+    .tablaper li .nomelemento {
+        font-size: 1rem;
+    }     
+    
+    .leyenda h3 {        
+        margin: auto;
+        margin-top: 6px;
+        font-size: 22px;        
+    }   
+
+    .leyenda h3 br {
+        display:none;        
+    }
+
+    /*Posicionamos las leyendas en las 10 primeras filas abarcando
+    las 2 columnas*/
+
+    .l1 {
+        grid-row: 1;
+        grid-column: 1 / span 2;
+    }
+
+    .l2 {
+        grid-row: 2;
+        grid-column: 1 / span 2;
+    }
+
+    .l3 {
+        grid-row: 3;
+        grid-column: 1 / span 2;
+    }
+
+    .l4 {
+        grid-row: 4;
+        grid-column: 1 / span 2;
+    }
+
+    .l5 {
+        grid-row: 5;
+        grid-column: 1 / span 2;
+    }
+
+    .l6 {
+        grid-row: 6;
+        grid-column: 1 / span 2;
+    }
+
+    .l7 {
+        grid-row: 7;
+        grid-column: 1 / span 2;
+    }
+
+    .l8 {
+        grid-row: 8;
+        grid-column: 1 / span 2;
+    }
+
+    .l9 {
+        grid-row: 9;
+        grid-column: 1 / span 2;
+    }
+
+    .l10 {
+        grid-row: 10;
+        grid-column: 1 / span 2;
+    }   
+
+    /*Ahora situamos el primer <li> en la fila 11, columna 1. Los demás deberían
+        seguirle y ocupar las demás cuadrículas pero tampoco. */
+        .tablaper li:not(.leyenda) {
+            grid-row:auto;
+        }
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    
+     /*Con esto vamos a eliminar el posicionamiento específico que les
+    dimos a algunos elementos en las reglas generales. */ 
+    #helio, #lantano, #actinio, #cerio, 
+    #pra, #neo, #pro, #sam, #eur, 
+    #gad, #ter, #dis, #hol, #erb, 
+    #tul, #ite, #lut, #hafnio,
+    #lantano, #actinio, #torio,
+    #prot, #uran, #nept, #plut,
+    #amer, #curi, #berk, #cali,
+    #boro, #eins, #aluminio,
+    #ferm, #mend, #nobe,
+    #laur {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+    }  
+
     body {
         background-color: #16585b;
         background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2355dde1' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
@@ -263,8 +532,9 @@ la gana.*/
         margin-top: 10px;
     }
     .tablaper {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);/*3 columnas */
+        grid-template-rows: auto; /*50 filas */
         gap: 2px;
         width: 90%;
     }
@@ -283,7 +553,7 @@ la gana.*/
     }
 
     .tablaper li .numatomico {
-        font-size: 1.4rem; /* Ajusta el tamaño de textos pequeños */
+        font-size: 1.4rem; 
         padding: 3px;        
     }
 
@@ -299,274 +569,51 @@ la gana.*/
 
     .leyenda h3 br {
         display:none;        
+    }
+
+    /*Posicionamos las leyendas en las 10 primeras filas abarcando
+    las 3 columnas*/
+    .l1 {
+        grid-row: 1;
+        grid-column: 1 / span 3;
+    }
+
+    .l2 {
+        grid-row: 2;
+        grid-column: 1 / span 3;
+    }
+
+    .l3 {
+        grid-row: 3;
+        grid-column: 1 / span 3;
+    }
+
+    .l4 {
+        grid-row: 4;
+        grid-column: 1 / span 3;
+    }
+
+    .l5 {
+        grid-row: 5;
+        grid-column: 1 / span 3;
+    }
+
+    .l6 {
+        grid-row: 6;
+        grid-column: 1 / span 3;
+    }
+
+    .l7 {
+        grid-row: 7;
+        grid-column: 1 / span 3;
+    }
+
+    /*Ahora situamos el primer <li> en la fila 11, columna 1. Los demás deberían
+    seguirle y ocupar las demás cuadrículas pero ni de %$&# coña. */
+    .tablaper li:not(.leyenda) {
+        grid-column: span 1;
     }
   
 
 }
-
-@media screen and (width: 768px) {
-    body {
-        background-color: #16585b;
-        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2355dde1' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
-        background-size: 7px; 
-    }
-
-    .tablaper {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-        width: 98%;
-    }
-
-    .tablaper li {        
-        height: 40px;
-        flex-direction: row;
-        position: relative;                
-    }
-
-    .tablaper li h2 {
-        font-size: 1.7rem;       
-        position:absolute;
-        left: 45%;
-        text-align: center;              
-    }
-
-    .tablaper li .numatomico {
-        font-size: 1.4rem; /* Ajusta el tamaño de textos pequeños */
-        padding: 3px;        
-    }
-
-    .tablaper li .nomelemento {
-        font-size: 1.2rem;
-    }      
-    
-    .leyenda h3 {        
-        margin: auto;
-        margin-top: 6px;
-        font-size: 22px;        
-    }
-
-    .leyenda h3 br {
-        display:none;        
-    }
-
-    .tablaper .l1 {
-        order: -1;
-    }
-
-    .l2 {
-        order: -2;
-    }
-
-    .l3 {
-        order: -3;
-    }
-
-    .l4 {
-        order: -4;
-    }
-
-    .l5 {
-        order: -5;
-    }
-
-    .l6 {
-        order: -6;
-    }
-
-    .l7 {
-        order: -7;
-    }
-
-    .l8 {
-        order: -8;
-    }
-
-    .l9 {
-        order: -9;
-    }
-
-    .l10 {
-        order: -10;
-    }
-
-    .nometalesreactivos,
-    .actinidos,
-    .alcalinos,
-    .alcalinoterreos,
-    .gasesnobles,
-    .lantanidos,
-    .metalesdetransicion,
-    .metaloides,
-    .postransicionales,
-    .propiedadesdesconocidas {
-        width: 50%;
-    }
-
-
-}
-
-@media screen and (width: 1024px) {
-    
-    body {
-        background-color: #16585b;
-        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2355dde1' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
-        background-size: 7px; 
-    }
-
-    h1 {
-        font-size: 30px;
-        margin-top: 10px;
-    }
-    .tablaper {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-        width: 90%;
-    }
-   
-    .tablaper li {        
-        height: 40px;
-        flex-direction: row;
-        position: relative;        
-    }
-
-    .tablaper li h2 {
-        font-size: 1.7rem;       
-        position:absolute;
-        left: 45%;
-        text-align: center;              
-    }
-
-    .tablaper li .numatomico {
-        font-size: 1.4rem; /* Ajusta el tamaño de textos pequeños */
-        padding: 3px;        
-    }
-
-    .tablaper li .nomelemento {
-        font-size: 1.2rem;
-    }      
-    
-    .leyenda h3 {        
-        margin: auto;
-        margin-top: 6px;
-        font-size: 22px;        
-    }
-
-    .leyenda h3 br {
-        display:none;        
-    }
-  
-
-}
-
-@media screen and ( max-width: 768px) {
-    body {
-        background-color: #16585b;
-        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2355dde1' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
-        background-size: 7px; 
-    }
-
-    .tablaper {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-        width: 98%;
-    }
-
-    .tablaper li {        
-        height: 40px;
-        flex-direction: row;
-        position: relative;                
-    }
-
-    .tablaper li h2 {
-        font-size: 1.7rem;       
-        position:absolute;
-        left: 45%;
-        text-align: center;              
-    }
-
-    .tablaper li .numatomico {
-        font-size: 1.4rem; /* Ajusta el tamaño de textos pequeños */
-        padding: 3px;        
-    }
-
-    .tablaper li .nomelemento {
-        font-size: 1.2rem;
-    }      
-    
-    .leyenda h3 {        
-        margin: auto;
-        margin-top: 6px;
-        font-size: 22px;        
-    }
-
-    .leyenda h3 br {
-        display:none;        
-    }
-
-    .tablaper .l1 {
-        order: -1;
-    }
-
-    .l2 {
-        order: -2;
-    }
-
-    .l3 {
-        order: -3;
-    }
-
-    .l4 {
-        order: -4;
-    }
-
-    .l5 {
-        order: -5;
-    }
-
-    .l6 {
-        order: -6;
-    }
-
-    .l7 {
-        order: -7;
-    }
-
-    .l8 {
-        order: -8;
-    }
-
-    .l9 {
-        order: -9;
-    }
-
-    .l10 {
-        order: -10;
-    }
-    
-    
-    .leyenda {
-        width: 100%;
-    }
-
-    .nometalesreactivos,
-    .actinidos,
-    .alcalinos,
-    .alcalinoterreos,
-    .gasesnobles,
-    .lantanidos,
-    .metalesdetransicion,
-    .metaloides,
-    .postransicionales,
-    .propiedadesdesconocidas {
-        width: 31%;
-    }
-
-}
-
-
-
-
 
