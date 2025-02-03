@@ -141,7 +141,6 @@ que los elementos, aplicarles un grid-column: 1 / span 2 */
 }
 
 /*Posicionamiento de las leyendas*/
-
 .l1, .l2, .l3, .l4 {
     grid-row: 1;
 }
@@ -192,7 +191,10 @@ que los elementos, aplicarles un grid-column: 1 / span 2 */
 /*Pues este es el fracaso de la práctica. Por muchas vueltas que le he dado
  (y no estoy muy brillante con este horrible gripazo) no he encontrado la manera
  de que el resto de los lantánidos y actínidos se posicionaran en las 2 últimas líneas
- automaticamente.*/
+ automaticamente. Esta solución no sólo provoca un largo añadido de id´s (que en realidad
+ es lo de menos) Lo peor es que convierte la elaboración de las 3 medias querys en una pesadilla.
+ Y lo peor de todo es que, aunque consiga el objetivo final de la práctica, al no ser el código eficiente
+ puede que todo este trabajo haya sido sólo una pérdida de tiempo.*/
 
 #pra, #neo, #pro, #sam, #eur, #gad, #ter, #dis, #hol, #erb, #tul, #ite, #lut {
     grid-row: 8;
@@ -246,14 +248,14 @@ que los elementos, aplicarles un grid-column: 1 / span 2 */
     grid-row: 9;
 }
 
-/*================media query===============================================================
-Creo que está todo correcto, la cuestión es que al ir estrechando la ventana del navegador, aplica las media
-querys como le da la gana. Ya no puedo seguir probando, se acabó el tiempo porque tengo mucho que hacer.*/
+/*================media query x 3===============================================================*/
 
 @media screen and (max-width: 480px) {
-
     /*Con esto vamos a eliminar el posicionamiento específico que les
-    dimos a algunos elementos en las reglas generales. */ 
+    dimos a algunos elementos en las reglas generales (esto se repite
+    en las siguientes media querys. Por haber tenido que hacer ese
+     posicionamiento específico a los lantánidos y los actínidos
+      las medias querys se han convertido en una pesadilla.*/ 
     #helio, #lantano, #actinio, #cerio, 
     #pra, #neo, #pro, #sam, #eur, 
     #gad, #ter, #dis, #hol, #erb, 
@@ -264,8 +266,8 @@ querys como le da la gana. Ya no puedo seguir probando, se acabó el tiempo porq
     #boro, #eins, #aluminio,
     #ferm, #mend, #nobe,
     #laur {
-        grid-column: 1 !important;
-        grid-row: auto !important;
+        grid-column: 1;
+        grid-row: auto;
     }  
 
     body {
@@ -278,10 +280,10 @@ querys como le da la gana. Ya no puedo seguir probando, se acabó el tiempo porq
         font-size: 25px;
         margin-top: 10px;
     }
-    .tablaper {
-        display: grid;
-        grid-template-columns: 1fr; /* Una sola columna */
-        grid-template-rows: repeat(128, 1fr); /* 128 filas de igual tamaño */       
+    .tablaper {        
+        /*Aquí establecemos el template de esta media query*/
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(128, 1fr);       
         gap: 2px;
         width: 90%;
     }
@@ -301,7 +303,7 @@ querys como le da la gana. Ya no puedo seguir probando, se acabó el tiempo porq
     }
 
     .tablaper li .numatomico {
-        font-size: 1.4rem; /* Ajusta el tamaño de textos pequeños */
+        font-size: 1.4rem;
         padding: 3px;        
     }
 
@@ -370,29 +372,31 @@ querys como le da la gana. Ya no puedo seguir probando, se acabó el tiempo porq
         grid-column: 1;
     }
 
-    /*Ahora situamos el primer <li> en la fila 11, columna 1. Los demás deberían
-        seguirle y ocupar las demás cuadrículas. */
-        .tablaper li:not(.leyenda) {
-            grid-column: 1;
-        }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
-    /*Con esto vamos a eliminar el posicionamiento específico que les
+     /*Con esto vamos a eliminar el posicionamiento específico que les
     dimos a algunos elementos en las reglas generales. */ 
-    #helio, #lantano, #actinio, #cerio, 
-    #pra, #neo, #pro, #sam, #eur, 
-    #gad, #ter, #dis, #hol, #erb, 
-    #tul, #ite, #lut, #hafnio,
-    #lantano, #actinio, #torio,
-    #prot, #uran, #nept, #plut,
-    #amer, #curi, #berk, #cali,
-    #boro, #eins, #aluminio,
-    #ferm, #mend, #nobe,
-    #laur {
-        grid-column: 1 !important;
-        grid-row: auto !important;
-    }  
+    #lantano, #actinio,  
+    #pra, #pro, #eur, 
+    #ter, #hol, 
+    #tul, #lut, #lantano,
+    #actinio, #prot, #nept,
+    #amer, #berk, #boro,
+     #eins, #aluminio,
+     #mend, #laur {
+        grid-column: 1;
+        grid-row: auto;
+    }
+    
+    #helio, #cerio, #neo, #sam,
+    #gad, #dis, #erb, #ite,
+    #hafnio, #torio, #uran,
+    #plut, #curi, #cali,
+    #ferm, #nobe  {
+        grid-column: 2;
+        grid-row: auto;
+    }
    
     
     body {
@@ -401,12 +405,15 @@ querys como le da la gana. Ya no puedo seguir probando, se acabó el tiempo porq
         background-size: 7px; 
     }
 
+    h1 {
+        margin-top: 10px;
+    }
+
     .tablaper {        
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Una sola columna */
-        grid-template-rows: auto; /* 128 filas de igual tamaño */        
-        gap: 2px;
-        grid-auto-flow: row;
+        /*Aquí establecemos el template de esta media query*/
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;        
+        gap: 2px;        
         width: 90%;       
     }
 
@@ -424,7 +431,7 @@ querys como le da la gana. Ya no puedo seguir probando, se acabó el tiempo porq
     }
 
     .tablaper li .numatomico {
-        font-size: 1.2rem; /* Ajusta el tamaño de textos pequeños */
+        font-size: 1.2rem;
         padding: 3px;        
     }
 
@@ -444,7 +451,6 @@ querys como le da la gana. Ya no puedo seguir probando, se acabó el tiempo porq
 
     /*Posicionamos las leyendas en las 10 primeras filas abarcando
     las 2 columnas*/
-
     .l1 {
         grid-row: 1;
         grid-column: 1 / span 2;
@@ -493,33 +499,33 @@ querys como le da la gana. Ya no puedo seguir probando, se acabó el tiempo porq
     .l10 {
         grid-row: 10;
         grid-column: 1 / span 2;
-    }   
-
-    /*Ahora situamos el primer <li> en la fila 11, columna 1. Los demás deberían
-        seguirle y ocupar las demás cuadrículas pero tampoco. */
-        .tablaper li:not(.leyenda) {
-            grid-row:auto;
-        }
-
+    }  
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {  
+     
+    #lantano, #pro, #gad, #hol, 
+    #actinio, #prot, #berk,
+    #aluminio, #laur, #cerio,
+     #ite, #plut, #ferm {
+        grid-column: 1;
+        grid-row: auto;
+    }
     
-     /*Con esto vamos a eliminar el posicionamiento específico que les
-    dimos a algunos elementos en las reglas generales. */ 
-    #helio, #lantano, #actinio, #cerio, 
-    #pra, #neo, #pro, #sam, #eur, 
-    #gad, #ter, #dis, #hol, #erb, 
-    #tul, #ite, #lut, #hafnio,
-    #lantano, #actinio, #torio,
-    #prot, #uran, #nept, #plut,
-    #amer, #curi, #berk, #cali,
-    #boro, #eins, #aluminio,
-    #ferm, #mend, #nobe,
-    #laur {
-        grid-column: 1 !important;
-        grid-row: auto !important;
-    }  
+    #boro, #helio, #sam,
+    #erb, #uran, #cali,
+    #pra, #ter, #lut,
+    #actinio, #amer, #mend  {
+        grid-column: 2;
+        grid-row: auto;
+    }
+
+    #lantano, #neo, #eur,
+    #dis, #tul, #hafnio, #torio,
+    #nept, #curi, #eins, #nobe {
+        grid-column: 3;
+        grid-row: auto;
+     }    
 
     body {
         background-color: #16585b;
@@ -531,8 +537,9 @@ querys como le da la gana. Ya no puedo seguir probando, se acabó el tiempo porq
         font-size: 30px;
         margin-top: 10px;
     }
+
     .tablaper {
-        display: grid;
+        /*Aquí establecemos el template de esta media query*/
         grid-template-columns: repeat(3, 1fr);/*3 columnas */
         grid-template-rows: auto; /*50 filas */
         gap: 2px;
@@ -546,27 +553,30 @@ querys como le da la gana. Ya no puedo seguir probando, se acabó el tiempo porq
     }
 
     .tablaper li h2 {
-        font-size: 1.7rem;       
+        font-size: 1.3rem;       
         position:absolute;
         left: 45%;
         text-align: center;              
     }
 
     .tablaper li .numatomico {
-        font-size: 1.4rem; 
+        font-size: 1rem; 
         padding: 3px;        
     }
 
     .tablaper li .nomelemento {
-        font-size: 1.2rem;
+        font-size: 0.9rem;
     }      
     
     .leyenda h3 {        
         margin: auto;
         margin-top: 6px;
-        font-size: 22px;        
+        font-size: 15px;        
     }
 
+    /*Quitando el efecto del <br> que añadí para
+    poder posicionar bien las leyendas de más de una 
+    palabra. */
     .leyenda h3 br {
         display:none;        
     }
@@ -608,12 +618,20 @@ querys como le da la gana. Ya no puedo seguir probando, se acabó el tiempo porq
         grid-column: 1 / span 3;
     }
 
-    /*Ahora situamos el primer <li> en la fila 11, columna 1. Los demás deberían
-    seguirle y ocupar las demás cuadrículas pero ni de %$&# coña. */
-    .tablaper li:not(.leyenda) {
-        grid-column: span 1;
+    .l8 {
+        grid-row: 8;
+        grid-column: 1 / span 3;
     }
-  
+
+    .l9 {
+        grid-row: 9;
+        grid-column: 1 / span 3;
+    }
+
+    .l10 {
+        grid-row: 10;
+        grid-column: 1 / span 3;
+    }    
 
 }
 
