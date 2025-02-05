@@ -3,3 +3,326 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    background-image: url("./img/waves.png");
+    background-size: 68%;
+    background-repeat: repeat;
+}
+
+header {
+    width: 100%;    
+    background-image: url("./img/header.png");
+    background-position:bottom;
+    background-size: 100%;             
+    height: 17vw;       
+    text-align:center;
+    font-family: "Emilys Candy", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(7, 7, 157);    
+}
+
+header h1 {
+    padding-top: 0.5%;
+    font-size: clamp(2rem, 5vw, 2.3rem);        
+}
+
+header p {
+    padding: 1% 1%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    font-size: clamp(0.7rem, 3vw, 1.3rem); /*Ajuste de tamaño dinámico para el responsive*/    
+    width: 100%;      
+}
+
+#transp {
+    background-color: rgba(85, 211, 211, 0.3);
+    width: 92%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /*Con auto-fit y minmax nos ahorramos el responsive.*/
+    grid-auto-rows: 32vh;
+    gap: 12px;
+    padding: 10px;
+    position: relative;/*Esto es para el efecto del hover */      
+}
+
+#transp h2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    
+}
+
+#h2A {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;  
+    font-style: normal;
+    font-size: 1em;
+    color: rgb(7, 7, 157);
+    background-color: rgba(85, 211, 211, 0.7);           
+    height: 22%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    align-self: start;
+    padding: 3px;
+}
+
+#h2B {
+    font-family: "Emilys Candy", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2em;
+    color: rgb(7, 7, 157);
+    background-color: rgba(85, 211, 211, 0.7);
+    height: 22%;
+    text-align: right;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    align-self: end;
+    padding: 3px;
+}
+
+#transp div {        
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    margin: 12px;
+    justify-content: space-around;
+    transition: transform 0.8s ease, filter 0.3s ease;
+    position: relative; /*Permite ocultar los h2*/
+}
+
+/*Efecto cuando el cursor pasa sobre una imagen*/
+#transp div:hover {
+    transform: scale(1.5); /*Aumenta el tamaño de la imagen*/
+    z-index: 10; /*La pone por encima del resto*/
+}
+
+/*Oculta los h2 dentro del div en hover*/
+#transp div:hover h2 {
+    opacity: 0; /*Desaparecen los títulos*/
+    transition: opacity 0.3s ease;
+}
+
+/*Difumina el resto de la pantalla*/
+#transp:hover > div:not(:hover) {
+    filter: blur(5px); /*Difumina las imágenes que NO tienen hover*/
+    transition: filter 0.3s ease;
+}
+
+#germany {
+    background-image: url("./img/f1.jpg");
+    background-size: cover; /*Hace que la imagen ocupe todo el div, manteniendo su proporción*/
+    background-position: center; /*Centra la imagen dentro del div*/
+    background-repeat: no-repeat; /*Evita que la imagen se repita*/
+    width: 90%; /*Asegura que el div ocupe el espacio asignado por el grid*/
+    height: 90%;
+    border-radius: 10px;
+}
+
+#northIreland {
+    background-image: url("./img/f2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+#hungary {
+    background-image: url("./img/f3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+#romania {
+    background-image: url("./img/f4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+#india {
+    background-image: url("./img/f5.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+#montenegro {
+    background-image: url("./img/f6.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+#italy {
+    background-image: url("./img/f7.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+#slovenia {
+    background-image: url("./img/f8.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+#spain {
+    background-image: url("./img/f9.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+#morocco {
+    background-image: url("./img/f10.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    width: 90%; 
+    height: 90%;
+    border-radius: 10px;
+}
+
+#austria {
+    background-image: url("./img/f11.jpg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%; 
+    height: 90%;
+    border-radius: 10px;
+}
+
+#scotland {
+    background-image: url("./img/f12.jpg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%; 
+    height: 90%;
+    border-radius: 10px;
+}
+
+#croatia {
+    background-image: url("./img/f13.jpg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%; 
+    height: 90%;
+    border-radius: 10px;
+}
+
+#letonia {
+    background-image: url("./img/f14.jpg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%; 
+    height: 90%;
+    border-radius: 10px;
+}
+
+#belgium {
+    background-image: url("./img/f15.jpg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%; 
+    height: 90%;
+    border-radius: 10px;
+}
+
+#bosnia-herzegovina {
+    background-image: url("./img/f16.jpg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%; 
+    height: 90%;
+    border-radius: 10px; 
+}
+
+#england {
+    background-image: url("./img/f17.jpg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%; 
+    height: 90%;
+    border-radius: 10px;
+}
+
+#poland {
+    background-image: url("./img/f18.jpg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%; 
+    height: 90%;
+    border-radius: 10px;
+}
+
+#czechRepublic {
+    background-image: url("./img/f19.jpg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%; 
+    height: 90%;
+    border-radius: 10px;
+}
+
+#ireland {
+    background-image: url("./img/f20.jpg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%; 
+    height: 90%;
+    border-radius: 10px;
+}
+
+footer {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;        
+}
+
+footer h2 {
+    text-align: center;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;  
+    font-style: normal;
+    font-size: 1.8em;
+    color: rgb(7, 7, 157);
+    margin-bottom: 20px;    
+}
