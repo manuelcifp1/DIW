@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+  background-image: url("./img/comic3.jpg");
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+#izquierda {
+  width: 60vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
+
+#derecha {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  height: 100vh;
+  background-color: rgba(138, 54, 69, 0.647);
+  font-family: "Kadwa", serif;
+  font-weight: 400;
+  font-style: normal;
+  z-index: 3;
+
+}
+
+#crucigrama {
+  background-image: url("./img/rays.jpg");
+  display: grid;
+  grid-template-columns: repeat(14, 40px);
+  grid-template-rows: repeat(12, 40px);
+  width: 564px;
+  height: 484px;
+}
