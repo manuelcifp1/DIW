@@ -9,108 +9,141 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mynerve&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js"></script>
     <title>Crucigrama</title>
 </head>
+<!--Entiendo que tiene que haber una manera más rápida de hacer esto, pero a mi no se me ha ocurrido.
+He posicionado cada input uno a uno en la cuadrícula grid, no me ha quedado otra. Muchos id y muchas 
+clases, demasiadas.-->
 <body>
   <div id="izquierda">
+    <form action="#">
     <div id="crucigrama">
-      <input type="text" minlength="1" maxlength="1" pattern="^[gG]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[oO]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[bB]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[lL]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[iI]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[nN]{1}$" required value="">
-
-      <input type="text" minlength="1" maxlength="1" pattern="^[iI]{1}$" required value="">
-
-      <input type="text" minlength="1" maxlength="1" pattern="^[wW]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[sS]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[gG]{1}$" required value="">
-
-      <input type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[mM]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[rR]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[vV]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[eE]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[lL]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[tT]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[hH]{1}$" required value="">
-
-      <input type="text" minlength="1" maxlength="1" pattern="^[kK]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[eE]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[oO]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[tT]{1}$" required value="">
-
-      <input type="text" minlength="1" maxlength="1" pattern="^[cC]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[pP]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[tT]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[iI]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[nN]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[mM]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[eE]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[rR]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[iI]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[cC]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
-
-      <input type="text" minlength="1" maxlength="1" pattern="^[nN]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[hH]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[gG]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[mM]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[rR]{1}$" required value="">
-
-      <input type="text" minlength="1" maxlength="1" pattern="^[dD]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[rR]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[xX]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[eE]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
-
-      <input type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[nN]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[rR]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[wW]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[iI]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[dD]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[oO]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[wW]{1}$" required value="">
-
-      <input type="text" minlength="1" maxlength="1" pattern="^[oO]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[sS]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[lL]{1}$" required value="">
-
-      <input type="text" minlength="1" maxlength="1" pattern="^[sS]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[eE]{1}$" required value="">
-
-      <input type="text" minlength="1" maxlength="1" pattern="^[sS]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[tT]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[rR]{1}$" required value="">
-      <input type="text" minlength="1" maxlength="1" pattern="^[kK]{1}$" required value="">
+      <!--Primera fila-->
+      <div class="cell start" data-number="1">
+        <input class="goblin" type="text" minlength="1" maxlength="1" pattern="^[gG]{1}$" required value="">
+      </div>
+      <input class="goblin" id="oGoblin" type="text" minlength="1" maxlength="1" pattern="^[oO]{1}$" required value="">
+      <input class="goblin" id="bGoblin" type="text" minlength="1" maxlength="1" pattern="^[bB]{1}$" required value="">
+      <input class="goblin" id="lGoblin" type="text" minlength="1" maxlength="1" pattern="^[lL]{1}$" required value="">
+      <input class="goblin" id="iGoblin" type="text" minlength="1" maxlength="1" pattern="^[iI]{1}$" required value="">
+      <div class="cell start" data-number="11">
+        <input class="goblin nightcrawler" type="text" minlength="1" maxlength="1" pattern="^[nN]{1}$" required value="">
+      </div>
+      <!--Segunda fila-->
+      <input class="nightcrawler" id="iNightcrawler" type="text" minlength="1" maxlength="1" pattern="^[iI]{1}$" required value="">
+      <!--Tercera fila-->
+      <div class="cell start" data-number="7">
+        <input class="wakanda" type="text" minlength="1" maxlength="1" pattern="^[wW]{1}$" required value="">
+      </div>
+      <div class="cell start" data-number="9">
+        <input class="avengers" type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
+      </div>
+      <div class="cell start" data-number="10">
+        <input class="storm" type="text" minlength="1" maxlength="1" pattern="^[sS]{1}$" required value="">
+      </div>
+      <input class="nightcrawler" id="gNightcrawler" type="text" minlength="1" maxlength="1" pattern="^[gG]{1}$" required value="">
+      <!--Cuarta fila-->
+      <input class="wakanda" id="a1Wakanda" type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
+      <div class="cell start" data-number="2">
+        <input class="marvel" type="text" minlength="1" maxlength="1" pattern="^[mM]{1}$" required value="">
+      </div>
+      <input class="marvel" id="aMarvel" type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
+      <input class="marvel" id="rMarvel" type="text" minlength="1" maxlength="1" pattern="^[rR]{1}$" required value="">
+      <input class="marvel avengers" id="vMarvel" type="text" minlength="1" maxlength="1" pattern="^[vV]{1}$" required value="">
+      <input class="marvel" id="eMarvel" type="text" minlength="1" maxlength="1" pattern="^[eE]{1}$" required value="">
+      <input class="marvel" id="lMarvel" type="text" minlength="1" maxlength="1" pattern="^[lL]{1}$" required value="">
+      <input class="storm" id="tStorm" type="text" minlength="1" maxlength="1" pattern="^[tT]{1}$" required value="">
+      <input class="nightcrawler" id="hNightcrawler" type="text" minlength="1" maxlength="1" pattern="^[hH]{1}$" required value="">
+      <!--Quinta fila-->      
+      <input class="wakanda" id="kWakanda" type="text" minlength="1" maxlength="1" pattern="^[kK]{1}$" required value="">
+      <input class="avengers" id="e1Avengers" type="text" minlength="1" maxlength="1" pattern="^[eE]{1}$" required value="">
+      <input class="storm" id="oStorm" type="text" minlength="1" maxlength="1" pattern="^[oO]{1}$" required value="">
+      <input class="nightcrawler" id="tNightcrawler" type="text" minlength="1" maxlength="1" pattern="^[tT]{1}$" required value="">
+      <!--Sexta fila-->
+      <div class="cell start" data-number="3">
+        <input class="captain" type="text" minlength="1" maxlength="1" pattern="^[cC]{1}$" required value="">
+      </div>
+      <input class="captain wakanda" id="a1Captain" type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
+      <input class="captain" id="pCaptain" type="text" minlength="1" maxlength="1" pattern="^[pP]{1}$" required value="">
+      <div class="cell start" data-number="8">
+        <input class="captain thanos" type="text" minlength="1" maxlength="1" pattern="^[tT]{1}$" required value="">
+      </div>
+      <input class="captain" id="a2Captain" type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
+      <input class="captain" id="iCaptain" type="text" minlength="1" maxlength="1" pattern="^[iI]{1}$" required value="">
+      <input class="captain avengers" id="nCaptain" type="text" minlength="1" maxlength="1" pattern="^[nN]{1}$" required value="">      
+      <input class="captain" id="a1America" type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
+      <input class="captain" id="mAmerica" type="text" minlength="1" maxlength="1" pattern="^[mM]{1}$" required value="">
+      <input class="captain" id="eAmerica" type="text" minlength="1" maxlength="1" pattern="^[eE]{1}$" required value="">
+      <input class="captain storm" id="rAmerica" type="text" minlength="1" maxlength="1" pattern="^[rR]{1}$" required value="">
+      <input class="captain" id="iAmerica" type="text" minlength="1" maxlength="1" pattern="^[iI]{1}$" required value="">
+      <input class="captain nightcrawler" id="cAmerica" type="text" minlength="1" maxlength="1" pattern="^[cC]{1}$" required value="">
+      <input class="captain" id="a2America" type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
+      <!--Séptima fila-->
+      <input class="wakanda" id="nWakanda" type="text" minlength="1" maxlength="1" pattern="^[nN]{1}$" required value="">
+      <input class="thanos" id="hThanos" type="text" minlength="1" maxlength="1" pattern="^[hH]{1}$" required value="">
+      <input class="avengers" id="gAvengers" type="text" minlength="1" maxlength="1" pattern="^[gG]{1}$" required value="">
+      <input class="storm" id="mStorm" type="text" minlength="1" maxlength="1" pattern="^[mM]{1}$" required value="">
+      <input class="nightcrawler" id="r1Nightcrawler" type="text" minlength="1" maxlength="1" pattern="^[rR]{1}$" required value="">
+      <!--Octava fila-->
+      <div class="cell start" data-number="4">
+        <input class="drax wakanda" type="text" minlength="1" maxlength="1" pattern="^[dD]{1}$" required value="">
+      </div>
+      <input class="drax " id="rDrax" type="text" minlength="1" maxlength="1" pattern="^[rR]{1}$" required value="">
+      <input class="drax thanos" id="aDrax" type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
+      <input class="drax" id="xDrax" type="text" minlength="1" maxlength="1" pattern="^[xX]{1}$" required value="">
+      <input class="avengers" id="e2Avengers" type="text" minlength="1" maxlength="1" pattern="^[eE]{1}$" required value="">
+      <input class="nightcrawler" id="aNightcrawler" type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
+      <!--Novena fila-->
+      <input class="wakanda" id="a3Wakanda" type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
+      <input class="thanos" id="nThanos" type="text" minlength="1" maxlength="1" pattern="^[nN]{1}$" required value="">
+      <input class="avengers" id="rAvengers" type="text" minlength="1" maxlength="1" pattern="^[rR]{1}$" required value="">
+      <div class="cell start" data-number="5">
+        <input class="widow" type="text" minlength="1" maxlength="1" pattern="^[wW]{1}$" required value="">
+      </div>
+      <input class="widow" id="iWidow" type="text" minlength="1" maxlength="1" pattern="^[iI]{1}$" required value="">
+      <input class="widow" id="dWidow" type="text" minlength="1" maxlength="1" pattern="^[dD]{1}$" required value="">
+      <input class="widow" id="oWidow" type="text" minlength="1" maxlength="1" pattern="^[oO]{1}$" required value="">
+      <input  class="widow nightcrawler" id="wWidow" type="text" minlength="1" maxlength="1" pattern="^[wW]{1}$" required value="">
+      <!--Décima fila-->
+      <input class="thanos" id="oThanos" type="text" minlength="1" maxlength="1" pattern="^[oO]{1}$" required value="">
+      <input class="avengers" id="sAvengers" type="text" minlength="1" maxlength="1" pattern="^[sS]{1}$" required value="">
+      <input class="nightcrawler" id="lNightcrawler" type="text" minlength="1" maxlength="1" pattern="^[lL]{1}$" required value="">
+      <!--Undécima fila-->
+      <input class="thanos" id="sThanos" type="text" minlength="1" maxlength="1" pattern="^[sS]{1}$" required value="">
+      <input class="nightcrawler" id="eNightcrawler" type="text" minlength="1" maxlength="1" pattern="^[eE]{1}$" required value="">
+      <!--Duodécima fila-->
+      <div class="cell start" data-number="6">
+        <input class="stark" type="text" minlength="1" maxlength="1" pattern="^[sS]{1}$" required value="">
+      </div>
+      <input class="stark" id="tStark" type="text" minlength="1" maxlength="1" pattern="^[tT]{1}$" required value="">
+      <input class="stark" id="aStark" type="text" minlength="1" maxlength="1" pattern="^[aA]{1}$" required value="">
+      <input class="stark nightcrawler" id="rStark" type="text" minlength="1" maxlength="1" pattern="^[rR]{1}$" required value="">
+      <input class="stark" id="kStark" type="text" minlength="1" maxlength="1" pattern="^[kK]{1}$" required value="">
     </div>
+    <div>
+      <button type="submit">- Highlight correct answers as I type -</button>
+    </div>
+  </form>
+  
   </div>
   <div id="derecha">
     <h2>Solve the crossword!</h2>
     <p><span>Across:</span></p>
-    <p>1.- Green ___, Spiderman's infamous enemy. (6)</p>
-    <p>2.- ___ Cinematic Universe, media franchise. (6)</p>
-    <p>3.- Superhero whose real name is Steve Rogers. (7,7)</p>
-    <p>4.- ___ The Destroyer, from Guardians of the Galaxy. (4)</p>
-    <p>5.- Black ___, portrayed by Scarlett Johansson. (6)</p>
-    <p>6.- Tony ___, better known as Iron Man. (5)</p>
+    <p id="p1">1.- Green ___, Spiderman's infamous enemy. (6)</p>
+    <p id="p2">2.- ___ Cinematic Universe, media franchise. (6)</p>
+    <p id="p3">3.- Superhero whose real name is Steve Rogers. (7,7)</p>
+    <p id="p4">4.- ___ The Destroyer, from Guardians of the Galaxy. (4)</p>
+    <p id="p5">5.- Black ___, portrayed by Scarlett Johansson. (6)</p>
+    <p id="p6">6.- Tony ___, better known as Iron Man. (5)</p>
     <p><span>Down:</span></p>
-    <p>7.- Country from which Black Panther is from. (7)</p>
-    <p>8.- Supervillain that made half of the living things disappear. (6)</p>
-    <p>9.- Superhero team, labeled "Earth's Mightiest heroes". (8)</p>
-    <p>10.- Powerful mutant from the X-Men who can control the weather. (5)</p>
-    <p>11.-This superheroe's powers include super-agility and self-teleportation. (12)</p>
+    <p id="p7">7.- Country from which Black Panther is from. (7)</p>
+    <p id="p8">8.- Supervillain that made half of the living things disappear. (6)</p>
+    <p id="p9">9.- Superhero team, labeled "Earth's Mightiest heroes". (8)</p>
+    <p id="p10">10.- Powerful mutant from the X-Men who can control the weather. (5)</p>
+    <p id="p11">11.-This superheroe's powers include super-agility and self-teleportation. (12)</p>
     <img src="./img/pow.png" alt="pow!">
   </div>  
             
