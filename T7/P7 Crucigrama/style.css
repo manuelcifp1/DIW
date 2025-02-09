@@ -18,6 +18,9 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  
 
 }
 
@@ -31,14 +34,46 @@ body {
   font-weight: 400;
   font-style: normal;
   z-index: 3;
+  color: #f8f8ff;
+}
 
+#derecha img {
+  width: 35%;
+  margin: auto 0; 
+  margin-left: 28%; 
+}
+
+#derecha h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#derecha p {
+  margin-left: 20px;
+}
+
+span {
+  font-weight:800;
+  font-size: 20px;
 }
 
 #crucigrama {
   background-image: url("./img/rays.jpg");
+  background-size: cover;
+  background-position: center;
   display: grid;
   grid-template-columns: repeat(14, 40px);
   grid-template-rows: repeat(12, 40px);
   width: 564px;
   height: 484px;
+  border: ridge #ffffff 1px;
+  border-radius: 5px;
+  gap: 1px;  
+}
+
+input {
+  width: 40px;
+  height: 40px;
+  background-color: #f8f8ff;
+  margin: 2px;
 }
