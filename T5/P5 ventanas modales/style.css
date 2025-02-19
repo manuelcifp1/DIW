@@ -26,13 +26,98 @@
   
     --colorcruznormal: #444444;
     --colorcruzhover: #88637A;
-  }
-  
+  }  
   
   body{
-    font-family: 'Chivo',sans-serif;
-    
+    font-family: 'Chivo',sans-serif; 
+    font-optical-sizing: auto;
+    background: rgba(0, 0, 0, 0.9) url("./img/pattern.svg") repeat center/cover;     
+  }
   
+  #recepcion {
+     width: 65vw;
+     height: 75vh;
+     background-color: var(--fondoprincipal);
+     border-radius: 20px;
+     display: block;
+     margin: 0 auto;
+     margin-top: 5%;
+  }
+
+  
+
+  #recepcion h1 {
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  #recepcion img {
+    width: 15%;    
+  }
+
+  #recepcion #fotos img:nth-child(1) {
+    position: relative;
+    left: 292px;
+    top: 62px;
+    transform: rotate(-20deg);
+  }
+
+  #recepcion #fotos img:nth-child(2) {
+    position: relative;
+    left: 260px;
+    top: 40px;
+    z-index: 5;
+  }
+
+  #recepcion #fotos img:nth-child(3) {
+    position: relative;
+    left: 227px;
+    top: 62px;
+    transform: rotate(20deg);
+  }
+
+  #recepcion p {
+    width: 90%;
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    margin-top: 100px;
+  }
+
+  /* Ocultar checkboxes */
+#botones input {
+  display: none;
+}
+
+/* Estilos de los botones */
+.boton-modal {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: var(--textoboton);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-right: 10px;
+}
+
+/* Colores de botones */
+.boton1 { background-color: var(--fondoboton1); }
+.boton2 { background-color: var(--fondoboton2); }
+.boton3 { background-color: var(--fondoboton3); }
+.boton4 { background-color: var(--fondoboton4); }
+
+/* Efecto hover */
+.boton-modal:hover {
+  background-color: var(--fondobotonhover);
+  color: var(--textobotonhover);
+}
+
+  #fotos {
+    margin-left: 5%;
+  }
+
+  #botones {
+    margin-left: 25%;
   }
   
   .modal p{
@@ -41,10 +126,84 @@
   
   .modalfondo {
     cursor: pointer;
-  }
-  
+  }  
   
   .modalcierre::after{
-    content: "\2A2F";
-    
+    content: "\2A2F";    
   }
+
+  .ventanaModal img {
+    width: 8%;
+  }
+
+  .ventanaModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--fondomodal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out
+  }
+
+  /* Mostrar modal cuando el checkbox está activo */
+  #one:checked ~ .ventanaModal:nth-of-type(1),
+  #two:checked ~ .ventanaModal:nth-of-type(2),
+  #three:checked ~ .ventanaModal:nth-of-type(3),
+  #four:checked ~ .ventanaModal:nth-of-type(4) {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .contenidoVentana {
+    background-color: var(--fondoventanasmodal);
+    width: 50%;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  /* Cerrar modal al hacer clic fuera */
+.ventanaModal label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Botón de cierre */
+.cerrar-modal {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 30px;
+  color: var(--colorcruznormal);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cerrar-modal:hover {
+  color: var(--colorcruzhover);
+}
+
+/* Imágenes alineadas con float */
+.img-izquierda {
+  float: left;
+  margin-right: 15px;
+}
+
+.img-derecha {
+  float: right;
+  margin-left: 15px;
+}
+
+/* Limpiar flotados */
+.contenidoVentana::after {
+  content: "";
+  display: table;
+  clear: both;
+}
