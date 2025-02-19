@@ -2,4 +2,49 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
+
+:root{
+
+    --textoboton: #f5f5f5;
+    --textobotonhover:#220b36;
+  
+    --fondoboton1: #74445D;
+    --fondoboton2: #543172;
+    --fondoboton3: #90275C;
+    --fondoboton4: #5A0C26;
+    --fondobotonhover: #d3a0cc;
+  
+    --fondocuerpo: #111111;
+    --fondoprincipal:#e4e4e4cc; 
+    --fondoventanasmodal: #e8e8e8;
+  
+  
+    --fondomodal: #570b46e6;
+    
+  
+    --colorcruznormal: #444444;
+    --colorcruzhover: #88637A;
+  }
+  
+  
+  body{
+    font-family: 'Chivo',sans-serif;
+    
+  
+  }
+  
+  .modal p{
+    user-select: none;
+  }
+  
+  .modalfondo {
+    cursor: pointer;
+  }
+  
+  
+  .modalcierre::after{
+    content: "\2A2F";
+    
+  }
