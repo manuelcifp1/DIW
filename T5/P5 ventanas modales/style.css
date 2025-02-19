@@ -66,7 +66,7 @@
     position: relative;
     left: 260px;
     top: 40px;
-    z-index: 5;
+    z-index: 2;
   }
 
   #recepcion #fotos img:nth-child(3) {
@@ -85,8 +85,8 @@
   }
 
   /* Ocultar checkboxes */
-#botones input {
-  display: none;
+input {
+  display: none;  
 }
 
 /* Estilos de los botones */
@@ -132,9 +132,12 @@
     content: "\2A2F";    
   }
 
-  .ventanaModal img {
-    width: 8%;
-  }
+  /* Ajustar el tamaño de las imágenes */
+.ventanaModal img {
+  width: 40%;  /* Ajusta el tamaño para que el texto fluya alrededor */
+  max-width: 200px; /* Evita que la imagen sea demasiado grande */
+  border-radius: 5px;
+}
 
   .ventanaModal {
     position: fixed;
@@ -148,22 +151,24 @@
     justify-content: center;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out
+    transition: opacity 0.3s ease-in-out;
+    z-index: 3;
   }
 
   /* Mostrar modal cuando el checkbox está activo */
-  #one:checked ~ .ventanaModal:nth-of-type(1),
-  #two:checked ~ .ventanaModal:nth-of-type(2),
-  #three:checked ~ .ventanaModal:nth-of-type(3),
-  #four:checked ~ .ventanaModal:nth-of-type(4) {
+  #one:checked ~ #recepcion #ventana1,
+  #two:checked ~ #recepcion #ventana2,
+  #three:checked ~ #recepcion #ventana3,
+  #four:checked ~ #recepcion #ventana4 {
     visibility: visible;
     opacity: 1;
-  }
+}
+
 
   .contenidoVentana {
     background-color: var(--fondoventanasmodal);
-    width: 50%;
-    padding: 20px;
+    width: 40%;
+    padding: 15px;
     border-radius: 10px;
     position: relative;
   }
@@ -179,7 +184,7 @@
 .cerrar-modal {
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: 675px;
   font-size: 30px;
   color: var(--colorcruznormal);
   cursor: pointer;
@@ -190,20 +195,30 @@
   color: var(--colorcruzhover);
 }
 
-/* Imágenes alineadas con float */
-.img-izquierda {
-  float: left;
-  margin-right: 15px;
+  /* Para imágenes alineadas a la izquierda */
+  .img-izquierda {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 10px;
+  }
+  
+  /* Para imágenes alineadas a la derecha */
+  .img-derecha {
+    float: right;
+    margin-left: 15px;
+    margin-bottom: 10px;
+  }
+
+  /* Asegurar que el texto rodee correctamente la imagen */
+.contenidoVentana p {
+  text-align: justify;
+  display: block;
 }
 
-.img-derecha {
-  float: right;
-  margin-left: 15px;
-}
-
-/* Limpiar flotados */
+/* Limpiar el float después del contenido para evitar solapamientos */
 .contenidoVentana::after {
   content: "";
   display: table;
   clear: both;
 }
+ 
